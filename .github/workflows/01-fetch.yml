@@ -41,7 +41,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: my-stars-draft
-          path: my-stars.md
+          path: |
+            my-stars.md
+            my-stars.csv
 
       - name: Commit and push release changes
         if: github.event.inputs.mode == 'release'
