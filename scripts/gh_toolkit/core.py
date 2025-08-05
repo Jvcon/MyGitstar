@@ -113,60 +113,6 @@ class GitHubManager:
 
     # --- GraphQL API Methods for Lists ---
 
-    def get_repo_list_mapping(self) -> dict[str, str]:
-        """
-        Fetches all user lists and the repositories within them,
-        then returns a mapping from a repo's full name to its list's name.
-
-        Returns:
-            A dictionary like: {'user/repo1': 'List A', 'user/repo2': 'List B'}
-        """
-        repo_to_list_map = {}
-        query = """
-        query GetListsWithRepos($cursor: String) {
-          viewer {
-            lists(first: 20, after: $cursor) {
-              pageInfo {
-                hasNextPage
-                endCursor
-              }
-              nodes {
-                name
-                entries(first: 100) { # Assuming a list won't have more than 100 repos
-                  nodes {
-                    ... on Repository {
-                      nameWithOwner
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        """
-        
-        has_next_page = True
-        cursor = None
-        
-        print("Building repository-to-list mapping...")
-        while has_next_page:
-            variables = {"cursor": cursor}
-            data = self._execute_graphql(query, variables)
-            
-            lists_data = data.get("viewer", {}).get("lists", {})
-            for list_node in lists_data.get("nodes", []):
-                list_name = list_node.get("name")
-                for entry_node in list_node.get("entries", {}).get("nodes", []):
-                    if repo_name := entry_node.get("nameWithOwner"):
-                        repo_to_list_map[repo_name] = list_name
-            
-            page_info = lists_data.get("pageInfo", {})
-            has_next_page = page_info.get("hasNextPage", False)
-            cursor = page_info.get("endCursor")
-
-        print("Mapping built successfully.")
-        return repo_to_list_map
-
     def get_lists(self) -> list[dict]:
         """Fetches all star lists for the authenticated user."""
         query = """

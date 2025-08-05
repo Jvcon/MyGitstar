@@ -4,31 +4,11 @@ from collections import defaultdict
 from gh_toolkit import GitHubManager
 from datetime import datetime
 
-def enrich_starred_repos(manager: GitHubManager) -> list[dict]:
+def format_to_csv(data: list[dict], filename: str):
     """
-    Fetches starred repos and enriches them with the list they belong to.
+    Formats the repository data into a CSV file.
     """
-    print("Step 1: Building repository-to-list mapping...")
-    repo_to_list_map = manager.get_repo_list_mapping()
-    
-    print("Step 2: Fetching all starred repositories...")
-    starred_repos = manager.get_starred_repos()
-    
-    print("Step 3: Enriching data...")
-    enriched_data = []
-    for repo in starred_repos:
-        repo_full_name = repo.get('full_name')
-        # 为每个 repo 增加 'list_name' 字段
-        repo['list_name'] = repo_to_list_map.get(repo_full_name, 'Uncategorized')
-        enriched_data.append(repo)
-        
-    return enriched_data
-
-def format_to_csv(enriched_data: list[dict], filename: str):
-    """
-    Formats the enriched repository data into a CSV file.
-    """
-    if not enriched_data:
+    if not data:
         print("No data to format into CSV.")
         return
 
@@ -38,22 +18,22 @@ def format_to_csv(enriched_data: list[dict], filename: str):
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=headers, extrasaction='ignore')
         writer.writeheader()
-        writer.writerows(enriched_data)
+        writer.writerows(data)
         
     print(f"Successfully generated CSV file: {filename}")
 
-def format_to_markdown(enriched_data: list[dict], filename: str):
+def format_to_markdown(data: list[dict], filename: str):
     """
-    Formats the enriched repository data into a Markdown file,
+    Formats the repository data into a Markdown file,
     grouped by list name.
     """
-    if not enriched_data:
+    if not data:
         print("No data to format into Markdown.")
         return
         
     # 按 list_name 进行分组
     grouped_repos = defaultdict(list)
-    for repo in enriched_data:
+    for repo in data:
         grouped_repos[repo['list_name']].append(repo)
 
     markdown_content = [
@@ -92,12 +72,12 @@ def main():
 
     manager = GitHubManager(token=token)
     
-    enriched_data = enrich_starred_repos(manager)
+    data = manager.get_starred_repos()
     
-    if enriched_data:
+    if data:
         print("\nFormatting data into different formats...")
-        format_to_csv(enriched_data, "my-stars.csv")
-        format_to_markdown(enriched_data, "my-stars.md")
+        format_to_csv(data, "my-stars.csv")
+        format_to_markdown(data, "my-stars.md")
     else:
         print("No starred repositories found.")
 
