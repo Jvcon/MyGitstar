@@ -4,14 +4,13 @@ from datetime import datetime
 
 def main():
     token = os.getenv('GH_TOKEN')
-    user_id = os.getenv("GH_USER_ID")
     if not token:
         raise ValueError("GitHub token not provided in GH_TOKEN env var.")
 
     manager = GitHubManager(token=token)
 
     print("Fetching starred repositories...")
-    starred_repos = manager.get_starred_repos(user_id=user_id)
+    starred_repos = manager.get_starred_repos()
     print(f"Found {len(starred_repos)} starred repos.")
 
     print("\nCurrent lists:")

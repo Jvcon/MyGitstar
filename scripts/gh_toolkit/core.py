@@ -43,13 +43,34 @@ class GitHubManager:
             
         return data.get("data", {})
 
+    _authenticated_user_id = None
+
     # --- REST API Methods for Stars and Repos ---
 
-    def get_starred_repos(self, user_id: str) -> list[dict]:
+    def get_authenticated_user_id(self) -> str:
+        """
+        Fetches and returns the user ID (login) of the authenticated user.
+        Caches the result to avoid repeated API calls.
+        """
+        if self._authenticated_user_id:
+            return self._authenticated_user_id
+            
+        url = f"{self._REST_API_URL}/user"
+        response = self.session.get(url)
+        response.raise_for_status()
+        
+        user_data = response.json()
+        self._authenticated_user_id = user_data['login']
+        return self._authenticated_user_id
+
+    def get_starred_repos(self, user_id: str = None) -> list[dict]:
         """
         Fetches all starred repositories for a given user.
         See: https://docs.github.com/en/rest/activity/starring
         """
+        if not user_id:
+            user_id = self.get_authenticated_user_id()
+            
         repos = []
         page = 1
         per_page = 100
