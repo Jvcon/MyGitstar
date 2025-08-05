@@ -1,5 +1,5 @@
 import os
-from github_toolkit import GitHubManager
+from gh_toolkit import GitHubManager
 from datetime import datetime
 
 def main():
