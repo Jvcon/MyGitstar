@@ -33,7 +33,7 @@ jobs:
 
       - name: Run fetch stars script
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT }}
         run: python scripts/fetch_stars.py
       
       - name: Upload stars file
