@@ -48,7 +48,7 @@ jobs:
       - name: Prepare release files
         if: github.event.inputs.mode == 'release'
         run: |
-          mv my-stars.md app/src/content/docs/my-stars.md
+          mv my-stars.md app/src/content/docs/index.md
           mv my-stars.csv app/public/data/my-stars.csv
 
       - name: Commit and push release changes
@@ -57,7 +57,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "📚 Release update of starred repositories"
-          file_pattern: 'app/src/content/docs/my-stars.md app/public/data/my-stars.csv'
+          file_pattern: 'app/src/content/docs/index.md app/public/data/my-stars.csv'
           branch: main
 
       - name: "Run if changes have been detected"

@@ -77,7 +77,11 @@ def format_to_markdown(data: list[dict], filename: str):
         grouped_repos[repo['list_name']].append(repo)
 
     markdown_content = [
-        f"# 🌟 My Starred Repositories \n",
+        f"---\n",
+        "title: My Starred Repositories\n",
+        "description: A curated list of my favorite repositories.\n",
+        "---\n\n",
+        "# 🌟 My Starred Repositories \n",
         " > Update Time : {datetime.now().strftime('%Y-%m-%d')}\n"
         "A curated list of my starred repositories on GitHub, presented in a filterable table.\n",
     ]

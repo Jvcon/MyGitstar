@@ -7,7 +7,7 @@ import { StarlightConfig } from 'virtual:starlight/user-config';
 
 // 定义视图切换的链接
 const views = [
-  { label: 'Page', href: '/' },
+  { label: 'Doc', href: '/' },
   { label: 'Table', href: '/table' },
   { label: 'Kanboard', href: '/kanboard' },
 ];
@@ -28,7 +28,7 @@ const views = [
   <div class="right-items sl-flex">
     <!-- 视图切换器 (使用简单的 details/summary 实现下拉菜单) -->
     <details class="view-switcher">
-      <summary class="switcher-summary">切换视图</summary>
+      <summary class="switcher-summary">View</summary>
       <ul class="switcher-menu">
         {views.map(view => (
           <li><a href={view.href}>{view.label}</a></li>

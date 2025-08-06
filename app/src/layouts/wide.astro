@@ -1,0 +1,36 @@
+---
+import CustomHeader from '../components/header.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<slot name="head" /> <!-- 允许页面注入额外的 head 内容, 比如 CSS 链接 -->
+	</head>
+	<body>
+		<CustomHeader />
+		<main class="page-content">
+			<slot /> <!-- 这是页面主要内容将被注入的地方 -->
+		</main>
+		<style is:global>
+			/* 全局样式，可以在这里定义页面通用边距等 */
+			.page-content {
+				padding: 2rem;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+		</style>
+	</body>
+</html>
