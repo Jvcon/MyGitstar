@@ -45,10 +45,25 @@ jobs:
             my-stars.md
             my-stars.csv
 
+      - name: Prepare release files
+        if: github.event.inputs.mode == 'release'
+        run: |
+          mv my-stars.md app/src/content/docs/my-stars.md
+          mv my-stars.csv app/public/data/my-stars.csv
+
       - name: Commit and push release changes
+        id: auto-commit-action
         if: github.event.inputs.mode == 'release'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "docs(stars): Release update of starred repositories"
-          file_pattern: "my-stars.md"
+          commit_message: "📚 Release update of starred repositories"
+          file_pattern: 'app/src/content/docs/my-stars.md app/public/data/my-stars.csv'
           branch: main
+
+      - name: "Run if changes have been detected"
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
+        run: echo "Changes!"
+
+      - name: "Run if no changes have been detected"
+        if: steps.auto-commit-action.outputs.changes_detected == 'false'
+        run: echo "No Changes!"
