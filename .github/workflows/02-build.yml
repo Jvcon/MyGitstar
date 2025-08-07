@@ -1,0 +1,73 @@
+name: 02 - Build App and Deploy
+
+on: 
+  workflow_call:
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: true
+        type: string
+        default: 'draft'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: true
+        default: 'draft'
+        type: choice
+        options:
+          - draft
+          - release
+
+env:
+  BASE_PATH: "./app"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      build-path: steps.build-site.outputs.path
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        working-directory: ${{ env.BASE_PATH }}
+        run: npm install
+
+      - name: Build the application
+        id: build-site
+        working-directory: ${{ env.BASE_PATH }}
+        run: npm run build
+
+      - name: Upload build artifact
+        if: inputs.mode == 'draft'
+        uses: actions/upload-artifact@v4
+        with:
+          name: astro-build-draft
+          path: ${{ steps.build-site.outputs.path }}
+          retention-days: 7
+          
+  deploy:
+    if: inputs.mode == 'release'
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
+    steps:
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ needs.build.outputs.build-path }}
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

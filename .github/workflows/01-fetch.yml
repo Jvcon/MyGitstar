@@ -1,10 +1,15 @@
 name: 01 - Fetch and Analyze Stars
 
 on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'scripts/**'
   workflow_dispatch: 
     inputs:
       mode: 
-        description: 'Draft or Release'
+        description: 'Run mode'
         required: true
         default: 'draft'
         type: choice
@@ -15,9 +20,22 @@ on:
   #   - cron: '0 0 * * 0' # 每周日午夜执行一次
 
 jobs:
-  fetch-stars:
+  fetch:
     runs-on: ubuntu-latest
+    outputs:
+      has_changes: ${{ steps.auto-commit-action.outputs.changes_detected || 'false'}}
+      mode: ${{ steps.init-env.outputs.mode }}
     steps:
+      - name: Initialize environment
+        id: init-env
+        run: |
+          if [ "${{ github.event}}" == 'pull_request' ]; then
+            echo "mode=draft" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event }}" == 'schedule' ]; then
+            echo "mode=release" >> $GITHUB_OUTPUT
+          else
+            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
+    
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -26,18 +44,15 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install PyGithub
-
-      - name: Run fetch stars script
+      - name: Install dependencies and run
         env:
           GH_TOKEN: ${{ secrets.PAT }}
-        run: python scripts/fetch_stars.py
-      
+        run: |
+          python -m pip install --upgrade pip
+          python scripts/fetch_stars.py
+
       - name: Upload stars file
-        if: github.event.inputs.mode == 'draft'
+        if: steps.init-env.outputs.mode == 'draft'
         uses: actions/upload-artifact@v4
         with:
           name: my-stars-draft
@@ -46,24 +61,24 @@ jobs:
             my-stars.csv
 
       - name: Prepare release files
-        if: github.event.inputs.mode == 'release'
+        if: steps.init-env.outputs.mode == 'release'
         run: |
+          mkdir -p app/src/content/docs app/public/data
           mv my-stars.md app/src/content/docs/index.md
           mv my-stars.csv app/public/data/my-stars.csv
 
       - name: Commit and push release changes
         id: auto-commit-action
-        if: github.event.inputs.mode == 'release'
+        if: steps.init-env.outputs.mode == 'release'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "📚 Release update of starred repositories"
           file_pattern: 'app/src/content/docs/index.md app/public/data/my-stars.csv'
           branch: main
 
-      - name: "Run if changes have been detected"
-        if: steps.auto-commit-action.outputs.changes_detected == 'true'
-        run: echo "Changes!"
-
-      - name: "Run if no changes have been detected"
-        if: steps.auto-commit-action.outputs.changes_detected == 'false'
-        run: echo "No Changes!"
+  call-build:
+    if: needs.fetch.outputs.has_changes == 'true'
+    uses: ./.github/workflows/02-build.yml
+    with:
+      mode: ${{ needs.fetch.outputs.mode }}
+    needs: fetch
