@@ -35,7 +35,7 @@ jobs:
             echo "mode=release" >> $GITHUB_OUTPUT
           else
             echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
-    
+          fi
       - name: Checkout repository
         uses: actions/checkout@v4
 
