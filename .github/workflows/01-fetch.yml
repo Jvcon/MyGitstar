@@ -29,9 +29,9 @@ jobs:
       - name: Initialize environment
         id: init-env
         run: |
-          if [ "${{ github.event}}" == 'pull_request' ]; then
+          if [ "${{ github.event_name}}" == 'pull_request' ]; then
             echo "mode=draft" >> $GITHUB_OUTPUT
-          elif [ "${{ github.event }}" == 'schedule' ]; then
+          elif [ "${{ github.event_name }}" == 'schedule' ]; then
             echo "mode=release" >> $GITHUB_OUTPUT
           else
             echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
