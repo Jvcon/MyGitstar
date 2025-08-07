@@ -115,8 +115,8 @@ def format_to_markdown(data: list[dict], filename: str):
             language = repo.get('language', 'N/A')
             platform = repo.get('platform', 'N/A')
             stars = repo.get('stars', 0)
+            markdown_content.append(f"| {name_link} | {description} | {language} | {platform} | {stars} |")
         
-        markdown_content.append(f"| {name_link} | {description} | {language} | {platform} | {stars} |")
         markdown_content.append("\n")
 
     markdown_content.append("\n")
