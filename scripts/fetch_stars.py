@@ -106,7 +106,7 @@ def format_to_markdown(data: list[dict], filename: str):
     for list_name in sorted(grouped_repos.keys()):
         markdown_content.append(f"## 🗂️ {list_name}\n")
         markdown_content.append("| Repository | Description | Language | Platform | Stars |")
-        markdown_content.append("|---|---|---|---|")
+        markdown_content.append("|---|---|---|---|---|")
         repos_in_list = grouped_repos[list_name]
 
         for repo in repos_in_list:
