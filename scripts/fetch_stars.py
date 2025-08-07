@@ -119,8 +119,6 @@ def format_to_markdown(data: list[dict], filename: str):
         
         markdown_content.append("\n")
 
-    markdown_content.append("\n")
-
     with open(filename, "w", encoding="utf-8") as f:
         f.write("\n".join(markdown_content))
 
