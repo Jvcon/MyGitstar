@@ -18,6 +18,12 @@ export default defineConfig({
       components: {
         Header: './src/components/CustomHeader.astro',
       },
+      lable:{
+        'themeSelect.accessibleLabel': 'Select theme',
+        'themeSelect.dark': 'Dark',
+        'themeSelect.light': 'Light',
+        'themeSelect.auto': 'Auto',
+      }
     }),
     tailwind({
       // 禁用 Tailwind 的基础样式，以免与 Starlight 冲突

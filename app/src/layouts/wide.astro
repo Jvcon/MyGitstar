@@ -22,7 +22,7 @@ const { title, description } = Astro.props;
 	<body>
 		<CustomHeader />
 		<main class="page-content">
-			<slot /> <!-- 这是页面主要内容将被注入的地方 -->
+			<slot {...Astro.props} /> <!-- 这是页面主要内容将被注入的地方 -->
 		</main>
 		<style is:global>
 			/* 全局样式，可以在这里定义页面通用边距等 */
