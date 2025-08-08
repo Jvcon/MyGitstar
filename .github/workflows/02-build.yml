@@ -28,7 +28,12 @@ on:
         required: false
         type: boolean
         default: false
-
+  push:
+    branches:
+      - main
+    paths:
+      - app/**
+      - .github/workflows/02-build.yml
 env:
   BASE_PATH: "./app"
 
@@ -53,7 +58,7 @@ jobs:
           echo "path=${{ env.BASE_PATH }}/dist" >> $GITHUB_OUTPUT
 
       - name: Upload build artifact
-        if: ${{ inputs.mode == 'draft' || (inputs.mode == 'release' && inputs.has_changes == 'false') }}
+        if: ${{ github.event_name == 'push' || inputs.mode == 'draft' || (inputs.mode == 'release' && inputs.has_changes == 'false') }}
         uses: actions/upload-artifact@v4
         with:
           name: astro-build-draft
