@@ -8,6 +8,11 @@ on:
         required: true
         type: string
         default: 'draft'
+      has_changes:
+        description: 'Indicates if there are changes to build'
+        required: false
+        type: boolean
+        default: false
   workflow_dispatch:
     inputs:
       mode:
@@ -18,6 +23,11 @@ on:
         options:
           - draft
           - release
+      has_changes:
+        description: 'Indicates if there are changes to build'
+        required: false
+        type: boolean
+        default: false
 
 env:
   BASE_PATH: "./app"
@@ -38,10 +48,12 @@ jobs:
       - name: Build the application
         id: build-site
         working-directory: ${{ env.BASE_PATH }}
-        run: npm run build
+        run: |
+          npm run build
+          echo "path=${{ env.BASE_PATH }}/dist" >> $GITHUB_OUTPUT
 
       - name: Upload build artifact
-        if: inputs.mode == 'draft'
+        if: ${{ inputs.mode == 'draft' || (inputs.mode == 'release' && inputs.has_changes == 'false') }}
         uses: actions/upload-artifact@v4
         with:
           name: astro-build-draft
@@ -49,7 +61,7 @@ jobs:
           retention-days: 7
           
   deploy:
-    if: inputs.mode == 'release'
+    if: inputs.mode == 'release' && inputs.has_changes == 'true'
     runs-on: ubuntu-latest
     needs: build
     permissions:

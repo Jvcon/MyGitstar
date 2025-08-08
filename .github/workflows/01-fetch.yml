@@ -78,8 +78,8 @@ jobs:
           branch: main
 
   call-build:
-    if: needs.fetch.outputs.has_changes == 'true'
     uses: ./.github/workflows/02-build.yml
     with:
       mode: ${{ needs.fetch.outputs.mode }}
+      has_changes: ${{ needs.fetch.outputs.has_changes }}
     needs: fetch

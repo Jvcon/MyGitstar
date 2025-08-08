@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "astro": "^4.11.3",
-    "@astrojs/react": "^3.6.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "papaparse": "^5.4.1"
+    "papaparse": "^5.4.1",
+    "@astrojs/starlight": "^0.25.1",
+    "@astrojs/react": "^3.6.0",
+    "@astrojs/tailwind": "^5.1.0"
   }
 }

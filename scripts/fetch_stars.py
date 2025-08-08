@@ -5,21 +5,111 @@ from collections import defaultdict
 from gh_toolkit import GitHubManager
 
 # 定义一个平台关键词配置，更易于维护和扩展
-PLATFORM_KEYWORDS = {
-    "iOS": {'ios', 'swift', 'swiftui', 'objective-c', 'flutter', 'dart', 'react-native'},
-    "Android": {'android', 'kotlin', 'java', 'jetpack-compose', 'flutter', 'dart', 'react-native'},
-    "Linux": {'linux', 'docker', 'kernel', 'ubuntu', 'debian', 'centos', 'arch'},
-    "Windows": {'windows', 'wpf', '.net', 'winforms', 'c#'},
-    "macOS": {'macos', 'cocoa', 'osx'},
-    "Web": {'web', 'react', 'vue', 'angular', 'svelte', 'javascript', 'typescript', 'wasm'},
-    "Backend": {'backend', 'server', 'api', 'go', 'golang', 'rust', 'python'}
+PLATFORM_MAPPING = {
+    "Windows": {
+        'keywords': {'windows', 'win32', 'win64', 'wpf', 'winforms', 'winui', 'uwp'},
+        'languages': {'c#', 'visual basic .net'}
+    },
+    "macOS": {
+        'keywords': {'macos', 'osx', 'mac', 'cocoa', 'mac-app-store'},
+        'languages': {'swift', 'objective-c'}
+    },
+    "Linux": {
+        'keywords': {'linux', 'ubuntu', 'debian', 'fedora', 'arch', 'centos', 'gnome', 'kde'},
+        'languages': {} 
+    },
+     "iOS": {
+        'keywords': {'ios', 'iphone', 'ipad', 'swiftui', 'uikit'},
+        'languages': {'swift', 'objective-c'}
+    },
+    "Android": {
+        'keywords': {'android', 'jetpack-compose', 'wear-os'},
+        'languages': {'kotlin', 'java'} 
+    },
+    "Web": {
+        'keywords': {
+            'web', 'website', 'webapp', 'web-app', 'backend', 'server', 'api', 'rest-api', 
+            'frontend', 'react', 'vue', 'angular', 'svelte', 'django', 'flask', 'fastapi',
+            'rails', 'asp.net', 'nodejs', 'express', 'nginx', 'apache', 'serverless', 'lambda'
+        },
+        'languages': {'javascript', 'typescript', 'php', 'ruby', 'go'}
+    },
+    "Cross-platform": {
+        'keywords': {'cross-platform', 'electron', 'react-native', 'flutter', 'maui', 'xamarin', 'qt', 'ionic'},
+        'languages': {'dart'}
+    }
 }
 
-# 避免一些过于通用的词产生误判
-# 例如，我们不希望一个普通的 Java 库被标记为 "Android"
-AMBIGUOUS_KEYWORDS = {
-    "Android": {'java'} 
+CROSS_PLATFORM_TARGETS = {
+    'electron': {'Windows', 'macOS', 'Linux'},
+    'react-native': {'iOS', 'Android'},
+    'flutter': {'iOS', 'Android', 'Windows', 'macOS', 'Linux', 'Web'},
+    'dart': {'iOS', 'Android', 'Windows', 'macOS', 'Linux', 'Web'},
+    'maui': {'iOS', 'Android', 'Windows', 'macOS'},
+    'xamarin': {'iOS', 'Android', 'Windows'},
+    'qt': {'Windows', 'macOS', 'Linux'},
+    'ionic': {'iOS', 'Android', 'Web'}
 }
+
+def analyze_platform_from_repo(repo: dict) -> str:
+    """
+    Analyzes a repository's topics, description, and language to determine its platform(s).
+    This function uses a structured mapping inspired by AlternativeTo.net's categorization.
+    
+    Args:
+        repo: A dictionary representing a single repository from the GitHub API.
+
+    Returns:
+        A string of comma-separated platform names.
+    """
+    # 1. Aggregate all text sources for analysis
+    language = (repo.get('language') or "").lower()
+    topics = {t.lower() for t in repo.get('topics', [])}
+    description_text = (repo.get('description') or "").lower()
+    
+    # Combine topics and language into a single set of tags for efficient lookup
+    analysis_tags = topics.union({language})
+
+    # Also create a combined string for regex-based keyword searching in the description
+    full_text = " ".join(list(topics)) + " " + description_text
+
+    detected_platforms = set()
+
+    # 2. Check for Cross-Platform technologies first
+    cross_platform_tech_found = set()
+    for tech, targets in CROSS_PLATFORM_TARGETS.items():
+        if tech in analysis_tags or tech in full_text:
+            detected_platforms.update(targets)
+            cross_platform_tech_found.add(tech)
+
+    # 3. Check for native platforms
+    for platform, data in PLATFORM_MAPPING.items():
+        if platform == "Cross-platform":
+            continue
+
+        # Check keywords and languages
+        if not analysis_tags.isdisjoint(data['keywords']) or language in data['languages']:
+            # Special handling for ambiguous 'java'
+            if platform == 'Android' and language == 'java' and not any(kw in analysis_tags for kw in ['android', 'jetpack-compose']):
+                # If language is Java but no other Android keyword is present, be cautious.
+                # We can add more logic here, e.g., checking description for 'android app'. For now, we skip if ambiguous.
+                if 'android' not in full_text:
+                    continue
+            
+            detected_platforms.add(platform)
+
+    # 4. Final Cleanup and Formatting
+    if not detected_platforms:
+        # If no specific platform is detected, but it's a known backend language/framework, classify as Web.
+        if not analysis_tags.isdisjoint(PLATFORM_MAPPING['Web']['keywords']):
+             detected_platforms.add('Web')
+        elif cross_platform_tech_found:
+             # Already handled by the initial update
+             pass
+        else:
+            return "General"
+
+    return ", ".join(sorted(list(detected_platforms)))
 
 def process_and_enrich_data(manager: GitHubManager) -> list[dict]:
     """
@@ -37,21 +127,8 @@ def process_and_enrich_data(manager: GitHubManager) -> list[dict]:
         repo_copy['list_name'] = repo_to_list_map.get(repo_full_name, 'Uncategorized')
         language = repo.get('language') or "N/A"
         repo_copy['language'] = language
-
-        analysis_tags = set([t.lower() for t in repo.get('topics', [])])
-        analysis_tags.add(language.lower())
-
-        os_tags = set()
-        for platform, keywords in PLATFORM_KEYWORDS.items():
-            # 检查关键词交集
-            if not analysis_tags.isdisjoint(keywords):
-                # 对模糊关键词进行二次判断
-                ambiguous = AMBIGUOUS_KEYWORDS.get(platform, set())
-                # 如果交集全都是模糊词，并且仓库描述中没有明确提示，则可以考虑跳过
-                # (为简化，此处仅作基础交集判断)
-                os_tags.add(platform)
         
-        repo_copy['platform'] = ", ".join(sorted(list(os_tags))) if os_tags else "General"
+        repo_copy['platform'] = analyze_platform_from_repo(repo)
         repo_copy['topics_str'] = ','.join(repo.get('topics', []))
 
         enriched_data.append(repo_copy)

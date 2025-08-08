@@ -16,7 +16,7 @@ export default defineConfig({
 
       // 4. [核心] 声明我们要覆盖 Starlight 的默认 Header 组件
       components: {
-        Header: './src/components/CustomHeader.astro',
+        Header: './src/components/header.astro',
       },
     }),
     tailwind({

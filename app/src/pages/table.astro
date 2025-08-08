@@ -20,7 +20,7 @@ let tableHeaders = [];
 
 try {
   // 健壮地读取位于 public 目录的 CSV 文件
-  const csvPath = path.resolve(process.cwd(), 'astro-app/public/data/stars.csv');
+  const csvPath = path.resolve(process.cwd(), 'app/public/data/my-stars.csv');
   const csvFileContent = fs.readFileSync(csvPath, 'utf8');
 
   // 使用 PapaParse 解析 CSV 数据
