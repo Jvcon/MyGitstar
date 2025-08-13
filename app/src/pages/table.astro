@@ -1,84 +1,25 @@
 ---
-import PageLayout from '../layouts/wide.astro';
-import { parse } from 'papaparse';
-import fs from 'fs';
-import path from 'path';
-
-const columnHeaderMap = {
-  'full_name': 'Repository',
-  'list_name': 'Collection',
-  'description': 'Description',
-  'language': 'Language',
-  'platform': 'Platform',
-  'stars': 'Stars ⭐',
-  'topics_str': 'Topics',
-  'url': 'Link'
-};
-
-let tableData = [];
-let tableHeaders = [];
-
-try {
-  // 健壮地读取位于 public 目录的 CSV 文件
-  const csvPath = path.resolve(process.cwd(), 'app/public/data/my-stars.csv');
-  const csvFileContent = fs.readFileSync(csvPath, 'utf8');
-
-  // 使用 PapaParse 解析 CSV 数据
-  const parseResult = parse(csvFileContent, { 
-    header: true,
-    skipEmptyLines: true,
-  });
-
-  tableData = parseResult.data;
-  tableHeaders = parseResult.meta.fields || [];
-} catch (error) {
-  console.error('Error reading or parsing CSV file:', error);
-  // 在生产环境中可以考虑更优雅的错误处理
-}
+import Layout from "../layouts/MainLayout.astro";
+import RepositoryTable from "../components/RepositoryTable.astro";
 ---
 
-<!-- --- 2. 页面模板 (HTML) --- -->
-<PageLayout title="Table View | My GitStar" description="A filterable list of my starred repositories.">
-  
-  <!-- 注入 DataTables 的 CSS 到布局的 <head> 中 -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" slot="head">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" slot="head">
-  
-  <div class="container-fluid">
-    <h1>Repository Table</h1>
-    <p>A searchable and filterable list of my starred repositories.</p>
-
-    <!-- 这是 Astro 在构建时生成的静态表格 -->
-    <div class="table-responsive">
-      <table id="stars-datatable" class="table table-striped table-bordered" style="width:100%">
-        <thead>
-          <tr>
-            {tableHeaders.map(header => (
-              <th>{columnHeaderMap[header] || header}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {tableData.map(row => (
-            <tr>
-              {tableHeaders.map(header => <td>{row[header]}</td>)}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+<Layout title="Repository Table">
+  <main class="table-page-container">
+    <div class="table-wrapper">
+      <RepositoryTable />
     </div>
-  </div>
-
-  <!-- 引入前端交互所需的 JS 库 -->
-  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-  
-  <!-- 初始化 DataTables 的脚本 -->
-  <script is:inline>
-    // 这段脚本在浏览器中运行，为已存在的静态表格添加交互功能
-    $(document).ready(function() {
-      $('#stars-datatable').DataTable();
-    });
-  </script>
-</PageLayout>
+  </main>
+</Layout>
+<style>
+  .table-page-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+  }
+  .table-wrapper {
+    flex-grow: 1;
+    position: relative; /* 为内部绝对定位的 DataTables 元素提供参考 */
+    min-height: 0;
+  }
+</style>

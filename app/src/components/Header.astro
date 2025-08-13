@@ -1,0 +1,116 @@
+---
+// 我们自己创建的可移植组件
+// import ThemeToggleButton from './ThemeToggleButton.astro';
+
+const views = [
+  { label: "Doc", href: "/getting-started" },
+  { label: "Table", href: "/table" },
+  { label: "Kanboard", href: "/kanboard" },
+];
+
+const siteTitle = "🌟 My Gitstar";
+---
+
+<header
+  class="sticky top-0 z-30 w-full backdrop-blur transition-colors duration-500"
+>
+  <div class="header">
+    <div class="title-wrapper sl-flex">
+      <a href="/" class="site-title">{siteTitle}</a>
+    </div>
+    <!-- 左侧部分 -->
+    <div class="left-items print:hidden sl-flex">
+      <nav class="hidden md:flex nav-links">
+        <a href="/getting-started" class="nav-link">Introduction</a>
+        <a href="/table" class="nav-link">Table</a>
+        <a href="/manage" class="nav-link">Manage</a>
+      </nav>
+    </div>
+
+    <!-- 右侧部分 -->
+    <div class="right-items sl-flex"></div>
+  </div>
+</header>
+
+<style>
+  .header {
+    z-index: 10;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid var(--color-gray-900);
+    background-color: var(--color-gray-800);
+  }
+
+  .title-wrapper {
+    overflow: clip;
+    padding: 0.25rem;
+    margin: -0.25rem;
+    min-width: 0;
+  }
+  .site-title {
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-accent-200);
+    text-decoration: none;
+    white-space: nowrap;
+    min-width: 0;
+  }
+  .nav-link {
+    padding: 10px;
+    text-decoration: none;
+    font-weight: 400;
+    color: var(--color-accent-200);
+    font-size: 1rem;
+  }
+  .nav-link:hover {
+    color: var(--color-gray-400);
+  }
+  .left-items .right-items {
+    gap: var(--nav-gap);
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  /* 在这里添加您的自定义样式，可以使用 Tailwind 或原生 CSS */
+  .manage-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--sl-color-accent);
+    color: var(--sl-color-white);
+    border-radius: 9999px; /* 圆角矩形 */
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .view-switcher {
+    position: relative;
+  }
+  .switcher-summary {
+    cursor: pointer;
+  }
+  .switcher-menu {
+    position: absolute;
+    right: 0;
+    margin-top: 0.5rem;
+    background-color: var(--sl-color-bg-sidebar);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    list-style: none;
+    z-index: 10;
+    min-width: 120px;
+  }
+  .switcher-menu a {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+    color: var(--sl-color-text-1);
+  }
+</style>

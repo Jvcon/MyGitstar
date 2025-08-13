@@ -1,0 +1,148 @@
+---
+// 1. 在服务器端导入 JSON 数据
+// Astro 会在构建时处理这个导入，将 JSON 数据嵌入到页面中。
+import repos from '../content/repos.json';
+
+// 定义组件的 Props 接口（可选，为了好的实践）
+export interface Props {
+  id?: string;
+}
+
+// 如果未提供 id，则使用默认 id
+const tableId = Astro.props.id || 'repos-table';
+---
+
+<!-- 2. 在服务器端渲染基础 HTML 表格 -->
+<!-- Astro 的模板语法会遍历数据并生成静态的 HTML -->
+<div class="table-container">
+  <table id={tableId} class="display compact" style="width:100%">
+    <thead>
+      <!-- 第一行：列标题 -->
+      <tr>
+        <th>Name</th>
+        <th>Language</th>
+        <th>⭐ Stars</th>
+        <th>Description</th>
+        <th>Topics</th>
+      </tr>
+      <!-- 第二行：筛选器 -->
+      <tr class="filters">
+        <th></th> <!-- Name filter -->
+        <th></th> <!-- Language filter -->
+        <th></th> <!-- Stars (no filter) -->
+        <th></th> <!-- Description filter -->
+        <th></th> <!-- Topics filter -->
+      </tr>
+    </thead>
+    <tbody>
+      {repos.map(repo => (
+        <tr>
+          <td><a href={repo.html_url} target="_blank" rel="noopener noreferrer">{repo.name}</a></td>
+          <td>{repo.language || 'N/A'}</td>
+          <td>{repo.stargazers_count}</td>
+          <td>{repo.description}</td>
+          <td>{repo.topics?.join(', ') || ''}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<script define:vars={{ tableId }}>
+document.addEventListener('DOMContentLoaded', function () {
+  $('#' + tableId + ' .filters th').each(function () {
+    $(this).html('<input type="text" placeholder="Search..." />');
+  });
+
+  const table = $('#' + tableId).DataTable({
+    orderCellsTop: true, // 告诉 DataTables 排序事件应该附加到最顶部的表头行
+    fixedHeader: true,   // 推荐：当页面滚动时，固定表头和筛选行
+    dom: 'Bfrtip',
+    buttons: [{ extend: 'colvis', text: 'Show / Hide Columns' }],
+    columnDefs: [
+      { targets: [2], orderable: false, searchable: false }, // Stars
+      { targets: [3], orderable: false }, // Description
+      { targets: [4], orderable: false }  // Topics
+    ],
+    initComplete: function () {
+      const api = this.api();
+
+      api.columns().every(function () {
+        const column = this;
+        const filterCell = $('.filters th').eq(column.index());
+        
+        // --- 为特定列生成筛选器 ---
+        if (column.index() === 1 || column.index() === 4) { // Language or Topics
+          const select = $('<select multiple="multiple" style="width: 100%;"></select>')
+            .appendTo(filterCell.empty())
+            .on('change', function () {
+              const selectedValues = $(this).val() || [];
+              const searchStr = selectedValues.map(val => $.fn.dataTable.util.escapeRegex(val)).join('|');
+              column.search(searchStr, true, false).draw();
+            });
+
+          // 初始化 Select2
+          select.select2({ placeholder: 'Select...', allowClear: true });
+
+          // 填充选项
+          const uniqueValues = new Set();
+          if (column.index() === 4) { // Topics (multi-value per cell)
+            column.data().each(d => d.split(', ').forEach(item => { if(item) uniqueValues.add(item) }));
+          } else { // Language (single value per cell)
+            column.data().unique().each(d => uniqueValues.add(d));
+          }
+          Array.from(uniqueValues).sort().forEach(d => select.append(`<option value="${d}">${d}</option>`));
+        
+        } else if (column.index() === 2) { // Stars 列
+          filterCell.empty(); // 清空，不提供筛选器
+        
+        } else { // 默认文本搜索框
+          const input = $('input', filterCell);
+          input.on('keyup change clear', function () {
+            if (column.search() !== this.value) {
+              column.search(this.value).draw();
+            }
+          });
+        }
+      });
+    }
+  });
+
+  
+    // --- FEATURE 1 (cont.): Prevent 'Name' column from being hidden ---
+    // DataTables adds a class to the visibility buttons. We can use that.
+    $('.dt-button.buttons-colvis').on('click', function() {
+        // Find the button for the first column and disable it
+        $('.dt-button.buttons-columnVisibility[data-cv-idx="0"]').prop('disabled', true);
+    });
+    // Initial check in case the menu is opened
+    $('.dt-button.buttons-columnVisibility[data-cv-idx="0"]').prop('disabled', true);
+  });
+  </script>
+
+<style>
+  /* 为表格容器添加一些样式，以便在小屏幕上可以水平滚动 */
+  .table-container {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  /* DataTables 的一些微调（可选） */
+  table.dataTable thead th {
+    font-weight: bold;
+  }
+  .table-controls {
+    margin-bottom: 1rem;
+  }
+  thead select {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .filters input, .filters select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px;
+  }
+</style>
