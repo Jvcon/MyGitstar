@@ -22,12 +22,11 @@ export default defineConfig({
           items: [
             // Starlight 根据文件自动生成侧边栏，或手动配置
             { label: "Getting Started", link: "/getting-started" },
+            { label: "Starred Repositories", link: "/starred-repos" },
           ],
         },
       ],
-      customCss: [
-        './src/styles/global.css',
-      ],
+      customCss: ["./src/styles/global.css"],
     }),
   ],
 

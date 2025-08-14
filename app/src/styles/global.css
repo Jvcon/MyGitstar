@@ -110,35 +110,54 @@ https://tailwindcss.com/docs/adding-custom-styles#using-custom-css
     transform: translateY(4px);
   }
 }
-
 /* 
- * 3. 第三方库样式覆盖 (Select2 Theming)
- * 使用 var() 函数来引用上面 @theme 中定义的颜色，实现主题统一。
- */
+* 3. 第三方库样式覆盖 (Select2 Theming)
+* 使用 var() 函数来引用上面 @theme 中定义的颜色，实现主题统一。
+*/
 .dt-buttons {
-    --tablens-highlight-color: var(--color-gray-200);
-    --tablens-focused-color: var(--color-accent-600);
-    --tablens-highlight-style: dashed;
-    --tablens-focused-style: solid;
+  --tablens-highlight-color: var(--color-gray-200);
+  --tablens-focused-color: var(--color-accent-600);
+  --tablens-highlight-style: dashed;
+  --tablens-focused-style: solid;
+  @apply bg-gray-800 border border-gray-700 text-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-600;
 }
 
-div.dt-button-collection{
+div.dt-button-collection {
   background-color: var(--color-accent-900);
 }
 
-
+input {
+  @apply bg-gray-800 border border-gray-700 text-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-600;
+  min-height: 32px;
+}
+.badge {
+  @apply inline-flex items-center px-2 py-1 text-xs font-medium rounded-full;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  margin: 0.1rem;
+}
+.badge.platform {
+  color: var(--color-gray-100);
+  background-color: var(--color-accent-900, #4e0e5b);
+}
+.badge.topic {
+  color: var(--color-gray-200);
+  background-color: var(--color-gray-700, #412e55);
+}
 /* 主容器和多选框区域 */
 .select2-container--default .select2-selection--multiple {
-  background-color: var(--color-gray-800);
-  border-color: var(--color-gray-700);
-  color: var(--color-gray-300);
-  @apply rounded-lg;
+  @apply bg-gray-800 border border-gray-700 text-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-600;
+  padding: 0;
 }
 
 /* 已选中的选项 "pills" */
-.select2-container--default
-  .select2-selection--multiple
-  .select2-selection__choice {
+.select2-selection__choice {
   background-color: var(--color-accent-600);
   border-color: var(--color-accent-900);
   color: var(--color-gray-100);
@@ -171,6 +190,7 @@ div.dt-button-collection{
   color: var(--color-gray-200);
   @apply focus:outline-none;
 }
+
 .select2-container--default
   .select2-search--dropdown
   .select2-search__field:focus {

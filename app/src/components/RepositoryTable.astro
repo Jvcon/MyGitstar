@@ -1,7 +1,7 @@
 ---
 // 1. 在服务器端导入 JSON 数据
 // Astro 会在构建时处理这个导入，将 JSON 数据嵌入到页面中。
-import repos from '../content/repos.json';
+import repos from "../content/repos.json";
 
 // 定义组件的 Props 接口（可选，为了好的实践）
 export interface Props {
@@ -9,17 +9,18 @@ export interface Props {
 }
 
 // 如果未提供 id，则使用默认 id
-const tableId = Astro.props.id || 'repos-table';
+const tableId = Astro.props.id || "repos-table";
 ---
 
-<!-- 2. 在服务器端渲染基础 HTML 表格 -->
-<!-- Astro 的模板语法会遍历数据并生成静态的 HTML -->
+<!-- 2. 在服务器端渲染基础 HTML 表格 --><!-- Astro 的模板语法会遍历数据并生成静态的 HTML -->
 <div class="table-container">
   <table id={tableId} class="display compact" style="width:100%">
     <thead>
       <!-- 第一行：列标题 -->
       <tr>
-        <th>Name</th>
+        <th>Repository</th>
+        <th>Collection</th>
+        <th>Platform(s)</th>
         <th>Language</th>
         <th>⭐ Stars</th>
         <th>Description</th>
@@ -27,98 +28,199 @@ const tableId = Astro.props.id || 'repos-table';
       </tr>
       <!-- 第二行：筛选器 -->
       <tr class="filters">
-        <th></th> <!-- Name filter -->
-        <th></th> <!-- Language filter -->
-        <th></th> <!-- Stars (no filter) -->
-        <th></th> <!-- Description filter -->
-        <th></th> <!-- Topics filter -->
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-      {repos.map(repo => (
-        <tr>
-          <td><a href={repo.html_url} target="_blank" rel="noopener noreferrer">{repo.name}</a></td>
-          <td>{repo.language || 'N/A'}</td>
-          <td>{repo.stargazers_count}</td>
-          <td>{repo.description}</td>
-          <td>{repo.topics?.join(', ') || ''}</td>
-        </tr>
-      ))}
+      {}
     </tbody>
   </table>
 </div>
 
-<script define:vars={{ tableId }}>
-document.addEventListener('DOMContentLoaded', function () {
-  $('#' + tableId + ' .filters th').each(function () {
-    $(this).html('<input type="text" placeholder="Search..." />');
-  });
+<script define:vars={{ tableId, repos }}>
+  document.addEventListener("DOMContentLoaded", function () {
+    $("#" + tableId + " .filters th").each(function () {
+      const title = $(this).text();
+      // 只有需要文本搜索的列才添加 input
+      if ($(this).index() === 0 || $(this).index() === 5) {
+        $(this).html('<input type="text" placeholder="Search..." />');
+      }
+    });
 
-  const table = $('#' + tableId).DataTable({
-    orderCellsTop: true, // 告诉 DataTables 排序事件应该附加到最顶部的表头行
-    fixedHeader: true,   // 推荐：当页面滚动时，固定表头和筛选行
-    dom: 'Bfrtip',
-    buttons: [{ extend: 'colvis', text: 'Show / Hide Columns' }],
-    columnDefs: [
-      { targets: [2], orderable: false, searchable: false }, // Stars
-      { targets: [3], orderable: false }, // Description
-      { targets: [4], orderable: false }  // Topics
-    ],
-    initComplete: function () {
-      const api = this.api();
+    const table = $("#" + tableId).DataTable({
+      data: repos,
+      columns: [
+        { data: "full_name", title: "Repository" }, // 使用 title 属性确保 ColVis 显示正确的名称
+        { data: "list_name", title: "Collection" },
+        { data: "platform", title: "Platform(s)" },
+        { data: "language", title: "Language" },
+        { data: "stars", title: "⭐ Stars" },
+        { data: "description", title: "Description" },
+        { data: "topics", title: "Topics" },
+      ],
+      orderCellsTop: true, // 告诉 DataTables 排序事件应该附加到最顶部的表头行
+      fixedHeader: true, // 推荐：当页面滚动时，固定表头和筛选行
+      dom: "Bfrtip",
+      buttons: [
+        {
+          extend: "colvis",
+          text: "Columns",
+          // 使用 columns 选择器确保 ColVis 能正确地作用于所有非指定的列
+          columns: ":not(.no-colvis)",
+        },
+      ],
+      columnDefs: [
+        // Column 0: Repository
+        {
+          targets: 0,
+          className: "no-colvis",
+          orderable: true,
+          searchable: true,
+          render: function (data, type, row) {
+            // 只在显示时渲染为链接
+            if (type === "display") {
+              return `<a href="${row.url}" target="_blank" rel="noopener noreferrer">${data}</a>`;
+            }
+            return data; // 对于搜索和排序，使用原始的 full_name 字符串
+          },
+        },
+        // Column 1: Colleciton
+        { targets: 1, orderable: true, searchable: true },
+        // Column 2: Platform(s) / Column 6: Topics - 禁用排序，自定义渲染
+        {
+          targets: [2, 6],
+          orderable: false,
+          searchable: true,
+          render: function (data, type, row, meta) {
+            // 'data' 在这里是 platform 或 topics 数组
+            if (type === "display") {
+              const tagsArray = data || [];
+              if (Array.isArray(tagsArray) && tagsArray.length > 0) {
+                const badgeClass = meta.col === 2 ? 'platform' : 'topic'; 
+                // 只显示前5个以避免拥挤
+                return tagsArray
+                  .slice(0, 5)
+                  .map(
+                    (tag) => `<span class="badge ${badgeClass}">${tag}</span>`
+                  )
+                  .join(" ");
+              }
+              return "";
+            }
+            // 对于搜索和筛选，返回一个空格分隔的字符串
+            return Array.isArray(data) ? data.join(" ") : "";
+          },
+        },
+        // Column 3: Language
+        { targets: 3, orderable: true, searchable: true },
+        // Column 4: Stars - 启用排序，禁用搜索
+        {
+          targets: 4,
+          orderable: true,
+          searchable: false,
+          className: "text-center",
+        },
+        // Column 5: Description - 禁用排序
+        {
+          targets: 5,
+          orderable: false,
+          searchable: true,
+          render: function (data, type, row) {
+            // 截断长文本以保持表格整洁
+            return type === "display" && data && data.length > 80
+              ? '<span title="' + data + '">' + data.substr(0, 80) + "…</span>"
+              : data;
+          },
+        },
+      ],
+      initComplete: function () {
+        const api = this.api();
 
-      api.columns().every(function () {
-        const column = this;
-        const filterCell = $('.filters th').eq(column.index());
-        
-        // --- 为特定列生成筛选器 ---
-        if (column.index() === 1 || column.index() === 4) { // Language or Topics
-          const select = $('<select multiple="multiple" style="width: 100%;"></select>')
+        api.columns([1, 2, 3, 6]).every(function () {
+          const column = this;
+          const filterCell = $(".filters th").eq(column.index());
+          if (filterCell.length === 0) return; // 如果单元格不存在则跳过
+
+          const select = $(
+            '<select multiple="multiple" style="width: 100%;"></select>'
+          )
             .appendTo(filterCell.empty())
-            .on('change', function () {
+            .on("change", function () {
               const selectedValues = $(this).val() || [];
-              const searchStr = selectedValues.map(val => $.fn.dataTable.util.escapeRegex(val)).join('|');
+              if (selectedValues.length === 0) {
+                // 如果没有选项被选中，清除该列的搜索
+                column.search("", true, false).draw();
+                return;
+              }
+              const searchStr = selectedValues
+                .map((val) => `\\b${$.fn.dataTable.util.escapeRegex(val)}\\b`) // 使用单词边界 \b
+                .join("|");
               column.search(searchStr, true, false).draw();
             });
 
-          // 初始化 Select2
-          select.select2({ placeholder: 'Select...', allowClear: true });
+          select.select2({ placeholder: "Filter...", allowClear: true });
 
-          // 填充选项
           const uniqueValues = new Set();
-          if (column.index() === 4) { // Topics (multi-value per cell)
-            column.data().each(d => d.split(', ').forEach(item => { if(item) uniqueValues.add(item) }));
-          } else { // Language (single value per cell)
-            column.data().unique().each(d => uniqueValues.add(d));
-          }
-          Array.from(uniqueValues).sort().forEach(d => select.append(`<option value="${d}">${d}</option>`));
-        
-        } else if (column.index() === 2) { // Stars 列
-          filterCell.empty(); // 清空，不提供筛选器
-        
-        } else { // 默认文本搜索框
-          const input = $('input', filterCell);
-          input.on('keyup change clear', function () {
-            if (column.search() !== this.value) {
-              column.search(this.value).draw();
-            }
-          });
-        }
-      });
-    }
-  });
+          // 使用为搜索优化的正交数据来构建筛选选项
+          const columnSearchData = column.data();
 
-  
+          if (column.index() === 2 || column.index() === 6) {
+            // Platform(s) 和 Topics 列
+            columnSearchData.each((arr) => {
+              if (Array.isArray(arr))
+                arr.forEach((item) => uniqueValues.add(item));
+            });
+          } else {
+            // Collection & Language
+            columnSearchData.unique().each((d) => {
+              if (d) uniqueValues.add(d);
+            });
+          }
+
+          Array.from(uniqueValues)
+            .sort()
+            .forEach((d) =>
+              select.append(`<option value="${d}">${d}</option>`)
+            );
+        });
+
+        // 为文本搜索框绑定事件
+        api.columns([0, 5]).every(function () {
+          const column = this;
+          $("input", $(".filters th").eq(column.index())).on(
+            "keyup change clear",
+            function () {
+              if (column.search() !== this.value) {
+                column.search(this.value).draw();
+              }
+            }
+          );
+        });
+      },
+    });
+
     // --- FEATURE 1 (cont.): Prevent 'Name' column from being hidden ---
     // DataTables adds a class to the visibility buttons. We can use that.
-    $('.dt-button.buttons-colvis').on('click', function() {
-        // Find the button for the first column and disable it
-        $('.dt-button.buttons-columnVisibility[data-cv-idx="0"]').prop('disabled', true);
+    $(".dt-button.buttons-colvis").on("click", function () {
+      // Find the button for the first column and disable it
+      $('.dt-button.buttons-columnVisibility[data-cv-idx="0"]').prop(
+        "disabled",
+        true
+      );
     });
     // Initial check in case the menu is opened
-    $('.dt-button.buttons-columnVisibility[data-cv-idx="0"]').prop('disabled', true);
+    $('.dt-button.buttons-columnVisibility[data-cv-idx="0"]').prop(
+      "disabled",
+      true
+    );
   });
-  </script>
+</script>
 
 <style>
   /* 为表格容器添加一些样式，以便在小屏幕上可以水平滚动 */
@@ -140,9 +242,13 @@ document.addEventListener('DOMContentLoaded', function () {
     border: 1px solid #ccc;
     border-radius: 4px;
   }
-  .filters input, .filters select {
+  .filters input,
+  .filters select {
     width: 100%;
     box-sizing: border-box;
     padding: 4px;
+  }
+  .text-center {
+    text-align: center;
   }
 </style>
