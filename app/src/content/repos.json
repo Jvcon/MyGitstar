@@ -3,7 +3,7 @@
     "full_name": "gonzazoid/Ultimatum",
     "description": "Ultimatum is a chromium fork with webextensions support on Android, anti-detect browser capabilities, web3.0 support and much more",
     "language": "C++",
-    "stars": 670,
+    "stars": 672,
     "topics": [],
     "url": "https://github.com/gonzazoid/Ultimatum",
     "list_name": "Uncategorized",
@@ -134,7 +134,7 @@
     "full_name": "Zie619/n8n-workflows",
     "description": "all of the workflows of n8n i could find (also from the site itself)",
     "language": "HTML",
-    "stars": 23014,
+    "stars": 23032,
     "topics": [],
     "url": "https://github.com/Zie619/n8n-workflows",
     "list_name": "Home Selfhosted List",
@@ -170,7 +170,7 @@
     "full_name": "Ciantic/VirtualDesktopAccessor",
     "description": "DLL for accessing Windows 11/10 Virtual Desktop features from e.g. AutoHotkey",
     "language": "Rust",
-    "stars": 906,
+    "stars": 907,
     "topics": [],
     "url": "https://github.com/Ciantic/VirtualDesktopAccessor",
     "list_name": "AHK",
@@ -206,7 +206,7 @@
     "full_name": "woheller69/Level",
     "description": "Android spirit level & ruler",
     "language": "Java",
-    "stars": 286,
+    "stars": 287,
     "topics": [
       "android"
     ],
@@ -249,7 +249,7 @@
     "full_name": "OpenCut-app/OpenCut",
     "description": "The open-source CapCut alternative",
     "language": "TypeScript",
-    "stars": 30396,
+    "stars": 30416,
     "topics": [
       "editor",
       "oss",
@@ -324,7 +324,7 @@
     "full_name": "wangwangit/SubsTracker",
     "description": "基于Cloudflare Workers的轻量级订阅管理系统，帮助您轻松跟踪各类订阅服务的到期时间，并通过Telegram发送及时提醒。",
     "language": "JavaScript",
-    "stars": 1083,
+    "stars": 1085,
     "topics": [],
     "url": "https://github.com/wangwangit/SubsTracker",
     "list_name": "Tool List",
@@ -373,7 +373,7 @@
     "full_name": "electric-sql/electric",
     "description": "Real-time sync for Postgres.",
     "language": "Elixir",
-    "stars": 8943,
+    "stars": 8945,
     "topics": [
       "crdt",
       "crdts",
@@ -625,7 +625,7 @@
     "full_name": "sysadminsmedia/homebox",
     "description": "A continuation of HomeBox the inventory and organization system built for the Home User",
     "language": "Go",
-    "stars": 3446,
+    "stars": 3448,
     "topics": [
       "hacktoberfest",
       "inventory",
@@ -683,7 +683,7 @@
     "full_name": "salarcode/SmartProxy",
     "description": "Firefox/Chrome browser extension. SmartProxy will automatically enable/disable proxy for the sites you visit, based on customizable patterns.",
     "language": "TypeScript",
-    "stars": 2449,
+    "stars": 2450,
     "topics": [
       "browser-extension",
       "chrome",
@@ -724,7 +724,7 @@
     "full_name": "uBlockOrigin/uBOL-home",
     "description": "uBO Lite home (MV3)",
     "language": "JavaScript",
-    "stars": 2485,
+    "stars": 2487,
     "topics": [],
     "url": "https://github.com/uBlockOrigin/uBOL-home",
     "list_name": "Chromium Extension",
@@ -825,7 +825,7 @@
     "full_name": "libredirect/browser_extension",
     "description": "A browser extension that redirects popular sites to alternative privacy friendly frontends",
     "language": "JavaScript",
-    "stars": 3643,
+    "stars": 3641,
     "topics": [
       "bibliogram",
       "chrome-extension",
@@ -908,7 +908,7 @@
     "full_name": "sansan0/TrendRadar",
     "description": "🎯 告别信息过载，只看真正关心的新闻 - 多平台热点聚合工具，一键监控今日头条、百度热搜、微博、抖音、知乎、B站等35个平台，智能关键词筛选，自动生成热点分析报告。支持企业微信、飞书、钉钉、Telegram推送，1分钟部署完毕， 支持 docker 部署。⭐ 让算法为你服务，而非被算法绑架",
     "language": "Python",
-    "stars": 2090,
+    "stars": 2093,
     "topics": [
       "bilibili",
       "data-analysis",
@@ -941,7 +941,7 @@
     "full_name": "amzxyz/rime_wanxiang",
     "description": "Rime万象拼音输入方案：标准版与增强版可选，词库基于AI筛选和语料辅助筛选精干高效，配合全新语法模型，输入不再纠结。PRO版本支持10种双拼，6种辅助码，并且可以扩展更多，支持中英混输，内置超级注释、带调全拼输入码显示、快符与重复上屏、手动排序、tips等功能扩展，大大增强使用体验。　　Q群：11033572",
     "language": "Lua",
-    "stars": 954,
+    "stars": 955,
     "topics": [
       "dicts",
       "grammar",
@@ -997,7 +997,7 @@
     "full_name": "imputnet/cobalt",
     "description": "best way to save what you love",
     "language": "Svelte",
-    "stars": 35643,
+    "stars": 35648,
     "topics": [
       "collaboration",
       "downloader",
@@ -1077,7 +1077,7 @@
     "full_name": "iamgio/quarkdown",
     "description": "🪐 Markdown with superpowers — from ideas to papers, presentations and books.",
     "language": "Kotlin",
-    "stars": 8863,
+    "stars": 8865,
     "topics": [
       "compiler",
       "markdown",
@@ -1101,7 +1101,7 @@
     "full_name": "onlook-dev/onlook",
     "description": "The Cursor for Designers • An Open-Source AI-First Design tool • Visually build, style, and edit your React App with AI",
     "language": "TypeScript",
-    "stars": 21376,
+    "stars": 21382,
     "topics": [
       "ai",
       "cursor",
@@ -1217,7 +1217,7 @@
     "full_name": "datalab-to/marker",
     "description": "Convert PDF to markdown + JSON quickly with high accuracy",
     "language": "Python",
-    "stars": 27458,
+    "stars": 27468,
     "topics": [],
     "url": "https://github.com/datalab-to/marker",
     "list_name": "Type selection",
@@ -1229,7 +1229,7 @@
     "full_name": "Stirling-Tools/Stirling-PDF",
     "description": "#1 Locally hosted web application that allows you to perform various operations on PDF files",
     "language": "Java",
-    "stars": 64303,
+    "stars": 64306,
     "topics": [
       "docker",
       "java",
@@ -1298,7 +1298,7 @@
     "full_name": "advplyr/audiobookshelf",
     "description": "Self-hosted audiobook and podcast server",
     "language": "JavaScript",
-    "stars": 9711,
+    "stars": 9712,
     "topics": [
       "audiobook-manager",
       "audiobooks",
@@ -1328,7 +1328,7 @@
     "full_name": "rybbit-io/rybbit",
     "description": "🐸 Rybbit - open-source and privacy-friendly alternative to Google Analytics that is 10x more intuitive.",
     "language": "TypeScript",
-    "stars": 7794,
+    "stars": 7796,
     "topics": [
       "analytics",
       "google-analytics",
@@ -1381,7 +1381,7 @@
     "full_name": "ayangweb/BongoCat",
     "description": "🐱 跨平台桌宠 BongoCat，为桌面增添乐趣！",
     "language": "TypeScript",
-    "stars": 9299,
+    "stars": 9310,
     "topics": [
       "bongo-cat",
       "bongocat",
@@ -1483,7 +1483,7 @@
     "full_name": "QL-Win/QuickLook",
     "description": "Bring macOS “Quick Look” feature to Windows",
     "language": "C#",
-    "stars": 20582,
+    "stars": 20585,
     "topics": [
       "quicklook"
     ],
@@ -1579,7 +1579,7 @@
     "full_name": "Nihiue/open-ip-kvm",
     "description": "Build your own open-source ip-kvm device",
     "language": "JavaScript",
-    "stars": 501,
+    "stars": 503,
     "topics": [
       "arduino",
       "ip-kvm",
@@ -1635,7 +1635,7 @@
     "full_name": "xxnuo/MTranServer",
     "description": "End to end, Offline, high speed, and privately self-host free version of Google Translate - 低占用速度快可私有部署的离线版 Google 翻译",
     "language": "JavaScript",
-    "stars": 3459,
+    "stars": 3461,
     "topics": [],
     "url": "https://github.com/xxnuo/MTranServer",
     "list_name": "Home Selfhosted List",
@@ -1709,7 +1709,7 @@
     "full_name": "MuntashirAkon/AppManager",
     "description": "A full-featured package manager and viewer for Android",
     "language": "Java",
-    "stars": 6339,
+    "stars": 6340,
     "topics": [
       "adb",
       "android",
@@ -1862,7 +1862,7 @@
     "full_name": "ajeetdsouza/zoxide",
     "description": "A smarter cd command. Supports all major shells.",
     "language": "Rust",
-    "stars": 28743,
+    "stars": 28747,
     "topics": [
       "autojump",
       "bash",
@@ -1895,7 +1895,7 @@
     "full_name": "jesseduffield/lazydocker",
     "description": "The lazier way to manage everything docker",
     "language": "Go",
-    "stars": 45601,
+    "stars": 45604,
     "topics": [],
     "url": "https://github.com/jesseduffield/lazydocker",
     "list_name": "Mordem Terminal List",
@@ -1907,7 +1907,7 @@
     "full_name": "jqlang/jq",
     "description": "Command-line JSON processor",
     "language": "C",
-    "stars": 32368,
+    "stars": 32369,
     "topics": [
       "jq"
     ],
@@ -1933,7 +1933,7 @@
     "full_name": "bootandy/dust",
     "description": "A more intuitive version of du in rust",
     "language": "Rust",
-    "stars": 10251,
+    "stars": 10253,
     "topics": [],
     "url": "https://github.com/bootandy/dust",
     "list_name": "Mordem Terminal List",
@@ -1967,7 +1967,7 @@
     "full_name": "sharkdp/bat",
     "description": "A cat(1) clone with wings.",
     "language": "Rust",
-    "stars": 53885,
+    "stars": 53890,
     "topics": [
       "cli",
       "command-line",
@@ -1988,7 +1988,7 @@
     "full_name": "BurntSushi/ripgrep",
     "description": "ripgrep recursively searches directories for a regex pattern while respecting your gitignore",
     "language": "Rust",
-    "stars": 54369,
+    "stars": 54375,
     "topics": [
       "cli",
       "command-line",
@@ -2011,7 +2011,7 @@
     "full_name": "lsd-rs/lsd",
     "description": "The next gen ls command",
     "language": "Rust",
-    "stars": 14691,
+    "stars": 14693,
     "topics": [
       "color",
       "icons",
@@ -2029,7 +2029,7 @@
     "full_name": "microsoft/markitdown",
     "description": "Python tool for converting files and office documents to Markdown.",
     "language": "Python",
-    "stars": 71225,
+    "stars": 71240,
     "topics": [
       "autogen",
       "autogen-extension",
@@ -2160,7 +2160,7 @@
     "full_name": "community-scripts/ProxmoxVE",
     "description": "Proxmox VE Helper-Scripts (Community Edition) ",
     "language": "Shell",
-    "stars": 19275,
+    "stars": 19284,
     "topics": [
       "alpine",
       "authentification",
@@ -2218,7 +2218,7 @@
     "full_name": "abdallahmehiz/mpvKt",
     "description": "A media player for android, based on mpv-android and built with Jetpack Compose.",
     "language": "Kotlin",
-    "stars": 1097,
+    "stars": 1096,
     "topics": [
       "android",
       "compose",
@@ -2355,7 +2355,7 @@
     "full_name": "blackcandy-org/blackcandy",
     "description": "A self hosted music streaming server",
     "language": "Ruby",
-    "stars": 3868,
+    "stars": 3867,
     "topics": [
       "audio",
       "hotwire",
@@ -2377,7 +2377,7 @@
     "full_name": "subframe7536/maple-font",
     "description": "Maple Mono: Open source monospace font with round corner, ligatures and Nerd-Font icons for IDE and terminal, fine-grained customization options. 带连字和控制台图标的圆角等宽字体，中英文宽度完美2:1，细粒度的自定义选项",
     "language": "Python",
-    "stars": 18862,
+    "stars": 18867,
     "topics": [
       "coding-font",
       "font",
@@ -2401,7 +2401,7 @@
     "full_name": "tealdeer-rs/tealdeer",
     "description": "A very fast implementation of tldr in Rust.",
     "language": "Rust",
-    "stars": 5303,
+    "stars": 5304,
     "topics": [
       "hacktoberfest",
       "rust",
@@ -2417,7 +2417,7 @@
     "full_name": "studyzy/imewlconverter",
     "description": "”深蓝词库转换“ 一款开源免费的输入法词库转换程序",
     "language": "C#",
-    "stars": 8798,
+    "stars": 8797,
     "topics": [
       "c-sharp",
       "chinese-characters",
@@ -2436,7 +2436,7 @@
     "full_name": "visioncortex/vtracer",
     "description": "Raster to Vector Graphics Converter",
     "language": "Rust",
-    "stars": 4587,
+    "stars": 4588,
     "topics": [
       "image-procesing",
       "rust",
@@ -2472,7 +2472,7 @@
     "full_name": "readest/readest",
     "description": "Readest is a modern, feature-rich ebook reader designed for avid readers offering seamless cross-platform access, powerful tools, and an intuitive interface to elevate your reading experience.",
     "language": "TypeScript",
-    "stars": 11210,
+    "stars": 11218,
     "topics": [
       "android",
       "cross-platform",
@@ -2528,7 +2528,7 @@
     "full_name": "OXY2DEV/markview.nvim",
     "description": "A hackable markdown, Typst, latex, html(inline) & YAML previewer for Neovim",
     "language": "Lua",
-    "stars": 2793,
+    "stars": 2794,
     "topics": [],
     "url": "https://github.com/OXY2DEV/markview.nvim",
     "list_name": "neovim",
@@ -2540,7 +2540,7 @@
     "full_name": "LadybirdBrowser/ladybird",
     "description": "Truly independent web browser",
     "language": "C++",
-    "stars": 46683,
+    "stars": 46684,
     "topics": [
       "browser",
       "browser-engine"
@@ -2567,7 +2567,7 @@
     "full_name": "Mon-ius/Docker-Warp-Socks",
     "description": "Connet to CloudFlare WARP, exposing `socks5` proxy all together.",
     "language": "Shell",
-    "stars": 477,
+    "stars": 479,
     "topics": [
       "chatgpt",
       "cloudflare",
@@ -2664,7 +2664,7 @@
     "full_name": "hoothin/UserScripts",
     "description": "Greasemonkey scripts ( Pagetual / Picviewer CE+ / DownloadAllContent ) 油猴腳本集 ユーザースクリプト集",
     "language": "JavaScript",
-    "stars": 3725,
+    "stars": 3726,
     "topics": [
       "add-on",
       "auto-scroll",
@@ -2825,7 +2825,7 @@
     "full_name": "massgravel/Microsoft-Activation-Scripts",
     "description": "Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
     "language": "Batchfile",
-    "stars": 144591,
+    "stars": 144619,
     "topics": [
       "activator",
       "hwid",
@@ -2854,7 +2854,7 @@
     "full_name": "glanceapp/glance",
     "description": "A self-hosted dashboard that puts all your feeds in one place",
     "language": "Go",
-    "stars": 26963,
+    "stars": 26966,
     "topics": [
       "aggregator",
       "dashboard",
@@ -2881,7 +2881,7 @@
     "full_name": "Jeric-X/SyncClipboard",
     "description": "跨平台剪贴板同步方案 / Cross-Platform Cipboard Syncing Solution",
     "language": "C#",
-    "stars": 3280,
+    "stars": 3282,
     "topics": [],
     "url": "https://github.com/Jeric-X/SyncClipboard",
     "list_name": "Tool List",
@@ -2931,7 +2931,7 @@
     "full_name": "HaujetZhao/CapsWriter-Offline",
     "description": "CapsWriter 的离线版，一个好用的 PC 端的语音输入工具",
     "language": "Python",
-    "stars": 3827,
+    "stars": 3828,
     "topics": [],
     "url": "https://github.com/HaujetZhao/CapsWriter-Offline",
     "list_name": "Tool List",
@@ -2996,7 +2996,7 @@
     "full_name": "Gar-b-age/CookLikeHOC",
     "description": "🥢像老乡鸡🐔那样做饭。文字来自《老乡鸡菜品溯源报告》，并做归纳、编辑与整理。CookLikeHOC.",
     "language": "N/A",
-    "stars": 1073,
+    "stars": 1077,
     "topics": [],
     "url": "https://github.com/Gar-b-age/CookLikeHOC",
     "list_name": "Tool List",
@@ -3079,7 +3079,7 @@
     "full_name": "alyssaxuu/screenity",
     "description": "The free and privacy-friendly screen recorder with no limits 🎥",
     "language": "JavaScript",
-    "stars": 16547,
+    "stars": 16552,
     "topics": [
       "annotation",
       "annotation-tool",
@@ -3135,7 +3135,7 @@
     "full_name": "v2rayA/v2rayA",
     "description": "A web GUI client of Project V which supports VMess, VLESS, SS, SSR, Trojan, Tuic and Juicity protocols. 🚀",
     "language": "Go",
-    "stars": 13235,
+    "stars": 13237,
     "topics": [
       "gfw",
       "gui",
@@ -3202,7 +3202,7 @@
     "full_name": "cotes2020/jekyll-theme-chirpy",
     "description": "A minimal, responsive, and feature-rich Jekyll theme for technical writing.",
     "language": "HTML",
-    "stars": 9054,
+    "stars": 9057,
     "topics": [
       "bootstrap",
       "devcontainer",
@@ -3224,7 +3224,7 @@
     "full_name": "alshedivat/al-folio",
     "description": "A beautiful, simple, clean, and responsive Jekyll theme for academics",
     "language": "HTML",
-    "stars": 13653,
+    "stars": 13657,
     "topics": [
       "academic",
       "academic-website",
@@ -3247,7 +3247,7 @@
     "full_name": "iDvel/rime-ice",
     "description": "Rime 配置：雾凇拼音 | 长期维护的简体词库",
     "language": "Lua",
-    "stars": 12515,
+    "stars": 12519,
     "topics": [
       "rime",
       "rime-config",
@@ -3333,7 +3333,7 @@
     "full_name": "maybe-finance/maybe",
     "description": "The personal finance app for everyone",
     "language": "Ruby",
-    "stars": 52954,
+    "stars": 52960,
     "topics": [
       "finance",
       "hotwire",
@@ -3442,7 +3442,7 @@
     "full_name": "hanxi/xiaomusic",
     "description": "使用小爱音箱播放音乐，音乐使用 yt-dlp 下载。",
     "language": "Python",
-    "stars": 5203,
+    "stars": 5204,
     "topics": [
       "docker",
       "docker-compose",
@@ -3489,7 +3489,7 @@
     "full_name": "qarmin/czkawka",
     "description": "Multi functional app to find duplicates, empty folders, similar images etc.",
     "language": "Rust",
-    "stars": 24925,
+    "stars": 24935,
     "topics": [
       "cleaner",
       "duplicates",
@@ -3625,7 +3625,7 @@
     "full_name": "sapics/ip-location-db",
     "description": "ip to location database by ASN, GeoFeed, Whois, iptoasn.com, db-ip lite, GeoLite2",
     "language": "JavaScript",
-    "stars": 1580,
+    "stars": 1579,
     "topics": [
       "asn",
       "autonomous-system",
@@ -3684,7 +3684,7 @@
     "full_name": "JoeanAmier/TikTokDownloader",
     "description": "TikTok 发布/喜欢/合辑/直播/视频/图集/音乐；抖音发布/喜欢/收藏/收藏夹/视频/图集/实况/直播/音乐/合集/评论/账号/搜索/热榜数据采集工具/下载工具",
     "language": "Python",
-    "stars": 11224,
+    "stars": 11230,
     "topics": [
       "abogus",
       "api",
@@ -3720,7 +3720,7 @@
     "full_name": "JoeanAmier/XHS-Downloader",
     "description": "小红书（XiaoHongShu、RedNote）链接提取/作品采集工具：提取账号发布、收藏、点赞、专辑作品链接；提取搜索结果作品、用户链接；采集小红书作品信息；提取小红书作品下载地址；下载小红书无水印作品文件",
     "language": "Python",
-    "stars": 8434,
+    "stars": 8439,
     "topics": [
       "api",
       "docker",
@@ -3873,7 +3873,7 @@
     "full_name": "practical-tutorials/project-based-learning",
     "description": "Curated list of project-based tutorials",
     "language": "N/A",
-    "stars": 239482,
+    "stars": 239530,
     "topics": [
       "beginner-project",
       "cpp",
@@ -4004,7 +4004,7 @@
     "full_name": "wanglin2/mind-map",
     "description": "SimpleMindMap（思绪思维导图）：一个强大的Web思维导图。A powerful web mind map.",
     "language": "JavaScript",
-    "stars": 10176,
+    "stars": 10177,
     "topics": [
       "graph",
       "jsmind",
@@ -4334,7 +4334,7 @@
     "full_name": "LawRefBook/Laws",
     "description": null,
     "language": "Python",
-    "stars": 1656,
+    "stars": 1657,
     "topics": [],
     "url": "https://github.com/LawRefBook/Laws",
     "list_name": "Uncategorized",
@@ -4358,7 +4358,7 @@
     "full_name": "ikas-mc/ContextMenuForWindows11",
     "description": "Add Custom Context Menu For Windows11",
     "language": "C#",
-    "stars": 2399,
+    "stars": 2400,
     "topics": [
       "context-menu",
       "microsoft",
@@ -4449,7 +4449,7 @@
     "full_name": "CorentinTh/it-tools",
     "description": "Collection of handy online tools for developers, with great UX. ",
     "language": "Vue",
-    "stars": 32042,
+    "stars": 32045,
     "topics": [
       "converter",
       "developer-productivity",
@@ -4485,7 +4485,7 @@
     "full_name": "folke/lazy.nvim",
     "description": "💤 A modern plugin manager for Neovim",
     "language": "Lua",
-    "stars": 18489,
+    "stars": 18490,
     "topics": [
       "neovim",
       "neovim-plugin",
@@ -4773,7 +4773,7 @@
     "full_name": "charmbracelet/vhs",
     "description": "Your CLI home video recorder 📼",
     "language": "Go",
-    "stars": 17067,
+    "stars": 17068,
     "topics": [
       "ascii",
       "cli",
@@ -4830,7 +4830,7 @@
     "full_name": "ismartcoding/plain-app",
     "description": "PlainApp is an open-source app that lets you securely manage your phone from a web browser. Access files, media, contacts, SMS, calls, and more through a simple, easy-to-use interface on your desktop.",
     "language": "Kotlin",
-    "stars": 3004,
+    "stars": 3003,
     "topics": [
       "android",
       "android-app",
@@ -4876,7 +4876,7 @@
     "full_name": "hooke007/MPV_lazy",
     "description": "🔄 mpv player 播放器折腾记录 windows conf ； 中文注释配置 汉化文档 快速帮助入门 ； mpv-lazy 懒人包 win10 x64 config ； 着色器 shader 滤镜 filter 整合方案",
     "language": "GLSL",
-    "stars": 5593,
+    "stars": 5595,
     "topics": [
       "mpv",
       "mpv-config",
@@ -4907,7 +4907,7 @@
     "full_name": "immortalwrt/immortalwrt",
     "description": "An opensource OpenWrt variant for mainland China users.",
     "language": "C",
-    "stars": 8648,
+    "stars": 8650,
     "topics": [],
     "url": "https://github.com/immortalwrt/immortalwrt",
     "list_name": "Uncategorized",
@@ -4969,7 +4969,7 @@
     "full_name": "saber-notes/saber",
     "description": "The cross-platform open-source app built for handwriting",
     "language": "Dart",
-    "stars": 3480,
+    "stars": 3482,
     "topics": [
       "android",
       "cross-platform",
@@ -5020,7 +5020,7 @@
     "full_name": "Kozea/Radicale",
     "description": "A simple CalDAV (calendar) and CardDAV (contact) server.",
     "language": "Python",
-    "stars": 3913,
+    "stars": 3914,
     "topics": [
       "caldav",
       "carddav",
@@ -5060,7 +5060,7 @@
     "full_name": "pit-ray/win-vind",
     "description": "You can operate Windows with key bindings like Vim.",
     "language": "C++",
-    "stars": 2162,
+    "stars": 2163,
     "topics": [
       "emulation",
       "hotkey",
@@ -5081,7 +5081,7 @@
     "full_name": "RfidResearchGroup/proxmark3",
     "description": "Iceman Fork - Proxmark3",
     "language": "C",
-    "stars": 4748,
+    "stars": 4749,
     "topics": [
       "125khz",
       "clone",
@@ -5237,7 +5237,7 @@
     "full_name": "thqby/ahk2_lib",
     "description": null,
     "language": "AutoHotkey",
-    "stars": 375,
+    "stars": 376,
     "topics": [],
     "url": "https://github.com/thqby/ahk2_lib",
     "list_name": "Uncategorized",
@@ -5313,7 +5313,7 @@
     "full_name": "Anduin2017/HowToCook",
     "description": "程序员在家做饭方法指南。Programmer's guide about how to cook at home (Simplified Chinese only).",
     "language": "Dockerfile",
-    "stars": 92275,
+    "stars": 92288,
     "topics": [
       "chinese",
       "cookbook",
@@ -5331,7 +5331,7 @@
     "full_name": "XIU2/CloudflareSpeedTest",
     "description": "🌩「自选优选 IP」测试 Cloudflare CDN 延迟和速度，获取最快 IP ！当然也支持其他 CDN / 多个解析 IP 的网站 ~",
     "language": "Go",
-    "stars": 22638,
+    "stars": 22640,
     "topics": [
       "cdn",
       "cloudflare",
@@ -5349,7 +5349,7 @@
     "full_name": "ImranR98/Obtainium",
     "description": "Get Android app updates straight from the source.",
     "language": "Dart",
-    "stars": 12154,
+    "stars": 12156,
     "topics": [
       "android",
       "apk",
@@ -5438,7 +5438,7 @@
     "full_name": "ChrisTitusTech/winutil",
     "description": "Chris Titus Tech's Windows Utility - Install Programs, Tweaks, Fixes, and Updates",
     "language": "PowerShell",
-    "stars": 38779,
+    "stars": 38783,
     "topics": [],
     "url": "https://github.com/ChrisTitusTech/winutil",
     "list_name": "Tool List",
@@ -5821,7 +5821,7 @@
     "full_name": "sissbruecker/linkding",
     "description": "Self-hosted bookmark manager that is designed be to be minimal, fast, and easy to set up using Docker.",
     "language": "Python",
-    "stars": 8880,
+    "stars": 8881,
     "topics": [
       "bookmark-manager",
       "bookmark-service",
@@ -5857,7 +5857,7 @@
     "full_name": "AykutSarac/jsoncrack.com",
     "description": "✨ Innovative and open-source visualization application that transforms various data formats, such as JSON, YAML, XML, CSV and more, into interactive graphs.",
     "language": "TypeScript",
-    "stars": 40890,
+    "stars": 40899,
     "topics": [
       "csv",
       "diagrams",
@@ -6003,7 +6003,7 @@
     "full_name": "usememos/memos",
     "description": "A modern, open-source, self-hosted knowledge management and note-taking platform designed for privacy-conscious users and organizations.",
     "language": "Go",
-    "stars": 43588,
+    "stars": 43589,
     "topics": [
       "docker",
       "foss",
@@ -6028,7 +6028,7 @@
     "full_name": "toeverything/AFFiNE",
     "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use. ",
     "language": "TypeScript",
-    "stars": 54260,
+    "stars": 54267,
     "topics": [
       "app",
       "crdt",
@@ -6084,7 +6084,7 @@
     "full_name": "Macro-Deck-App/Macro-Deck",
     "description": "Macro Deck transforms your phone, tablet, or any device equipped with a modern internet browser into an efficient remote macro pad. With this tool, you can execute single or multi-step actions seamlessly with just a single tap.",
     "language": "C#",
-    "stars": 1234,
+    "stars": 1235,
     "topics": [
       "android",
       "macro-deck",
@@ -6171,7 +6171,7 @@
     "full_name": "zbezj/HEU_KMS_Activator",
     "description": null,
     "language": "N/A",
-    "stars": 36089,
+    "stars": 36098,
     "topics": [],
     "url": "https://github.com/zbezj/HEU_KMS_Activator",
     "list_name": "Tool List",
@@ -6195,7 +6195,7 @@
     "full_name": "CopyTranslator/CopyTranslator",
     "description": "🔠Foreign language reading and translation assistant based on copy and translate.",
     "language": "TypeScript",
-    "stars": 17461,
+    "stars": 17460,
     "topics": [
       "copytranslator",
       "dictionary",
@@ -6228,7 +6228,7 @@
     "full_name": "steveruizok/perfect-freehand",
     "description": "Draw perfect pressure-sensitive freehand lines.",
     "language": "HTML",
-    "stars": 4798,
+    "stars": 4799,
     "topics": [
       "drawing",
       "graphics",
@@ -6249,7 +6249,7 @@
     "full_name": "kingToolbox/WindTerm",
     "description": "A professional cross-platform SSH/Sftp/Shell/Telnet/Tmux/Serial terminal.",
     "language": "C",
-    "stars": 27573,
+    "stars": 27576,
     "topics": [
       "bash",
       "client",
@@ -6284,7 +6284,7 @@
     "full_name": "tldraw/tldraw",
     "description": "very good whiteboard SDK / infinite canvas SDK",
     "language": "TypeScript",
-    "stars": 41269,
+    "stars": 41273,
     "topics": [
       "canvas",
       "collaboration",
@@ -6372,7 +6372,7 @@
     "full_name": "LGUG2Z/komorebi",
     "description": "A tiling window manager for Windows 🍉",
     "language": "Rust",
-    "stars": 12336,
+    "stars": 12337,
     "topics": [
       "autohotkey",
       "palestine",
@@ -6436,7 +6436,7 @@
     "full_name": "XIU2/Yuedu",
     "description": "📚「阅读」APP 自用书源（网络小说）",
     "language": "N/A",
-    "stars": 10135,
+    "stars": 10136,
     "topics": [
       "legado",
       "xiaoshuo"
@@ -6547,7 +6547,7 @@
     "full_name": "rejetto/hfs",
     "description": "HFS is a web file server to run on your computer. Share folders or even a single file thanks to the virtual file system.",
     "language": "TypeScript",
-    "stars": 3016,
+    "stars": 3018,
     "topics": [
       "file-server",
       "file-sharing",
@@ -6566,7 +6566,7 @@
     "full_name": "valinet/ExplorerPatcher",
     "description": "This project aims to enhance the working environment on Windows",
     "language": "C",
-    "stars": 28401,
+    "stars": 28405,
     "topics": [],
     "url": "https://github.com/valinet/ExplorerPatcher",
     "list_name": "Tool List",
@@ -6663,7 +6663,7 @@
     "full_name": "rothgar/awesome-tuis",
     "description": "List of projects that provide terminal user interfaces",
     "language": "N/A",
-    "stars": 10485,
+    "stars": 10488,
     "topics": [],
     "url": "https://github.com/rothgar/awesome-tuis",
     "list_name": "Tool List",
@@ -6675,7 +6675,7 @@
     "full_name": "debauchee/barrier",
     "description": "Open-source KVM software",
     "language": "C",
-    "stars": 29433,
+    "stars": 29434,
     "topics": [
       "barrier",
       "gplv2",
@@ -6737,7 +6737,7 @@
     "full_name": "gristlabs/grist-core",
     "description": "Grist is the evolution of spreadsheets.",
     "language": "TypeScript",
-    "stars": 8842,
+    "stars": 8843,
     "topics": [
       "awesome",
       "database",
@@ -6872,7 +6872,7 @@
     "full_name": "Jackett/Jackett",
     "description": "API Support for your favorite torrent trackers",
     "language": "C#",
-    "stars": 13815,
+    "stars": 13816,
     "topics": [
       "api",
       "couchpotato",
@@ -6923,7 +6923,7 @@
     "full_name": "Sonarr/Sonarr",
     "description": "Smart PVR for newsgroup and bittorrent users.",
     "language": "C#",
-    "stars": 12228,
+    "stars": 12229,
     "topics": [],
     "url": "https://github.com/Sonarr/Sonarr",
     "list_name": "Home Selfhosted List",
@@ -7031,7 +7031,7 @@
     "full_name": "docker-mailserver/docker-mailserver",
     "description": "Production-ready fullstack but simple mail server (SMTP, IMAP, LDAP, Antispam, Antivirus, etc.) running inside a container.",
     "language": "Shell",
-    "stars": 16913,
+    "stars": 16912,
     "topics": [
       "antispam",
       "antivirus",
@@ -7293,7 +7293,7 @@
     "full_name": "pawelmalak/flame",
     "description": "Flame is self-hosted startpage for your server. Easily manage your apps and bookmarks with built-in editors.",
     "language": "TypeScript",
-    "stars": 5938,
+    "stars": 5939,
     "topics": [
       "homepage",
       "self-hosted",
@@ -7352,7 +7352,7 @@
     "full_name": "Loyalsoldier/v2ray-rules-dat",
     "description": "🦄 🎃 👻 V2Ray 路由规则文件加强版，可代替 V2Ray 官方 geoip.dat 和 geosite.dat，适用于 V2Ray、Xray-core、mihomo(Clash-Meta)、hysteria、Trojan-Go 和 leaf。Enhanced edition of V2Ray rules dat files, applicable to V2Ray, Xray-core, mihomo(Clash-Meta), hysteria, Trojan-Go and leaf.",
     "language": "N/A",
-    "stars": 17195,
+    "stars": 17196,
     "topics": [
       "adblock",
       "adguard",
@@ -7452,7 +7452,7 @@
     "full_name": "pdfarranger/pdfarranger",
     "description": "Small python-gtk application, which helps the user to merge or split PDF documents and rotate, crop and rearrange their pages using an interactive and intuitive graphical interface.",
     "language": "Python",
-    "stars": 4473,
+    "stars": 4474,
     "topics": [
       "gtk",
       "gtk3",
@@ -7531,7 +7531,7 @@
     "full_name": "zyx0814/Pichome",
     "description": "一款图片与媒体文件管理功能强大的开源网盘程序",
     "language": "PHP",
-    "stars": 989,
+    "stars": 990,
     "topics": [
       "ai",
       "cloud",
@@ -7627,7 +7627,7 @@
     "full_name": "BLKSerene/Wordless",
     "description": "An Integrated Corpus Tool With Multilingual Support for the Study of Language, Literature, and Translation",
     "language": "Python",
-    "stars": 731,
+    "stars": 732,
     "topics": [
       "corpus",
       "corpus-analysis",
@@ -7720,7 +7720,7 @@
     "full_name": "WXRIW/Lyricify-App",
     "description": "Lyricify (/lɪ'rɪsəfaɪ/), a fantastic app to provide scroll lyrics for Spotify and other apps. 一款为 Spotify 等各种应用提供滚动歌词的软件。",
     "language": "N/A",
-    "stars": 5865,
+    "stars": 5866,
     "topics": [
       "all-platforms",
       "apple",
@@ -7779,7 +7779,7 @@
     "full_name": "lxgw/LxgwWenKai",
     "description": "An unprofessional open-source Chinese font derived from Fontworks' Klee One. 一款非专业的开源中文字体，基于 FONTWORKS 出品字体 Klee One 衍生。  ",
     "language": "Shell",
-    "stars": 21170,
+    "stars": 21175,
     "topics": [
       "cjk",
       "font",
@@ -7795,7 +7795,7 @@
     "full_name": "xiangyuecn/AreaCity-JsSpider-StatsGov",
     "description": "省市区县乡镇三级或四级城市数据，带拼音标注、坐标、行政区域边界范围；2025年01月14日最新采集，提供csv格式文件，支持在线转成多级联动js代码、通用json格式，提供软件转成shp、geojson、sql、导入数据库；带浏览器里面运行的js采集源码，综合了中华人民共和国民政部、国家统计局、高德地图、腾讯地图行政区划数据",
     "language": "JavaScript",
-    "stars": 6178,
+    "stars": 6179,
     "topics": [],
     "url": "https://github.com/xiangyuecn/AreaCity-JsSpider-StatsGov",
     "list_name": "Uncategorized",
@@ -8024,7 +8024,7 @@
     "full_name": "nocodb/nocodb",
     "description": "🔥 🔥 🔥 Open Source Airtable Alternative",
     "language": "TypeScript",
-    "stars": 56404,
+    "stars": 56408,
     "topics": [
       "airtable",
       "airtable-alternative",
@@ -8303,7 +8303,7 @@
     "full_name": "excalidraw/excalidraw",
     "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
     "language": "TypeScript",
-    "stars": 105357,
+    "stars": 105368,
     "topics": [
       "canvas",
       "collaboration",
@@ -8368,7 +8368,7 @@
     "full_name": "pavlobu/deskreen",
     "description": "Deskreen turns any device with a web browser into a secondary screen for your computer. ⭐️ Star to support our work!",
     "language": "TypeScript",
-    "stars": 19374,
+    "stars": 19376,
     "topics": [
       "blueprintjs",
       "darkwire-io",
@@ -8404,7 +8404,7 @@
     "full_name": "dani-garcia/vaultwarden",
     "description": "Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs",
     "language": "Rust",
-    "stars": 47898,
+    "stars": 47903,
     "topics": [
       "bitwarden",
       "bitwarden-rs",
@@ -8470,7 +8470,7 @@
     "full_name": "GitSquared/edex-ui",
     "description": "A cross-platform, customizable science fiction terminal emulator with advanced monitoring & touchscreen support.",
     "language": "JavaScript",
-    "stars": 42848,
+    "stars": 42849,
     "topics": [
       "desktop",
       "edex-ui",
@@ -8552,7 +8552,7 @@
     "full_name": "Bioruebe/UniExtract2",
     "description": "Universal Extractor 2 is a tool to extract files from any type of archive or installer.",
     "language": "AutoIt",
-    "stars": 3961,
+    "stars": 3962,
     "topics": [
       "decompression",
       "extractor",
@@ -8648,7 +8648,7 @@
     "full_name": "outline/outline",
     "description": "The fastest knowledge base for growing teams. Beautiful, realtime collaborative, feature packed, and markdown compatible.",
     "language": "TypeScript",
-    "stars": 34446,
+    "stars": 34447,
     "topics": [
       "docker",
       "hacktoberfest",
@@ -8701,7 +8701,7 @@
     "full_name": "Tichau/FileConverter",
     "description": "File Converter is a very simple tool which allows you to convert and compress files using the context menu in windows explorer.",
     "language": "C#",
-    "stars": 10773,
+    "stars": 10772,
     "topics": [],
     "url": "https://github.com/Tichau/FileConverter",
     "list_name": "Uncategorized",
@@ -8852,7 +8852,7 @@
     "full_name": "srwi/EverythingToolbar",
     "description": "Everything integration for the Windows taskbar.",
     "language": "C#",
-    "stars": 12006,
+    "stars": 12005,
     "topics": [
       "deskband",
       "everything",
@@ -8954,7 +8954,7 @@
     "full_name": "PaddlePaddle/PaddleOCR",
     "description": "Awesome multilingual OCR and Document Parsing toolkits based on PaddlePaddle (practical ultra lightweight OCR system, support 80+ languages recognition, provide data annotation and synthesis tools, support training and deployment among server, mobile, embedded and IoT devices)",
     "language": "Python",
-    "stars": 52618,
+    "stars": 52623,
     "topics": [
       "chatocr",
       "chineseocr",
@@ -9029,7 +9029,7 @@
     "full_name": "SolarLune/masterplan",
     "description": "MasterPlan is a project management software / visual idea board software. It attempts to be easy to use, lightweight, and fun.",
     "language": "Go",
-    "stars": 538,
+    "stars": 537,
     "topics": [
       "developer",
       "game",
@@ -9067,7 +9067,7 @@
     "full_name": "BluePointLilac/ContextMenuManager",
     "description": "🖱️ 纯粹的Windows右键菜单管理程序",
     "language": "C#",
-    "stars": 15869,
+    "stars": 15873,
     "topics": [],
     "url": "https://github.com/BluePointLilac/ContextMenuManager",
     "list_name": "Uncategorized",
@@ -9145,7 +9145,7 @@
     "full_name": "pubpub-zz/ppInk",
     "description": "Fork from Gink",
     "language": "C#",
-    "stars": 1035,
+    "stars": 1036,
     "topics": [],
     "url": "https://github.com/pubpub-zz/ppInk",
     "list_name": "Uncategorized",
@@ -9269,7 +9269,7 @@
     "full_name": "UlionTse/translators",
     "description": "Translators is a library that aims to bring free, multiple, enjoyable translations to individuals and students in Python.  「翻译官」是一个旨在用Python为个人和学生带来免费、多样、愉快翻译的库。",
     "language": "Python",
-    "stars": 1893,
+    "stars": 1894,
     "topics": [
       "alibaba",
       "argos",
@@ -9321,7 +9321,7 @@
     "full_name": "rocksdanister/lively",
     "description": "Free and open-source software that allows users to set animated desktop wallpapers and screensavers powered by WinUI 3.",
     "language": "C#",
-    "stars": 16894,
+    "stars": 16895,
     "topics": [
       "csharp",
       "desktop",
@@ -9445,7 +9445,7 @@
     "full_name": "agarrharr/awesome-cli-apps",
     "description": "🖥 📊 🕹 🛠 A curated list of command line apps",
     "language": "Shell",
-    "stars": 17249,
+    "stars": 17251,
     "topics": [
       "awesome",
       "awesome-list",
@@ -9520,7 +9520,7 @@
     "full_name": "TriliumNext/Trilium",
     "description": "Build your personal knowledge base with Trilium Notes",
     "language": "TypeScript",
-    "stars": 30154,
+    "stars": 30160,
     "topics": [
       "electron",
       "electron-app",
@@ -9583,7 +9583,7 @@
     "full_name": "latentcat/qrbtf",
     "description": "AI & parametric QR code generator. AI & 参数化二维码生成器。https://qrbtf.com",
     "language": "TypeScript",
-    "stars": 6689,
+    "stars": 6690,
     "topics": [
       "art-qr",
       "art-qr-code",
@@ -9638,7 +9638,7 @@
     "full_name": "tasks/tasks",
     "description": "Bringing Astrid Tasks back from the dead",
     "language": "Kotlin",
-    "stars": 4408,
+    "stars": 4405,
     "topics": [
       "android",
       "productivity"
@@ -9783,7 +9783,7 @@
     "full_name": "geongeorge/i-hate-regex",
     "description": "The code for iHateregex.io 😈 - The Regex Cheat Sheet",
     "language": "Vue",
-    "stars": 4525,
+    "stars": 4526,
     "topics": [
       "nuxt",
       "regex",
@@ -9878,7 +9878,7 @@
     "full_name": "peng-zhihui/L-ink_Card",
     "description": "Smart NFC & ink-Display Card",
     "language": "C",
-    "stars": 7512,
+    "stars": 7513,
     "topics": [],
     "url": "https://github.com/peng-zhihui/L-ink_Card",
     "list_name": "Uncategorized",
@@ -9982,7 +9982,7 @@
     "full_name": "TeamNewPipe/NewPipe",
     "description": "A libre lightweight streaming front-end for Android.",
     "language": "Java",
-    "stars": 34710,
+    "stars": 34712,
     "topics": [
       "4k",
       "android",
@@ -10019,7 +10019,7 @@
     "full_name": "cloudreve/cloudreve",
     "description": "🌩 Self-hosted file management and sharing system, supports multiple storage providers",
     "language": "Go",
-    "stars": 24583,
+    "stars": 24586,
     "topics": [
       "cloud",
       "cloud-storage",
@@ -10112,7 +10112,7 @@
     "full_name": "microsoft/winget-cli",
     "description": "WinGet is the Windows Package Manager. This project includes a CLI (Command Line Interface), PowerShell modules, and a COM (Component Object Model) API (Application Programming Interface).",
     "language": "C++",
-    "stars": 24633,
+    "stars": 24635,
     "topics": [
       "command-line",
       "package-manager",
@@ -10182,7 +10182,7 @@
     "full_name": "coder/code-server",
     "description": "VS Code in the browser",
     "language": "TypeScript",
-    "stars": 73379,
+    "stars": 73381,
     "topics": [
       "browser-ide",
       "dev-tools",
@@ -10202,7 +10202,7 @@
     "full_name": "topjohnwu/Magisk",
     "description": "The Magic Mask for Android",
     "language": "Kotlin",
-    "stars": 55257,
+    "stars": 55261,
     "topics": [],
     "url": "https://github.com/topjohnwu/Magisk",
     "list_name": "Uncategorized",
@@ -10214,7 +10214,7 @@
     "full_name": "ventoy/Ventoy",
     "description": "A new bootable USB solution.",
     "language": "C",
-    "stars": 69824,
+    "stars": 69826,
     "topics": [
       "auto-install",
       "bootable-usb",
@@ -10255,7 +10255,7 @@
     "full_name": "tesseract-ocr/tesseract",
     "description": "Tesseract Open Source OCR Engine (main repository)",
     "language": "C++",
-    "stars": 68819,
+    "stars": 68823,
     "topics": [
       "hacktoberfest",
       "lstm",
@@ -10359,7 +10359,7 @@
     "full_name": "be5invis/Iosevka",
     "description": "Versatile typeface for code, from code.",
     "language": "JavaScript",
-    "stars": 20621,
+    "stars": 20622,
     "topics": [
       "font",
       "iosevka",
@@ -10380,7 +10380,7 @@
     "full_name": "Jonno12345/TileIconifier",
     "description": "Creates tiles for most Windows 8.1 and 10 start menu icons",
     "language": "C#",
-    "stars": 1427,
+    "stars": 1428,
     "topics": [
       "chrome",
       "creates-tiles",
@@ -10564,7 +10564,7 @@
     "full_name": "spencerwooo/substats",
     "description": "( ｀д′) how many followers do i have? how many!",
     "language": "TypeScript",
-    "stars": 857,
+    "stars": 858,
     "topics": [
       "api",
       "api-service",
@@ -10689,7 +10689,7 @@
     "full_name": "yujqiao/DungeonRush",
     "description": "👾🐍 A opensource game inspired by Snake, written in pure C with SDL",
     "language": "C",
-    "stars": 2113,
+    "stars": 2114,
     "topics": [
       "c",
       "game",
@@ -10717,7 +10717,7 @@
     "full_name": "firefly-iii/firefly-iii",
     "description": "Firefly III: a personal finances manager",
     "language": "PHP",
-    "stars": 20051,
+    "stars": 20052,
     "topics": [
       "accounting",
       "budget",
@@ -10761,7 +10761,7 @@
     "full_name": "RocketChat/Rocket.Chat",
     "description": "The communications platform that puts data protection first.",
     "language": "TypeScript",
-    "stars": 43194,
+    "stars": 43197,
     "topics": [
       "chat",
       "collaboration",
@@ -10809,7 +10809,7 @@
     "full_name": "jeecgboot/JeecgBoot",
     "description": "🔥企业级低代码平台集成了AI应用平台，帮助企业快速实现低代码开发和构建AI应用！前后端分离架构 SpringBoot，SpringCloud、Mybatis，Ant Design4、 Vue3.0、TS+vite！强大的代码生成器让前后端代码一键生成，无需写任何代码! 引领AI低代码开发模式: AI生成->OnlineCoding-> 代码生成-> 手工MERGE，显著的提高效率，又不失灵活~",
     "language": "Java",
-    "stars": 43620,
+    "stars": 43623,
     "topics": [
       "activiti",
       "ai",
@@ -11130,7 +11130,7 @@
     "full_name": "lyswhut/lx-music-desktop",
     "description": "一个基于 electron 的音乐软件",
     "language": "TypeScript",
-    "stars": 45703,
+    "stars": 45709,
     "topics": [
       "electron",
       "javascript",
@@ -11395,7 +11395,7 @@
     "full_name": "mltframework/shotcut",
     "description": "cross-platform (Qt), open-source (GPLv3) video editor",
     "language": "C++",
-    "stars": 12455,
+    "stars": 12457,
     "topics": [
       "cross-platform",
       "gplv3",
@@ -11453,7 +11453,7 @@
     "full_name": "hoppscotch/hoppscotch",
     "description": "Open source API development ecosystem - https://hoppscotch.io (open-source alternative to Postman, Insomnia)",
     "language": "TypeScript",
-    "stars": 73495,
+    "stars": 73497,
     "topics": [
       "api",
       "api-client",
@@ -11543,7 +11543,7 @@
     "full_name": "badges/shields",
     "description": "Concise, consistent, and legible badges in SVG and raster format",
     "language": "JavaScript",
-    "stars": 25266,
+    "stars": 25269,
     "topics": [
       "badge",
       "badge-maker",
@@ -11575,7 +11575,7 @@
     "full_name": "laurent22/joplin",
     "description": "Joplin - the privacy-focused note taking app with sync capabilities for Windows, macOS, Linux, Android and iOS.",
     "language": "TypeScript",
-    "stars": 50788,
+    "stars": 50790,
     "topics": [
       "android",
       "dropbox",
@@ -11608,7 +11608,7 @@
     "full_name": "home-assistant/core",
     "description": ":house_with_garden: Open source home automation that puts local control and privacy first.",
     "language": "Python",
-    "stars": 80722,
+    "stars": 80725,
     "topics": [
       "asyncio",
       "hacktoberfest",
@@ -11691,7 +11691,7 @@
     "full_name": "ChrisAnd1998/TaskbarX",
     "description": "Center Windows taskbar icons with a variety of animations and options.",
     "language": "Visual Basic .NET",
-    "stars": 7946,
+    "stars": 7947,
     "topics": [
       "animations",
       "automation",
@@ -11824,7 +11824,7 @@
     "full_name": "xjh22222228/nav",
     "description": "发现导航 , 好用强大轻量级导航网站 Discover navigation, easy to use, powerful lightweight navigation website",
     "language": "TypeScript",
-    "stars": 2905,
+    "stars": 2906,
     "topics": [
       "ai-awesome",
       "angular",
@@ -11886,7 +11886,7 @@
     "full_name": "fangzesheng/free-api",
     "description": "收集免费的接口服务,做一个api的搬运工",
     "language": "N/A",
-    "stars": 15582,
+    "stars": 15583,
     "topics": [
       "api",
       "freeapi"
@@ -11918,7 +11918,7 @@
     "full_name": "mitesh77/Best-Flutter-UI-Templates",
     "description": "completely free for everyone. Its build-in Flutter Dart.",
     "language": "Dart",
-    "stars": 21916,
+    "stars": 21917,
     "topics": [
       "cross-platform",
       "flutter",
@@ -11957,7 +11957,7 @@
     "full_name": "ivanhao/pvetools",
     "description": "proxmox ve tools script(debian9+ can use it).Including email, samba, NFS set zfs max ram, nested virtualization ,docker , pci passthrough etc. for english user,please look the end of readme.",
     "language": "Shell",
-    "stars": 5112,
+    "stars": 5111,
     "topics": [
       "proxmox",
       "proxmox-ve",
@@ -11974,7 +11974,7 @@
     "full_name": "n8n-io/n8n",
     "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
     "language": "TypeScript",
-    "stars": 129466,
+    "stars": 129526,
     "topics": [
       "ai",
       "apis",
@@ -12007,7 +12007,7 @@
     "full_name": "jellyfin/jellyfin",
     "description": "The Free Software Media System - Server Backend & API",
     "language": "C#",
-    "stars": 42635,
+    "stars": 42641,
     "topics": [
       "csharp",
       "dotnet",
@@ -12023,7 +12023,7 @@
     "full_name": "zhongyang219/TrafficMonitor",
     "description": "这是一个用于显示当前网速、CPU及内存利用率的桌面悬浮窗软件，并支持任务栏显示，支持更换皮肤。",
     "language": "C++",
-    "stars": 40469,
+    "stars": 40472,
     "topics": [],
     "url": "https://github.com/zhongyang219/TrafficMonitor",
     "list_name": "Uncategorized",
@@ -12055,7 +12055,7 @@
     "full_name": "iptv-org/iptv",
     "description": "Collection of publicly available IPTV channels from all over the world",
     "language": "TypeScript",
-    "stars": 96212,
+    "stars": 96215,
     "topics": [
       "iptv",
       "m3u",
@@ -12290,7 +12290,7 @@
     "full_name": "microsoft/vscode",
     "description": "Visual Studio Code",
     "language": "TypeScript",
-    "stars": 175718,
+    "stars": 175726,
     "topics": [
       "editor",
       "electron",
@@ -12433,7 +12433,7 @@
     "full_name": "justjavac/free-programming-books-zh_CN",
     "description": ":books: 免费的计算机编程类中文书籍，欢迎投稿",
     "language": "N/A",
-    "stars": 114966,
+    "stars": 114967,
     "topics": [
       "android",
       "angular",
@@ -12462,7 +12462,7 @@
     "full_name": "ziishaned/learn-regex",
     "description": "Learn regex the easy way",
     "language": "N/A",
-    "stars": 46060,
+    "stars": 46059,
     "topics": [
       "learn-regex",
       "regex",
@@ -12554,7 +12554,7 @@
     "full_name": "nvbn/thefuck",
     "description": "Magnificent app which corrects your previous console command.",
     "language": "Python",
-    "stars": 93455,
+    "stars": 93460,
     "topics": [
       "python",
       "shell"
@@ -12569,7 +12569,7 @@
     "full_name": "jackfrued/Python-100-Days",
     "description": "Python - 100天从新手到大师",
     "language": "Jupyter Notebook",
-    "stars": 170794,
+    "stars": 170800,
     "topics": [],
     "url": "https://github.com/jackfrued/Python-100-Days",
     "list_name": "Uncategorized",
@@ -12644,7 +12644,7 @@
     "full_name": "marp-team/marp",
     "description": "The entrance repository of Markdown presentation ecosystem",
     "language": "TypeScript",
-    "stars": 9407,
+    "stars": 9410,
     "topics": [
       "deck",
       "markdown",
@@ -12920,7 +12920,7 @@
     "full_name": "dylanaraps/pure-bash-bible",
     "description": "📖 A collection of pure bash alternatives to external processes.",
     "language": "Shell",
-    "stars": 39934,
+    "stars": 39936,
     "topics": [
       "bash",
       "bible",
@@ -12969,7 +12969,7 @@
     "full_name": "Jguer/yay",
     "description": "Yet another Yogurt - An AUR Helper written in Go",
     "language": "Go",
-    "stars": 12274,
+    "stars": 12275,
     "topics": [
       "archlinux",
       "aur",
@@ -13100,7 +13100,7 @@
     "full_name": "MisterBooo/LeetCodeAnimation",
     "description": "Demonstrate all the questions on LeetCode in the form of animation.（用动画的形式呈现解LeetCode题目的思路）",
     "language": "Java",
-    "stars": 76376,
+    "stars": 76380,
     "topics": [
       "animation",
       "leetcode",
@@ -13118,7 +13118,7 @@
     "full_name": "azl397985856/leetcode",
     "description": "LeetCode Solutions: A Record of My Problem Solving Journey.( leetcode题解，记录自己的leetcode解题之路。)",
     "language": "JavaScript",
-    "stars": 55566,
+    "stars": 55568,
     "topics": [
       "algo",
       "algorithm",
@@ -13389,7 +13389,7 @@
     "full_name": "Tencent/matrix",
     "description": "Matrix is a plugin style, non-invasive APM system developed by WeChat.",
     "language": "Java",
-    "stars": 11879,
+    "stars": 11881,
     "topics": [
       "android",
       "apm-client",
@@ -13437,7 +13437,7 @@
     "full_name": "gildas-lormeau/SingleFile",
     "description": "Web Extension for saving a faithful copy of a complete web page in a single HTML file",
     "language": "JavaScript",
-    "stars": 18869,
+    "stars": 18870,
     "topics": [
       "annotations",
       "archive",
@@ -13520,7 +13520,7 @@
     "full_name": "fatedier/frp",
     "description": "A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.",
     "language": "Go",
-    "stars": 97406,
+    "stars": 97413,
     "topics": [
       "expose",
       "firewall",
@@ -13700,7 +13700,7 @@
     "full_name": "AdguardTeam/AdGuardHome",
     "description": "Network-wide ads & trackers blocking DNS server",
     "language": "Go",
-    "stars": 29637,
+    "stars": 29638,
     "topics": [
       "adblock",
       "adguard",
@@ -13870,7 +13870,7 @@
     "full_name": "zhangheng18/rime-dict",
     "description": "RIME输入法 增强词库",
     "language": "N/A",
-    "stars": 232,
+    "stars": 233,
     "topics": [],
     "url": "https://github.com/zhangheng18/rime-dict",
     "list_name": "Uncategorized",
@@ -13911,7 +13911,7 @@
     "full_name": "flameshot-org/flameshot",
     "description": "Powerful yet simple to use screenshot software :desktop_computer: :camera_flash:",
     "language": "C++",
-    "stars": 27515,
+    "stars": 27517,
     "topics": [
       "capture",
       "cross-platform",
@@ -14035,7 +14035,7 @@
     "full_name": "pjialin/py12306",
     "description": "🚂 12306 购票助手，支持集群，多账号，多任务购票以及 Web 页面管理 ",
     "language": "Python",
-    "stars": 14636,
+    "stars": 14637,
     "topics": [],
     "url": "https://github.com/pjialin/py12306",
     "list_name": "Uncategorized",
@@ -14256,7 +14256,7 @@
     "full_name": "filebrowser/filebrowser",
     "description": "📂 Web File Browser",
     "language": "Go",
-    "stars": 30783,
+    "stars": 30786,
     "topics": [
       "file-browser",
       "file-manager",
@@ -14296,7 +14296,7 @@
     "full_name": "sherlock-project/sherlock",
     "description": "Hunt down social media accounts by username across social networks",
     "language": "Python",
-    "stars": 67980,
+    "stars": 67983,
     "topics": [
       "cli",
       "cti",
@@ -14325,7 +14325,7 @@
     "full_name": "ronggang/transmission-web-control",
     "description": "一个 Transmission 浏览器管理界面。Transmission Web Control is a custom web UI. （该项目不再维护。）",
     "language": "CSS",
-    "stars": 4776,
+    "stars": 4775,
     "topics": [],
     "url": "https://github.com/ronggang/transmission-web-control",
     "list_name": "Uncategorized",
@@ -14768,7 +14768,7 @@
     "full_name": "YMFE/yapi",
     "description": "YApi 是一个可本地部署的、打通前后端及QA的、可视化的接口管理平台",
     "language": "JavaScript",
-    "stars": 27646,
+    "stars": 27647,
     "topics": [
       "api",
       "api-management",
@@ -15145,7 +15145,7 @@
     "full_name": "serhii-londar/open-source-mac-os-apps",
     "description": "🚀 Awesome list of open source applications for macOS. https://t.me/s/opensourcemacosapps",
     "language": "N/A",
-    "stars": 44827,
+    "stars": 44828,
     "topics": [
       "applications",
       "apps",
@@ -15188,7 +15188,7 @@
     "full_name": "DIYgod/RSSHub",
     "description": "🧡 Everything is RSSible",
     "language": "TypeScript",
-    "stars": 38273,
+    "stars": 38277,
     "topics": [
       "bilibili",
       "douban",
@@ -15236,7 +15236,7 @@
     "full_name": "alebcay/awesome-shell",
     "description": "A curated list of awesome command-line frameworks, toolkits, guides and gizmos. Inspired by awesome-php.",
     "language": "N/A",
-    "stars": 34949,
+    "stars": 34951,
     "topics": [
       "awesome",
       "awesome-list",
@@ -15367,7 +15367,7 @@
     "full_name": "TKkk-iOSer/WeChatPlugin-MacOS",
     "description": "微信小助手",
     "language": "Objective-C",
-    "stars": 14267,
+    "stars": 14268,
     "topics": [
       "alfred-workflow",
       "macos",
@@ -15592,7 +15592,7 @@
     "full_name": "ryanoasis/nerd-fonts",
     "description": "Iconic font aggregator, collection, & patcher. 3,600+ icons, 50+ patched fonts: Hack, Source Code Pro, more. Glyph collections: Font Awesome, Material Design Icons, Octicons, & more",
     "language": "CSS",
-    "stars": 59136,
+    "stars": 59138,
     "topics": [
       "font",
       "font-awesome",
@@ -15618,7 +15618,7 @@
     "full_name": "lostindark/DriverStoreExplorer",
     "description": "Driver Store Explorer [RAPR]",
     "language": "C#",
-    "stars": 8478,
+    "stars": 8480,
     "topics": [
       "driver",
       "driver-store",
@@ -15702,7 +15702,7 @@
     "full_name": "NaoTu/DesktopNaotu",
     "description": "桌面版脑图 (百度脑图离线版，思维导图) 跨平台支持 Windows/Linux/Mac OS. (A cross-platform multilingual Mind Map Tool)",
     "language": "TypeScript",
-    "stars": 4831,
+    "stars": 4832,
     "topics": [
       "desktop-app",
       "inaotu",
@@ -15850,7 +15850,7 @@
     "full_name": "meowtec/Imagine",
     "description": "🖼️ PNG/JPEG optimization app for macOS, Windows and Linux.",
     "language": "TypeScript",
-    "stars": 3932,
+    "stars": 3933,
     "topics": [
       "cross-platform",
       "desktop",
@@ -15875,7 +15875,7 @@
     "full_name": "marktext/marktext",
     "description": "📝A simple and elegant markdown editor, available for Linux, macOS and Windows.",
     "language": "JavaScript",
-    "stars": 50881,
+    "stars": 50886,
     "topics": [
       "dark-mode",
       "editor",
@@ -15979,7 +15979,7 @@
     "full_name": "requarks/wiki",
     "description": "Wiki.js | A modern and powerful wiki app built on Node.js",
     "language": "Vue",
-    "stars": 26824,
+    "stars": 26825,
     "topics": [
       "cross-platform",
       "documentation",
@@ -15999,7 +15999,7 @@
     "full_name": "Molunerfinn/PicGo",
     "description": ":rocket:A simple & beautiful tool for pictures uploading built by vue-cli-electron-builder",
     "language": "TypeScript",
-    "stars": 25532,
+    "stars": 25533,
     "topics": [
       "aliyun-oss",
       "electron",
@@ -16028,7 +16028,7 @@
     "full_name": "1c7/chinese-independent-developer",
     "description": "👩🏿‍💻👨🏾‍💻👩🏼‍💻👨🏽‍💻👩🏻‍💻中国独立开发者项目列表 -- 分享大家都在做什么",
     "language": "N/A",
-    "stars": 39831,
+    "stars": 39834,
     "topics": [
       "china",
       "indie",
@@ -16092,7 +16092,7 @@
     "full_name": "Genymobile/scrcpy",
     "description": "Display and control your Android device",
     "language": "C",
-    "stars": 126541,
+    "stars": 126549,
     "topics": [
       "android",
       "c",
@@ -16188,7 +16188,7 @@
     "full_name": "huginn/huginn",
     "description": "Create agents that monitor and act on your behalf.  Your agents are standing by!",
     "language": "Ruby",
-    "stars": 47037,
+    "stars": 47041,
     "topics": [
       "agent",
       "automation",
@@ -16238,7 +16238,7 @@
     "full_name": "mautic/mautic",
     "description": "Mautic: Open Source Marketing Automation Software.",
     "language": "PHP",
-    "stars": 8528,
+    "stars": 8530,
     "topics": [
       "digital-experience-platform",
       "digitalexperienceplatform",
@@ -16411,7 +16411,7 @@
     "full_name": "learn-anything/learn-anything",
     "description": "Make interlinked notes in private (E2E encrypted), share parts of it to global network of topics with deep AI integration",
     "language": "TypeScript",
-    "stars": 16403,
+    "stars": 16405,
     "topics": [
       "jazz",
       "react",
@@ -16521,7 +16521,7 @@
     "full_name": "webslides/WebSlides",
     "description": "Create HTML presentations in seconds —",
     "language": "JavaScript",
-    "stars": 6272,
+    "stars": 6271,
     "topics": [
       "css",
       "design",
@@ -16543,7 +16543,7 @@
     "full_name": "ngosang/trackerslist",
     "description": "Updated list of public BitTorrent trackers",
     "language": "N/A",
-    "stars": 50969,
+    "stars": 50970,
     "topics": [
       "bittorrent",
       "bittorrent-tracker",
@@ -16631,7 +16631,7 @@
     "full_name": "material-components/material-components-web",
     "description": "Modular and customizable Material Design UI components for the web",
     "language": "TypeScript",
-    "stars": 17114,
+    "stars": 17115,
     "topics": [
       "css",
       "javascript",
@@ -16733,7 +16733,7 @@
     "full_name": "SoftEtherVPN/SoftEtherVPN",
     "description": "Cross-platform multi-protocol VPN software. Pull requests are welcome. The stable version is available at https://github.com/SoftEtherVPN/SoftEtherVPN_Stable.",
     "language": "C",
-    "stars": 12485,
+    "stars": 12486,
     "topics": [
       "etherip",
       "ike",
@@ -16859,7 +16859,7 @@
     "full_name": "psf/requests-html",
     "description": "Pythonic HTML Parsing for Humans™",
     "language": "Python",
-    "stars": 13840,
+    "stars": 13841,
     "topics": [
       "beautifulsoup",
       "css-selectors",
@@ -16976,7 +16976,7 @@
     "full_name": "TranslucentTB/TranslucentTB",
     "description": "A lightweight utility that makes the Windows taskbar translucent/transparent.",
     "language": "C++",
-    "stars": 17696,
+    "stars": 17698,
     "topics": [
       "acrylic",
       "aero",
@@ -17021,7 +17021,7 @@
     "full_name": "1j01/jspaint",
     "description": "🎨 Classic MS Paint, ＲＥＶＩＶＥＤ + ✨Extras",
     "language": "JavaScript",
-    "stars": 7514,
+    "stars": 7515,
     "topics": [
       "app",
       "canvas",
@@ -17085,7 +17085,7 @@
     "full_name": "listen1/listen1_desktop",
     "description": "one for all free music in china (Windows, Mac, Linux desktop)",
     "language": "JavaScript",
-    "stars": 10863,
+    "stars": 10864,
     "topics": [
       "desktop-app",
       "music-player"
@@ -17100,7 +17100,7 @@
     "full_name": "x-hw/amazing-qr",
     "description": "💮 amazing QRCode generator in Python (supporting animated gif) - Python amazing 二维码生成器（支持 gif 动态图片二维码）",
     "language": "Python",
-    "stars": 10676,
+    "stars": 10677,
     "topics": [
       "amazing",
       "gif",
@@ -17119,7 +17119,7 @@
     "full_name": "facebook/zstd",
     "description": "Zstandard - Fast real-time compression algorithm",
     "language": "C",
-    "stars": 25464,
+    "stars": 25465,
     "topics": [],
     "url": "https://github.com/facebook/zstd",
     "list_name": "Uncategorized",
@@ -17184,7 +17184,7 @@
     "full_name": "stella-emu/stella",
     "description": "A multi-platform Atari 2600 Emulator",
     "language": "C",
-    "stars": 681,
+    "stars": 682,
     "topics": [
       "2600",
       "atari",
@@ -17220,7 +17220,7 @@
     "full_name": "miniflux/v2",
     "description": "Minimalist and opinionated feed reader",
     "language": "Go",
-    "stars": 7916,
+    "stars": 7919,
     "topics": [
       "atom",
       "feed",
@@ -17300,7 +17300,7 @@
     "full_name": "awesome-selfhosted/awesome-selfhosted",
     "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
     "language": "N/A",
-    "stars": 241744,
+    "stars": 241759,
     "topics": [
       "awesome",
       "awesome-list",
@@ -17372,7 +17372,7 @@
     "full_name": "mattermost/mattermost",
     "description": "Mattermost is an open source platform for secure collaboration across the entire software development lifecycle..",
     "language": "TypeScript",
-    "stars": 33372,
+    "stars": 33373,
     "topics": [
       "collaboration",
       "golang",
@@ -17435,7 +17435,7 @@
     "full_name": "evolus/pencil",
     "description": "The Pencil Project's unique mission is to build a free and opensource tool for making diagrams and GUI prototyping that everyone can use. ",
     "language": "JavaScript",
-    "stars": 9226,
+    "stars": 9224,
     "topics": [
       "drawing",
       "electron",
@@ -17545,7 +17545,7 @@
     "full_name": "nextcloud/server",
     "description": "☁️ Nextcloud server, a safe home for all your data",
     "language": "PHP",
-    "stars": 30442,
+    "stars": 30445,
     "topics": [
       "cloud",
       "collaboration",
@@ -17636,7 +17636,7 @@
     "full_name": "FelisCatus/SwitchyOmega",
     "description": "No longer maintained, see pinned issues",
     "language": "CoffeeScript",
-    "stars": 22334,
+    "stars": 22335,
     "topics": [],
     "url": "https://github.com/FelisCatus/SwitchyOmega",
     "list_name": "Uncategorized",
@@ -17694,7 +17694,7 @@
     "full_name": "IridiumIO/CompactGUI",
     "description": "Reduce the space taken up by games and programs on disk by using native Windows APIs",
     "language": "Visual Basic .NET",
-    "stars": 6310,
+    "stars": 6312,
     "topics": [
       "compressing-folders",
       "compression",
@@ -17783,7 +17783,7 @@
     "full_name": "trazyn/ieaseMusic",
     "description": "网易云音乐第三方",
     "language": "JavaScript",
-    "stars": 8786,
+    "stars": 8785,
     "topics": [
       "electron",
       "electron-app",
@@ -17825,7 +17825,7 @@
     "full_name": "amix/vimrc",
     "description": "The ultimate Vim configuration (vimrc)",
     "language": "Vim Script",
-    "stars": 31425,
+    "stars": 31426,
     "topics": [],
     "url": "https://github.com/amix/vimrc",
     "list_name": "Uncategorized",
@@ -18057,7 +18057,7 @@
     "full_name": "Kenshin/simpread",
     "description": "简悦 ( SimpRead ) - 让你瞬间进入沉浸式阅读的扩展",
     "language": "JavaScript",
-    "stars": 8428,
+    "stars": 8429,
     "topics": [
       "chrome",
       "chrome-extension",
@@ -18168,7 +18168,7 @@
     "full_name": "huiyadanli/PasteEx",
     "description": ":clipboard: Paste As File 把剪贴板的内容直接粘贴为文件",
     "language": "C#",
-    "stars": 1417,
+    "stars": 1418,
     "topics": [
       "clipboard",
       "paste",
@@ -18602,7 +18602,7 @@
     "full_name": "chitosai/bilimini",
     "description": "藏起来！哔哩哔哩",
     "language": "JavaScript",
-    "stars": 1066,
+    "stars": 1067,
     "topics": [],
     "url": "https://github.com/chitosai/bilimini",
     "list_name": "Uncategorized",
@@ -18614,7 +18614,7 @@
     "full_name": "wasabeef/awesome-android-ui",
     "description": "A curated list of awesome Android UI/UX libraries",
     "language": "N/A",
-    "stars": 53337,
+    "stars": 53343,
     "topics": [
       "android",
       "awesome",
@@ -18689,7 +18689,7 @@
     "full_name": "chrissimpkins/codeface",
     "description": "Typefaces for source code beautification",
     "language": "Python",
-    "stars": 6345,
+    "stars": 6346,
     "topics": [
       "awesome",
       "awesome-list",
@@ -18715,7 +18715,7 @@
     "full_name": "cmderdev/cmder",
     "description": "Lovely console emulator package for Windows",
     "language": "C++",
-    "stars": 26514,
+    "stars": 26515,
     "topics": [
       "c-plus-plus",
       "cmder",
@@ -18790,7 +18790,7 @@
     "full_name": "luong-komorebi/Awesome-Linux-Software",
     "description": "🐧 A list of awesome Linux softwares ",
     "language": "HTML",
-    "stars": 23829,
+    "stars": 23830,
     "topics": [
       "applications",
       "awesome-list",
@@ -18864,7 +18864,7 @@
     "full_name": "GetStream/Winds",
     "description": "A Beautiful Open Source RSS & Podcast App Powered by Getstream.io",
     "language": "JavaScript",
-    "stars": 9088,
+    "stars": 9087,
     "topics": [
       "activity-stream",
       "algolia-api",
@@ -19049,7 +19049,7 @@
     "full_name": "albertlauncher/albert",
     "description": "A fast and flexible keyboard launcher",
     "language": "C++",
-    "stars": 7665,
+    "stars": 7664,
     "topics": [
       "albert",
       "albertlauncher",
@@ -19403,7 +19403,7 @@
     "full_name": "JacksonTian/fks",
     "description": "前端技能汇总 Frontend Knowledge Structure",
     "language": "JavaScript",
-    "stars": 17974,
+    "stars": 17975,
     "topics": [],
     "url": "https://github.com/JacksonTian/fks",
     "list_name": "Uncategorized",
@@ -19710,7 +19710,7 @@
     "full_name": "google/material-design-icons",
     "description": "Material Design icons by Google (Material Symbols)",
     "language": "N/A",
-    "stars": 51960,
+    "stars": 51962,
     "topics": [
       "android",
       "icons",
@@ -19744,7 +19744,7 @@
     "full_name": "sindresorhus/awesome",
     "description": "😎 Awesome lists about all kinds of interesting topics",
     "language": "N/A",
-    "stars": 391503,
+    "stars": 391536,
     "topics": [
       "awesome",
       "awesome-list",
@@ -19762,7 +19762,7 @@
     "full_name": "EbookFoundation/free-programming-books",
     "description": ":books: Freely available programming books",
     "language": "Python",
-    "stars": 365016,
+    "stars": 365022,
     "topics": [
       "books",
       "education",
@@ -19815,7 +19815,7 @@
     "full_name": "ShareX/ShareX",
     "description": "ShareX is a free and open-source application that enables users to capture or record any area of their screen with a single keystroke. It also supports uploading images, text, and various file types to a wide range of destinations.",
     "language": "C#",
-    "stars": 33301,
+    "stars": 33308,
     "topics": [
       "capture",
       "color-picker",
@@ -20207,7 +20207,7 @@
     "full_name": "rime/home",
     "description": "Rime::Home is home to Rime users and developers",
     "language": "CSS",
-    "stars": 4555,
+    "stars": 4556,
     "topics": [],
     "url": "https://github.com/rime/home",
     "list_name": "Uncategorized",
@@ -20231,7 +20231,7 @@
     "full_name": "git-for-windows/git",
     "description": "A fork of Git containing Windows-specific patches.",
     "language": "C",
-    "stars": 8826,
+    "stars": 8827,
     "topics": [
       "hacktoberfest"
     ],
@@ -20560,7 +20560,7 @@
     "full_name": "v2ray/v2ray-core",
     "description": "A platform for building proxies to bypass network restrictions.",
     "language": "Go",
-    "stars": 46269,
+    "stars": 46270,
     "topics": [
       "golang",
       "http-proxy",
@@ -20581,7 +20581,7 @@
     "full_name": "XX-net/XX-Net",
     "description": "A proxy tool to bypass GFW.",
     "language": "Python",
-    "stars": 33304,
+    "stars": 33303,
     "topics": [
       "gfw",
       "goagent",
