@@ -119,13 +119,13 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 
 | Repository | Description | Language | Platform | Stars |
 |---|---|---|---|---|
-| [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows) | all of the workflows of n8n i could find (also from the site itself) | HTML | General | 23006 |
+| [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows) | all of the workflows of n8n i could find (also from the site itself) | HTML | General | 23007 |
 | [Super-Badmen-Viper/NSMusicS](https://github.com/Super-Badmen-Viper/NSMusicS) | NSMusicS NineSong Cloud-Native Music Server/ Full platform Client，support navidrome, jellyfin, emby | Vue | Web | 2157 |
 | [denysvitali/immich-go-backend](https://github.com/denysvitali/immich-go-backend) | No description provided. | Go | Web | 12 |
-| [sysadminsmedia/homebox](https://github.com/sysadminsmedia/homebox) | A continuation of HomeBox the inventory and organization system built for the Home User | Go | Web | 3445 |
-| [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar) | 🎯 告别信息过载，只看真正关心的新闻 - 多平台热点聚合工具，一键监控今日头条、百度热搜、微博、抖音、知乎、B站等35个平台，智能关键词筛选，自动生成热点分析报告。支持企业微信、飞书、钉钉、Telegram推送，1分钟部署完毕， 支持 docker 部署。⭐ 让算法为你服务，而非被算法绑架 | Python | General | 2088 |
+| [sysadminsmedia/homebox](https://github.com/sysadminsmedia/homebox) | A continuation of HomeBox the inventory and organization system built for the Home User | Go | Web | 3446 |
+| [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar) | 🎯 告别信息过载，只看真正关心的新闻 - 多平台热点聚合工具，一键监控今日头条、百度热搜、微博、抖音、知乎、B站等35个平台，智能关键词筛选，自动生成热点分析报告。支持企业微信、飞书、钉钉、Telegram推送，1分钟部署完毕， 支持 docker 部署。⭐ 让算法为你服务，而非被算法绑架 | Python | General | 2089 |
 | [kentonv/lanparty](https://github.com/kentonv/lanparty) | Netboot a fleet of desktop machines from a single base image | Shell | General | 745 |
-| [imputnet/cobalt](https://github.com/imputnet/cobalt) | best way to save what you love | Svelte | Web | 35642 |
+| [imputnet/cobalt](https://github.com/imputnet/cobalt) | best way to save what you love | Svelte | Web | 35643 |
 | [cdhigh/KindleEar](https://github.com/cdhigh/KindleEar) | Aggregates RSS and web content(Calibre recipe), sends to Kindle, and includes an e-ink optimized online reader. | Python | General | 2806 |
 | [jaypyles/Scraperr](https://github.com/jaypyles/Scraperr) | Self-hosted webscraper. | TypeScript | Web | 4214 |
 | [advplyr/audiobookshelf](https://github.com/advplyr/audiobookshelf) | Self-hosted audiobook and podcast server | JavaScript | Web | 9710 |
@@ -163,9 +163,9 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [soulteary/traefik-example](https://github.com/soulteary/traefik-example) | Traefik 2.x 快速上手示例 | Shell | General | 68 |
 | [miniers/qb-web](https://github.com/miniers/qb-web) | A qBittorrent Web UI, write in TypeScript+Vue. | Vue | Web | 199 |
 | [CzBiX/qb-web](https://github.com/CzBiX/qb-web) | A qBittorrent Web UI, write in TypeScript+Vue. | Vue | Web | 1763 |
-| [imDazui/Tvlist-awesome-m3u-m3u8](https://github.com/imDazui/Tvlist-awesome-m3u-m3u8) | 直播源相关资源汇总 📺 💯 IPTV、M3U —— 勤洗手、戴口罩，祝愿所有人百毒不侵 | N/A | General | 27528 |
+| [imDazui/Tvlist-awesome-m3u-m3u8](https://github.com/imDazui/Tvlist-awesome-m3u-m3u8) | 直播源相关资源汇总 📺 💯 IPTV、M3U —— 勤洗手、戴口罩，祝愿所有人百毒不侵 | N/A | General | 27529 |
 | [Jackett/Jackett](https://github.com/Jackett/Jackett) | API Support for your favorite torrent trackers | C# | Web, Windows | 13815 |
-| [Lidarr/Lidarr](https://github.com/Lidarr/Lidarr) | Looks and smells like Sonarr but made for music. | C# | Windows | 4410 |
+| [Lidarr/Lidarr](https://github.com/Lidarr/Lidarr) | Looks and smells like Sonarr but made for music. | C# | Windows | 4411 |
 | [Sonarr/Sonarr](https://github.com/Sonarr/Sonarr) | Smart PVR for newsgroup and bittorrent users. | C# | Windows | 12228 |
 | [midarrlabs/midarr-server](https://github.com/midarrlabs/midarr-server) | 🔥Midarr, the minimal lightweight media server. | Elixir | General | 1325 |
 | [airsonic-advanced/airsonic-advanced](https://github.com/airsonic-advanced/airsonic-advanced) | No description provided. | JavaScript | Web | 1339 |
@@ -244,7 +244,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [Anyhub7/Microsoft-Rewards-Bing](https://github.com/Anyhub7/Microsoft-Rewards-Bing) | 模拟人类真实浏览，自动获取积分，从未被封禁...... | Python | General | 47 |
 | [alpha-liu-01/SpeedyNote](https://github.com/alpha-liu-01/SpeedyNote) | A simple note app with good performance and PDF import support | C++ | General | 797 |
 | [ByteAtATime/flare](https://github.com/ByteAtATime/flare) | Raycast-compatible launcher for Linux | Svelte | Web | 853 |
-| [OpenCut-app/OpenCut](https://github.com/OpenCut-app/OpenCut) | The open-source CapCut alternative | TypeScript | Web | 30390 |
+| [OpenCut-app/OpenCut](https://github.com/OpenCut-app/OpenCut) | The open-source CapCut alternative | TypeScript | Web | 30392 |
 | [dune3d/dune3d](https://github.com/dune3d/dune3d) | 3D CAD application | C | General | 1250 |
 | [wangwangit/SubsTracker](https://github.com/wangwangit/SubsTracker) | 基于Cloudflare Workers的轻量级订阅管理系统，帮助您轻松跟踪各类订阅服务的到期时间，并通过Telegram发送及时提醒。 | JavaScript | Web | 1082 |
 | [skeptrunedev/jukebox](https://github.com/skeptrunedev/jukebox) | Open Source alternative to Spotify Collaborative Playlists. Turn your device into a jukebox where a group can queue music together and fighting over aux. | TypeScript | Web | 249 |
@@ -262,7 +262,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [ciromattia/kcc](https://github.com/ciromattia/kcc) | KCC (a.k.a. Kindle Comic Converter) is a comic and manga converter for ebook readers. | Python | General | 3866 |
 | [ayangweb/BongoCat](https://github.com/ayangweb/BongoCat) | 🐱 跨平台桌宠 BongoCat，为桌面增添乐趣！ | TypeScript | Linux, Web, Windows, macOS | 9295 |
 | [veusz/veusz](https://github.com/veusz/veusz) | Veusz scientific plotting application | Python | General | 963 |
-| [QL-Win/QuickLook](https://github.com/QL-Win/QuickLook) | Bring macOS “Quick Look” feature to Windows | C# | Windows | 20580 |
+| [QL-Win/QuickLook](https://github.com/QL-Win/QuickLook) | Bring macOS “Quick Look” feature to Windows | C# | Windows | 20581 |
 | [xujiangjiang/Easy-Cat-Timer](https://github.com/xujiangjiang/Easy-Cat-Timer) | This is a very simple cat timer, made using WPF（这是一个非常简单的猫咪计时器，使用WPF制作） | C# | Windows | 494 |
 | [oviung/DownToneUI-Firefox](https://github.com/oviung/DownToneUI-Firefox) | A modular UI customization for Firefox. Supports Sidebery styling. | CSS | General | 37 |
 | [yshavit/mdq](https://github.com/yshavit/mdq) | like jq but for Markdown: find specific elements in a md doc | Rust | General | 1588 |
@@ -282,7 +282,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [GameGodS3/DropPoint](https://github.com/GameGodS3/DropPoint) | Make drag-and-drop easier using DropPoint. Drag content without having to open side-by-side windows | CSS | Linux, Windows, macOS | 1019 |
 | [TJYSunset/Phocid](https://github.com/TJYSunset/Phocid) | A modern offline music player with familiar designs for Android 11+. | Kotlin | Android | 379 |
 | [Xed-Editor/Xed-Editor](https://github.com/Xed-Editor/Xed-Editor) | Advanced Text Editor for android  | Java | Android | 976 |
-| [subframe7536/maple-font](https://github.com/subframe7536/maple-font) | Maple Mono: Open source monospace font with round corner, ligatures and Nerd-Font icons for IDE and terminal, fine-grained customization options. 带连字和控制台图标的圆角等宽字体，中英文宽度完美2:1，细粒度的自定义选项 | Python | General | 18860 |
+| [subframe7536/maple-font](https://github.com/subframe7536/maple-font) | Maple Mono: Open source monospace font with round corner, ligatures and Nerd-Font icons for IDE and terminal, fine-grained customization options. 带连字和控制台图标的圆角等宽字体，中英文宽度完美2:1，细粒度的自定义选项 | Python | General | 18861 |
 | [studyzy/imewlconverter](https://github.com/studyzy/imewlconverter) | ”深蓝词库转换“ 一款开源免费的输入法词库转换程序 | C# | Windows | 8797 |
 | [visioncortex/vtracer](https://github.com/visioncortex/vtracer) | Raster to Vector Graphics Converter | Rust | General | 4587 |
 | [Jeric-X/SyncClipboard](https://github.com/Jeric-X/SyncClipboard) | 跨平台剪贴板同步方案 / Cross-Platform Cipboard Syncing Solution | C# | Windows | 3280 |
@@ -304,7 +304,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [SpriteOvO/AirPodsDesktop](https://github.com/SpriteOvO/AirPodsDesktop) | ☄️ AirPods desktop user experience enhancement program, for Windows and Linux (WIP) | C++ | Windows | 2043 |
 | [dkrivoruchko/ScreenStream](https://github.com/dkrivoruchko/ScreenStream) | ScreenStream Android App | Kotlin | Android | 2143 |
 | [ikas-mc/ContextMenuForWindows11](https://github.com/ikas-mc/ContextMenuForWindows11) | Add Custom Context Menu For Windows11 | C# | Windows | 2398 |
-| [CorentinTh/it-tools](https://github.com/CorentinTh/it-tools) | Collection of handy online tools for developers, with great UX.  | Vue | Web | 32039 |
+| [CorentinTh/it-tools](https://github.com/CorentinTh/it-tools) | Collection of handy online tools for developers, with great UX.  | Vue | Web | 32041 |
 | [hchunhui/librime-lua](https://github.com/hchunhui/librime-lua) | Extending RIME with Lua scripts | C++ | General | 414 |
 | [Planshit/Tai](https://github.com/Planshit/Tai) | 👻 在Windows上统计软件使用时长和网站浏览时长 | C# | Windows | 4569 |
 | [filipesabella/CalcPad](https://github.com/filipesabella/CalcPad) | A different take on the caculator | TypeScript | Web | 31 |
@@ -371,7 +371,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 
 | Repository | Description | Language | Platform | Stars |
 |---|---|---|---|---|
-| [gonzazoid/Ultimatum](https://github.com/gonzazoid/Ultimatum) | Ultimatum is a chromium fork with webextensions support on Android, anti-detect browser capabilities, web3.0 support and much more | C++ | General | 668 |
+| [gonzazoid/Ultimatum](https://github.com/gonzazoid/Ultimatum) | Ultimatum is a chromium fork with webextensions support on Android, anti-detect browser capabilities, web3.0 support and much more | C++ | General | 669 |
 | [SimonAKing/Gwitter](https://github.com/SimonAKing/Gwitter) | Turn GitHub Issues into your personal microblog platform | TypeScript | Web | 309 |
 | [yuanxun-yx/SplitCAD](https://github.com/yuanxun-yx/SplitCAD) | Proposal for a GUI-first CAD system with source/result separation — like KiCad, but for 3D mechanical design | N/A | General | 14 |
 | [chika0801/sing-box-examples](https://github.com/chika0801/sing-box-examples) | sing-box 配置示例 | N/A | General | 2272 |
@@ -386,7 +386,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [AlexanderPro/Wlx2Explorer](https://github.com/AlexanderPro/Wlx2Explorer) | Wlx2Explorer is an application which allows to use Total Commander lister plugins from Windows Explorer. | C# | Windows | 60 |
 | [madprops/blog](https://github.com/madprops/blog) | I might write stuff here sometimes | N/A | General | 112 |
 | [catpuppyapp/PuppyGit](https://github.com/catpuppyapp/PuppyGit) | An android git client | Kotlin | Android | 444 |
-| [readest/readest](https://github.com/readest/readest) | Readest is a modern, feature-rich ebook reader designed for avid readers offering seamless cross-platform access, powerful tools, and an intuitive interface to elevate your reading experience. | TypeScript | Android, Web, iOS | 11204 |
+| [readest/readest](https://github.com/readest/readest) | Readest is a modern, feature-rich ebook reader designed for avid readers offering seamless cross-platform access, powerful tools, and an intuitive interface to elevate your reading experience. | TypeScript | Android, Web, iOS | 11205 |
 | [Julow/Unexpected-Keyboard](https://github.com/Julow/Unexpected-Keyboard) | A lightweight keyboard for Android | Java | Android | 2350 |
 | [gusibi/path-meme-web](https://github.com/gusibi/path-meme-web) | 一个灵感来源于 Path 应用用户界面的meme 系统 | Vue | Web | 10 |
 | [LadybirdBrowser/ladybird](https://github.com/LadybirdBrowser/ladybird) | Truly independent web browser | C++ | General | 46680 |
@@ -397,11 +397,11 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [sachaos/todoist](https://github.com/sachaos/todoist) | Todoist CLI Client. I ❤️ Todoist and CLI. | Go | Web | 1594 |
 | [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | Greasemonkey scripts ( Pagetual / Picviewer CE+ / DownloadAllContent ) 油猴腳本集 ユーザースクリプト集 | JavaScript | Web | 3726 |
 | [Partyb0ssishere/cef-fonts-cjk](https://github.com/Partyb0ssishere/cef-fonts-cjk) | CEF Fonts CJK / 快去写作业CJK 是一款用鼠标绘制字形的字体。 | N/A | General | 459 |
-| [massgravel/Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts) | Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting. | Batchfile | Windows | 144583 |
+| [massgravel/Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts) | Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting. | Batchfile | Windows | 144585 |
 | [AkiChase/scrcpy-mask](https://github.com/AkiChase/scrcpy-mask) | A Scrcpy client in Rust & Tarui aimed at providing mouse and key mapping to control Android device, similar to a game emulator | Vue | Web | 832 |
 | [Bowen-0x00/CustomProtocolHandler](https://github.com/Bowen-0x00/CustomProtocolHandler) | CustomProtocolHandler是一个用于处理自定义协议的工具，旨在实现处理自定义协议链接回链。方便通过笔记软件进行知识管理。如点击自定义协议链接时能够跳回原位，包括但不限于视频、PPT和PDF。 | Python | General | 13 |
 | [sveba/QlockTwo_DIY](https://github.com/sveba/QlockTwo_DIY) | A perfect copy of the original QlockTwo. | N/A | General | 3 |
-| [alyssaxuu/screenity](https://github.com/alyssaxuu/screenity) | The free and privacy-friendly screen recorder with no limits 🎥 | JavaScript | Web | 16546 |
+| [alyssaxuu/screenity](https://github.com/alyssaxuu/screenity) | The free and privacy-friendly screen recorder with no limits 🎥 | JavaScript | Web | 16547 |
 | [alyssaxuu/mapus](https://github.com/alyssaxuu/mapus) | A map tool with real-time collaboration 🗺️ | JavaScript | Web | 3456 |
 | [cotes2020/jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) | A minimal, responsive, and feature-rich Jekyll theme for technical writing. | HTML | General | 9054 |
 | [alshedivat/al-folio](https://github.com/alshedivat/al-folio) | A beautiful, simple, clean, and responsive Jekyll theme for academics | HTML | General | 13652 |
@@ -417,7 +417,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [easychen/stack-roadmap](https://github.com/easychen/stack-roadmap) | 方糖全栈路线图2023，为「从螺丝钉到一人企业」补全技能栈 | PHP | Web | 3820 |
 | [aleksey-hoffman/sigma-file-manager](https://github.com/aleksey-hoffman/sigma-file-manager) | "Sigma File Manager" is a free, open-source, quickly evolving, modern file manager (explorer / browser) app for Windows and Linux. | C | Linux, Web, Windows, macOS | 4932 |
 | [ravachol/kew](https://github.com/ravachol/kew) | A terminal music player. | C | Linux, macOS | 1789 |
-| [practical-tutorials/project-based-learning](https://github.com/practical-tutorials/project-based-learning) | Curated list of project-based tutorials | N/A | General | 239458 |
+| [practical-tutorials/project-based-learning](https://github.com/practical-tutorials/project-based-learning) | Curated list of project-based tutorials | N/A | General | 239460 |
 | [wanglin2/mind-map](https://github.com/wanglin2/mind-map) | SimpleMindMap（思绪思维导图）：一个强大的Web思维导图。A powerful web mind map. | JavaScript | Web | 10176 |
 | [zhanglun/lettura](https://github.com/zhanglun/lettura) | another rss reader | TypeScript | Web | 1670 |
 | [Xatta-Trone/medium-parser-extension](https://github.com/Xatta-Trone/medium-parser-extension) | Read medium.com and medium based articles using google web cache. | JavaScript | Web | 1515 |
@@ -471,7 +471,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [Lissy93/espanso-config](https://github.com/Lissy93/espanso-config) | 🦄 My configuration files for the Espanso text expander | Shell | General | 117 |
 | [wxy1343/MagiskOnWSALocal](https://github.com/wxy1343/MagiskOnWSALocal) | No description provided. | Shell | General | 81 |
 | [lz233/Tarnhelm](https://github.com/lz233/Tarnhelm) | The magic to clean sharing links up. | Kotlin | Android | 624 |
-| [usememos/memos](https://github.com/usememos/memos) | A modern, open-source, self-hosted knowledge management and note-taking platform designed for privacy-conscious users and organizations. | Go | Web | 43586 |
+| [usememos/memos](https://github.com/usememos/memos) | A modern, open-source, self-hosted knowledge management and note-taking platform designed for privacy-conscious users and organizations. | Go | Web | 43587 |
 | [UxxHans/Rainbow-Cats-Personal-WeChat-MiniProgram](https://github.com/UxxHans/Rainbow-Cats-Personal-WeChat-MiniProgram) | 给女朋友做的微信小程序！情侣自己的任务和商城系统！ | JavaScript | Web | 2064 |
 | [kingToolbox/WindTerm](https://github.com/kingToolbox/WindTerm) | A professional cross-platform SSH/Sftp/Shell/Telnet/Tmux/Serial terminal. | C | Linux, Windows, macOS | 27572 |
 | [tldraw/tldraw](https://github.com/tldraw/tldraw) | very good whiteboard SDK / infinite canvas SDK | TypeScript | Web | 41268 |
@@ -480,7 +480,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [bytemain/mail2rss](https://github.com/bytemain/mail2rss) | 0 成本的邮件转RSS订阅(zero cost method for converting newsletter to RSS). Power by testmail.app and cloudflare workers | JavaScript | Web | 65 |
 | [vvyoko/SmartZip](https://github.com/vvyoko/SmartZip) | 用于扩展7-Zip的脚本 | AutoHotkey | General | 309 |
 | [shapoco/calctus](https://github.com/shapoco/calctus) | No description provided. | C# | Windows | 533 |
-| [LGUG2Z/komorebi](https://github.com/LGUG2Z/komorebi) | A tiling window manager for Windows 🍉 | Rust | Windows | 12335 |
+| [LGUG2Z/komorebi](https://github.com/LGUG2Z/komorebi) | A tiling window manager for Windows 🍉 | Rust | Windows | 12336 |
 | [sxzxs/super-command](https://github.com/sxzxs/super-command) | Snippet management tools, if ahK python bat ...code, can be executed directly | AutoHotkey | General | 63 |
 | [TLMcode/AHKs](https://github.com/TLMcode/AHKs) | My AHK library | AutoHotkey | General | 143 |
 | [SleepyBag/dragon-win](https://github.com/SleepyBag/dragon-win) | Drag and drop files from CLI, like dragon, but for windows | C# | Windows | 18 |
@@ -559,7 +559,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [dani-garcia/vaultwarden](https://github.com/dani-garcia/vaultwarden) | Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs | Rust | General | 47897 |
 | [adi1090x/rofi](https://github.com/adi1090x/rofi) | A huge collection of Rofi based custom Applets, Launchers & Powermenus. | Shell | Linux, Windows, macOS | 7790 |
 | [alohaia/vimcfg](https://github.com/alohaia/vimcfg) | my vim configuration. | Vim script | General | 6 |
-| [GitSquared/edex-ui](https://github.com/GitSquared/edex-ui) | A cross-platform, customizable science fiction terminal emulator with advanced monitoring & touchscreen support. | JavaScript | Linux, Web, Windows, macOS | 42846 |
+| [GitSquared/edex-ui](https://github.com/GitSquared/edex-ui) | A cross-platform, customizable science fiction terminal emulator with advanced monitoring & touchscreen support. | JavaScript | Linux, Web, Windows, macOS | 42847 |
 | [zdong1995/OmniFocus-Tyme-Script](https://github.com/zdong1995/OmniFocus-Tyme-Script) | Automation scripts for OmniFocus and Tyme to boost GTD productivity and time management. | AppleScript | General | 51 |
 | [claudiodangelis/qrcp](https://github.com/claudiodangelis/qrcp) | :zap: Transfer files over wifi from your computer to your mobile device by scanning a QR code without leaving the terminal. | Go | Web | 10249 |
 | [cobaltdisco/Google-Chinese-Results-Blocklist](https://github.com/cobaltdisco/Google-Chinese-Results-Blocklist) | 我终于能用谷歌搜中文了…… | N/A | General | 7520 |
@@ -569,7 +569,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [akiirui/mpv-handler](https://github.com/akiirui/mpv-handler) | A protocol handler for mpv. Use mpv and yt-dlp to play video and music from the websites. | Rust | General | 321 |
 | [felixonmars/dnsmasq-china-list](https://github.com/felixonmars/dnsmasq-china-list) | Chinese-specific configuration to improve your favorite DNS server. Best partner for chnroutes. | Ruby | Web | 5823 |
 | [g0v/moedict-webkit](https://github.com/g0v/moedict-webkit) | 萌典網站 | Objective-C | Web, iOS, macOS | 627 |
-| [outline/outline](https://github.com/outline/outline) | The fastest knowledge base for growing teams. Beautiful, realtime collaborative, feature packed, and markdown compatible. | TypeScript | Web | 34443 |
+| [outline/outline](https://github.com/outline/outline) | The fastest knowledge base for growing teams. Beautiful, realtime collaborative, feature packed, and markdown compatible. | TypeScript | Web | 34444 |
 | [Aeroblast/AeroNovel](https://github.com/Aeroblast/AeroNovel) | 自用 TXT (+拓展标记) 转 EPUB (&少量其他格式) 工具链 | C# | Windows | 21 |
 | [derrod/legendary](https://github.com/derrod/legendary) | Legendary - A free and open-source replacement for the Epic Games Launcher | Python | General | 4928 |
 | [Tichau/FileConverter](https://github.com/Tichau/FileConverter) | File Converter is a very simple tool which allows you to convert and compress files using the context menu in windows explorer. | C# | Windows | 10771 |
@@ -594,7 +594,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [terryyin/translate-python](https://github.com/terryyin/translate-python) | Online translation as a Python module & command line tool. No key, no authentication needed. | Python | General | 749 |
 | [SolarLune/masterplan](https://github.com/SolarLune/masterplan) | MasterPlan is a project management software / visual idea board software. It attempts to be easy to use, lightweight, and fun. | Go | Web | 538 |
 | [xuxiaodong/archstrap](https://github.com/xuxiaodong/archstrap) | 利用 Ansible 自动化 Arch Linux 环境配置 | Shell | General | 12 |
-| [BluePointLilac/ContextMenuManager](https://github.com/BluePointLilac/ContextMenuManager) | 🖱️ 纯粹的Windows右键菜单管理程序 | C# | Windows | 15869 |
+| [BluePointLilac/ContextMenuManager](https://github.com/BluePointLilac/ContextMenuManager) | 🖱️ 纯粹的Windows右键菜单管理程序 | C# | Windows | 15868 |
 | [benrhughes/todotxt.net](https://github.com/benrhughes/todotxt.net) | An implementation of todo.txt for Windows using the .NET framework | C# | Windows | 514 |
 | [papple23g/ahkcompiler](https://github.com/papple23g/ahkcompiler) | AutoHotKey 語法產生器(線上網站) | JavaScript | Web | 206 |
 | [lanyulei/ferry](https://github.com/lanyulei/ferry) | 本系统是集工单统计、任务钩子、权限管理、灵活配置流程与模版等等于一身的开源工单系统，当然也可以称之为工作流引擎。 致力于减少跨部门之间的沟通，自动任务的执行，提升工作效率与工作质量，减少不必要的工作量与人为出错率。 | JavaScript | Web | 6501 |
@@ -739,7 +739,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [perkfly/reverse-interview-zh](https://github.com/perkfly/reverse-interview-zh) | 技术面试最后反问面试官的话 | N/A | General | 18204 |
 | [badges/shields](https://github.com/badges/shields) | Concise, consistent, and legible badges in SVG and raster format | JavaScript | Web | 25265 |
 | [Aatoz/AutoHotKey](https://github.com/Aatoz/AutoHotKey) | Auto | AutoHotkey | General | 5 |
-| [laurent22/joplin](https://github.com/laurent22/joplin) | Joplin - the privacy-focused note taking app with sync capabilities for Windows, macOS, Linux, Android and iOS. | TypeScript | Android, Linux, Web, Windows, iOS, macOS | 50785 |
+| [laurent22/joplin](https://github.com/laurent22/joplin) | Joplin - the privacy-focused note taking app with sync capabilities for Windows, macOS, Linux, Android and iOS. | TypeScript | Android, Linux, Web, Windows, iOS, macOS | 50787 |
 | [home-assistant/core](https://github.com/home-assistant/core) | :house_with_garden: Open source home automation that puts local control and privacy first. | Python | Linux, Windows, macOS | 80722 |
 | [edagarli/Collection-books](https://github.com/edagarli/Collection-books) | collections of tech books | N/A | General | 104 |
 | [danpla/wdx_fontinfo](https://github.com/danpla/wdx_fontinfo) | Font info plugin for Total and Double Commanders | Pascal | General | 16 |
@@ -751,16 +751,16 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [s0/git-publish-subdir-action](https://github.com/s0/git-publish-subdir-action) | GitHub Action to push a subdirectory as a branch to any git repo (e.g. for GitHub Pages) | TypeScript | Web | 232 |
 | [mnjul/html-resume](https://github.com/mnjul/html-resume) | A single-page resume template completely typeset with HTML & CSS. | HTML | General | 588 |
 | [duzyn/material-axure-library](https://github.com/duzyn/material-axure-library) | An Axure widget library based on Google Material Design. | N/A | General | 576 |
-| [coolsnowwolf/lede](https://github.com/coolsnowwolf/lede) | Lean's LEDE source | C | General | 30907 |
+| [coolsnowwolf/lede](https://github.com/coolsnowwolf/lede) | Lean's LEDE source | C | General | 30908 |
 | [xjh22222228/nav](https://github.com/xjh22222228/nav) | 发现导航 , 好用强大轻量级导航网站 Discover navigation, easy to use, powerful lightweight navigation website | TypeScript | Web | 2905 |
 | [Hackl0us/SS-Rule-Snippet](https://github.com/Hackl0us/SS-Rule-Snippet) | 搜集、整理、维护 Surge / Quantumult (X) / Shadowrocket / Surfboard / clash (Premium) 实用规则。 | JavaScript | Web, macOS | 11153 |
 | [shadowsocks/simple-obfs](https://github.com/shadowsocks/simple-obfs) | A simple obfuscating tool (Deprecated) | C | General | 2375 |
 | [fangzesheng/free-api](https://github.com/fangzesheng/free-api) | 收集免费的接口服务,做一个api的搬运工 | N/A | Web | 15581 |
 | [alexanderjeurissen/ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) | Ranger plugin that adds file glyphs / icon support to Ranger | Python | General | 994 |
-| [mitesh77/Best-Flutter-UI-Templates](https://github.com/mitesh77/Best-Flutter-UI-Templates) | completely free for everyone. Its build-in Flutter Dart. | Dart | Android, Linux, Web, Windows, iOS, macOS | 21915 |
+| [mitesh77/Best-Flutter-UI-Templates](https://github.com/mitesh77/Best-Flutter-UI-Templates) | completely free for everyone. Its build-in Flutter Dart. | Dart | Android, Linux, Web, Windows, iOS, macOS | 21916 |
 | [ivanhao/hdspindown](https://github.com/ivanhao/hdspindown) | No description provided. | Shell | General | 14 |
 | [ivanhao/pvetools](https://github.com/ivanhao/pvetools) | proxmox ve tools script(debian9+ can use it).Including email, samba, NFS set zfs max ram, nested virtualization ,docker , pci passthrough etc. for english user,please look the end of readme. | Shell | General | 5112 |
-| [n8n-io/n8n](https://github.com/n8n-io/n8n) | Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations. | TypeScript | Web | 129449 |
+| [n8n-io/n8n](https://github.com/n8n-io/n8n) | Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations. | TypeScript | Web | 129455 |
 | [jellyfin/jellyfin](https://github.com/jellyfin/jellyfin) | The Free Software Media System - Server Backend & API | C# | Windows | 42635 |
 | [zhongyang219/TrafficMonitor](https://github.com/zhongyang219/TrafficMonitor) | 这是一个用于显示当前网速、CPU及内存利用率的桌面悬浮窗软件，并支持任务栏显示，支持更换皮肤。 | C++ | General | 40469 |
 | [zce/fearless](https://github.com/zce/fearless) | A dashboard scaffolding based on Vue.js 3.x & TypeScript created by Vite. | TypeScript | Web | 1319 |
@@ -779,7 +779,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [wszqkzqk/deepin-wine-ubuntu](https://github.com/wszqkzqk/deepin-wine-ubuntu) | Deepin Wine for Ubuntu/Debian | C | Linux | 5985 |
 | [nominalista/expenses](https://github.com/nominalista/expenses) | App written in Kotlin for budget tracking. | Kotlin | Android | 397 |
 | [carloscuesta/gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) | A gitmoji interactive cli tool for using emojis on commits. 💻 | JavaScript | Web | 4778 |
-| [microsoft/vscode](https://github.com/microsoft/vscode) | Visual Studio Code | TypeScript | Linux, Web, Windows, macOS | 175716 |
+| [microsoft/vscode](https://github.com/microsoft/vscode) | Visual Studio Code | TypeScript | Linux, Web, Windows, macOS | 175715 |
 | [jdjdjdjdjdjd/TW5-Material](https://github.com/jdjdjdjdjdjd/TW5-Material) | A TW5 theme inspired by Material Design | N/A | General | 19 |
 | [muxueqz/skybook](https://github.com/muxueqz/skybook) | Light weight bookmark manager(delicious alternative) | Nim | General | 34 |
 | [thediveo/TW5FontAwesome](https://github.com/thediveo/TW5FontAwesome) | ⚑ Embedding Font Awesome in TW5 | JavaScript | Web | 41 |
@@ -850,7 +850,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [klaudiosinani/taskbook](https://github.com/klaudiosinani/taskbook) | Tasks, boards & notes for the command-line habitat | JavaScript | Web | 9111 |
 | [JVital2013/RoadApplePi](https://github.com/JVital2013/RoadApplePi) | An elegent "Black Box" solution that can be retrofitted into any car with an OBD(II) port for minimal cost. | JavaScript | Web | 245 |
 | [icons8/flat-color-icons](https://github.com/icons8/flat-color-icons) | Free Flat Color Icons | HTML | General | 2183 |
-| [fatedier/frp](https://github.com/fatedier/frp) | A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet. | Go | Web | 97401 |
+| [fatedier/frp](https://github.com/fatedier/frp) | A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet. | Go | Web | 97402 |
 | [hello-efficiency-inc/raven-reader](https://github.com/hello-efficiency-inc/raven-reader) | 📖 All your articles in one place. Beautiful. | Vue | Linux, Web, Windows, macOS | 2797 |
 | [sergey-dryabzhinsky/options_per_feed](https://github.com/sergey-dryabzhinsky/options_per_feed) | Tiny-Tiny-RSS plugin - proxy settings per feed | PHP | Web | 20 |
 | [overcache/hackintosh](https://github.com/overcache/hackintosh) | Minimal Clover Config and Drivers for Gigabyte Z390 I WIFI | N/A | General | 59 |
@@ -895,7 +895,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [jpillora/cloud-torrent](https://github.com/jpillora/cloud-torrent) | ☁️ Cloud Torrent: a self-hosted remote torrent client | Go | Web | 6034 |
 | [filebrowser/filebrowser](https://github.com/filebrowser/filebrowser) | 📂 Web File Browser | Go | Web | 30781 |
 | [File-New-Project/EarTrumpet](https://github.com/File-New-Project/EarTrumpet) | EarTrumpet - Volume Control for Windows | C# | Windows | 9854 |
-| [sherlock-project/sherlock](https://github.com/sherlock-project/sherlock) | Hunt down social media accounts by username across social networks | Python | Linux | 67978 |
+| [sherlock-project/sherlock](https://github.com/sherlock-project/sherlock) | Hunt down social media accounts by username across social networks | Python | Linux | 67980 |
 | [ronggang/transmission-web-control](https://github.com/ronggang/transmission-web-control) | 一个 Transmission 浏览器管理界面。Transmission Web Control is a custom web UI. （该项目不再维护。） | CSS | General | 4776 |
 | [DEgITx/rats-search](https://github.com/DEgITx/rats-search) | BitTorrent P2P multi-platform search engine for Desktop and Web servers with integrated torrent client. | JavaScript | Web | 1711 |
 | [zmzhang8/Photon](https://github.com/zmzhang8/Photon) | A lightweight multi-threaded downloader based on aria2. | JavaScript | Web | 2962 |
@@ -983,7 +983,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [egoist/docute](https://github.com/egoist/docute) | 📚 Effortless documentation, done right. | JavaScript | Web | 3818 |
 | [iblh/opaque](https://github.com/iblh/opaque) | Simple homepage for your browser. | CSS | General | 173 |
 | [meowtec/Imagine](https://github.com/meowtec/Imagine) | 🖼️ PNG/JPEG optimization app for macOS, Windows and Linux. | TypeScript | Web, macOS | 3932 |
-| [marktext/marktext](https://github.com/marktext/marktext) | 📝A simple and elegant markdown editor, available for Linux, macOS and Windows. | JavaScript | Linux, Web, Windows, macOS | 50875 |
+| [marktext/marktext](https://github.com/marktext/marktext) | 📝A simple and elegant markdown editor, available for Linux, macOS and Windows. | JavaScript | Linux, Web, Windows, macOS | 50876 |
 | [Molunerfinn/node-github-profile-summary](https://github.com/Molunerfinn/node-github-profile-summary) | [Temporarily unavailable]:octocat:The node version of github-profile-summary with GraphQL | JavaScript | Web | 261 |
 | [hanschencoder/Run-With-You](https://github.com/hanschencoder/Run-With-You) | 一个双人跑步应用 | Java | General | 13 |
 | [ty0x2333/TyLauncher](https://github.com/ty0x2333/TyLauncher) | A free open source file management software. | C++ | General | 22 |
@@ -999,7 +999,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [MOxFIVE/hexo-theme-yelee](https://github.com/MOxFIVE/hexo-theme-yelee) | 简而不减 Hexo 双栏博客主题; Another simple and elegant theme for Hexo. | CSS | General | 1378 |
 | [geekape/geek-navigation](https://github.com/geekape/geek-navigation) | ❤️ 极客猿导航－独立开发者的导航站！ | TypeScript | Web | 1857 |
 | [alanzchen/rm-protection](https://github.com/alanzchen/rm-protection) | A safe alternative for "rm". | Python | Linux, macOS | 418 |
-| [huginn/huginn](https://github.com/huginn/huginn) | Create agents that monitor and act on your behalf.  Your agents are standing by! | Ruby | Web | 47035 |
+| [huginn/huginn](https://github.com/huginn/huginn) | Create agents that monitor and act on your behalf.  Your agents are standing by! | Ruby | Web | 47037 |
 | [TeamAmaze/AmazeFileManager](https://github.com/TeamAmaze/AmazeFileManager) | Material design file manager for Android | Java | Android, Web | 5704 |
 | [mautic/mautic](https://github.com/mautic/mautic) | Mautic: Open Source Marketing Automation Software. | PHP | Web | 8528 |
 | [sapplica/sentrifugo](https://github.com/sapplica/sentrifugo) | Sentrifugo is a FREE and powerful Human Resource Management System (HRMS) that can be easily configured to meet your organizational needs. | PHP | Web | 517 |
@@ -1035,7 +1035,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [SoftEtherVPN/SoftEtherVPN](https://github.com/SoftEtherVPN/SoftEtherVPN) | Cross-platform multi-protocol VPN software. Pull requests are welcome. The stable version is available at https://github.com/SoftEtherVPN/SoftEtherVPN_Stable. | C | General | 12485 |
 | [txthinking/brook](https://github.com/txthinking/brook) | A cross-platform programmable network tool | Go | Android, Linux, Web, Windows, iOS, macOS | 14917 |
 | [vnotex/vnote](https://github.com/vnotex/vnote) | A pleasant note-taking platform in native C++. | C++ | General | 12544 |
-| [dexteryy/spellbook-of-modern-webdev](https://github.com/dexteryy/spellbook-of-modern-webdev) | A Big Picture, Thesaurus, and Taxonomy of Modern JavaScript Web Development | N/A | Web | 17508 |
+| [dexteryy/spellbook-of-modern-webdev](https://github.com/dexteryy/spellbook-of-modern-webdev) | A Big Picture, Thesaurus, and Taxonomy of Modern JavaScript Web Development | N/A | Web | 17509 |
 | [szzhiyang/PerfectWindows](https://github.com/szzhiyang/PerfectWindows) | Power Keys - 解放 Windows 和 macOS 使用效率 | N/A | General | 1325 |
 | [psf/requests-html](https://github.com/psf/requests-html) | Pythonic HTML Parsing for Humans™ | Python | General | 13840 |
 | [Sea-n/tdesktop](https://github.com/Sea-n/tdesktop) | Unofficial Telegreat Messaging app | C++ | General | 279 |
@@ -1062,7 +1062,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [91yun/finalspeed](https://github.com/91yun/finalspeed) | 高速双边加速软件,在高丢包,延迟环境下仍可达到90%物理带宽利用率. | Java | General | 480 |
 | [comeforu2012/FQ_FAQ](https://github.com/comeforu2012/FQ_FAQ) | 翻墙常见问题 | N/A | General | 30 |
 | [xiaolin3303/wx-charts](https://github.com/xiaolin3303/wx-charts) | 微信小程序图表库，Charts for WeChat Mini Program | JavaScript | Web | 4976 |
-| [awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) | A list of Free Software network services and web applications which can be hosted on your own servers | N/A | General | 241737 |
+| [awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) | A list of Free Software network services and web applications which can be hosted on your own servers | N/A | General | 241739 |
 | [menduo/gitit-bigger](https://github.com/menduo/gitit-bigger) | Gitit Bigger: 超棒的个人、团队Wiki/文档方案（Git、Markdown、Bootstrap、Ace、Docker） | JavaScript | Web | 287 |
 | [zulip/zulip](https://github.com/zulip/zulip) | Zulip server and web application. Open-source team chat that helps teams stay productive and focused. | Python | Android, Linux, Web, Windows, iOS, macOS | 23256 |
 | [mattermost/mattermost](https://github.com/mattermost/mattermost) | Mattermost is an open source platform for secure collaboration across the entire software development lifecycle.. | TypeScript | Android, Web, iOS | 33372 |
@@ -1165,7 +1165,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [albertlauncher/albert](https://github.com/albertlauncher/albert) | A fast and flexible keyboard launcher | C++ | Linux, Windows, macOS | 7665 |
 | [Dynalon/mdwiki](https://github.com/Dynalon/mdwiki) | CMS/Wiki system using Javascript for 100% client side single page application using Markdown. | JavaScript | Web | 3170 |
 | [lwfinger/rtl8188eu](https://github.com/lwfinger/rtl8188eu) | Repository for stand-alone RTL8188EU driver. | C | General | 1732 |
-| [archlinuxcn/repo](https://github.com/archlinuxcn/repo) | Arch Linux CN Repository | Shell | General | 1666 |
+| [archlinuxcn/repo](https://github.com/archlinuxcn/repo) | Arch Linux CN Repository | Shell | General | 1667 |
 | [dhruvasagar/vim-table-mode](https://github.com/dhruvasagar/vim-table-mode) | VIM Table Mode for instant table creation. | Vim Script | General | 2175 |
 | [taweili/ardublock](https://github.com/taweili/ardublock) | ArduBlock is a Block Programming Language for Arduino.   | Java | General | 431 |
 | [goreliu/runz](https://github.com/goreliu/runz) | RunZ，专业的快速启动工具 | AutoHotkey | General | 354 |
@@ -1198,7 +1198,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [xunxun1982/pcxfirefox](https://github.com/xunxun1982/pcxfirefox) | pcxFirefox | C++ | General | 71 |
 | [Hammerspoon/hammerspoon](https://github.com/Hammerspoon/hammerspoon) | Staggeringly powerful macOS desktop automation with Lua | Objective-C | iOS, macOS | 13562 |
 | [euanchan/set-up-mac](https://github.com/euanchan/set-up-mac) | 一个 iOS 开发者的 OS X 工作环境 | N/A | macOS | 81 |
-| [iCHAIT/awesome-macOS](https://github.com/iCHAIT/awesome-macOS) |   A curated list of awesome applications, softwares, tools and shiny things for macOS. | N/A | macOS | 16966 |
+| [iCHAIT/awesome-macOS](https://github.com/iCHAIT/awesome-macOS) |   A curated list of awesome applications, softwares, tools and shiny things for macOS. | N/A | macOS | 16967 |
 | [NsLib/blog-code-snippet](https://github.com/NsLib/blog-code-snippet) | 个人博客里面代码汇总 | Python | General | 9 |
 | [Hoekey/Cando](https://github.com/Hoekey/Cando) | Candy的插件 | AutoHotkey | General | 3 |
 | [m417z/Windows-10-Color-Control](https://github.com/m417z/Windows-10-Color-Control) | A tool for Windows 10 to modify the system colors | C++ | General | 91 |
@@ -1208,8 +1208,8 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [hylarucoder/ChortHotKey](https://github.com/hylarucoder/ChortHotKey) | ChorkHotkey  | AutoHotkey | Windows | 34 |
 | [google/material-design-icons](https://github.com/google/material-design-icons) | Material Design icons by Google (Material Symbols) | N/A | Android, Web, iOS | 51960 |
 | [zogvm/zogvm](https://github.com/zogvm/zogvm) | zogna video manager  | C | General | 781 |
-| [sindresorhus/awesome](https://github.com/sindresorhus/awesome) | 😎 Awesome lists about all kinds of interesting topics | N/A | General | 391483 |
-| [EbookFoundation/free-programming-books](https://github.com/EbookFoundation/free-programming-books) | :books: Freely available programming books | Python | General | 365011 |
+| [sindresorhus/awesome](https://github.com/sindresorhus/awesome) | 😎 Awesome lists about all kinds of interesting topics | N/A | General | 391486 |
+| [EbookFoundation/free-programming-books](https://github.com/EbookFoundation/free-programming-books) | :books: Freely available programming books | Python | General | 365013 |
 | [simpleinvoices/simpleinvoices](https://github.com/simpleinvoices/simpleinvoices) | Making invoicing rock since '05. | PHP | Web | 235 |
 | [ovity/octotree](https://github.com/ovity/octotree) | GitHub on steroids | JavaScript | Web | 23039 |
 | [ShareX/ShareX](https://github.com/ShareX/ShareX) | ShareX is a free and open-source application that enables users to capture or record any area of their screen with a single keystroke. It also supports uploading images, text, and various file types to a wide range of destinations. | C# | Windows | 33300 |
@@ -1280,10 +1280,10 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [Mon-ius/Docker-Warp-Socks](https://github.com/Mon-ius/Docker-Warp-Socks) | Connet to CloudFlare WARP, exposing `socks5` proxy all together. | Shell | General | 477 |
 | [akiraux/Akira](https://github.com/akiraux/Akira) | Native Linux App for UI and UX Design built in Vala and GTK | Vala | Linux | 5309 |
 | [tl-open-source/tl-rtc-file](https://github.com/tl-open-source/tl-rtc-file) | WebRTC P2P online web media streaming tool (for files, video, screen, live streaming, text) with management and statistical monitoring capabilities. | JavaScript | Web | 2627 |
-| [sissbruecker/linkding](https://github.com/sissbruecker/linkding) | Self-hosted bookmark manager that is designed be to be minimal, fast, and easy to set up using Docker. | Python | General | 8879 |
+| [sissbruecker/linkding](https://github.com/sissbruecker/linkding) | Self-hosted bookmark manager that is designed be to be minimal, fast, and easy to set up using Docker. | Python | General | 8880 |
 | [apple/ccs-calendarserver](https://github.com/apple/ccs-calendarserver) | The Calendar and Contacts Server. | Python | General | 497 |
 | [sabre-io/Baikal](https://github.com/sabre-io/Baikal) | Baïkal is a Calendar+Contacts server | PHP | Web | 2826 |
-| [toeverything/AFFiNE](https://github.com/toeverything/AFFiNE) | There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.  | TypeScript | Linux, Web, Windows, macOS | 54259 |
+| [toeverything/AFFiNE](https://github.com/toeverything/AFFiNE) | There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.  | TypeScript | Linux, Web, Windows, macOS | 54260 |
 | [RanKKI/LawRefBook](https://github.com/RanKKI/LawRefBook) | 中华人民共和国法律手册 | Swift | iOS, macOS | 2366 |
 | [gristlabs/grist-core](https://github.com/gristlabs/grist-core) | Grist is the evolution of spreadsheets. | TypeScript | Web | 8842 |
 | [rxrw/keycloak-justauth](https://github.com/rxrw/keycloak-justauth) | keycloak 集成 Github、Gitee、微博、钉钉、百度、Coding、腾讯云开发者平台、OSChina、支付宝、QQ、微信、淘宝、Google、Facebook、抖音、领英、小米、微软、今日头条、Teambition、StackOverflow、Pinterest、人人、华为、企业微信、酷家乐、Gitlab、美团、饿了么和推特等第三方平台的授权登录。 | Java | General | 34 |
@@ -1294,8 +1294,8 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 | [yinheli/crontab.guru](https://github.com/yinheli/crontab.guru) | mirror of crontab.guru | N/A | General | 9 |
 | [gskinner/regexr](https://github.com/gskinner/regexr) | RegExr is a HTML/JS based tool for creating, testing, and learning about Regular Expressions. | JavaScript | Web | 10209 |
 | [kritzware/json.pizza](https://github.com/kritzware/json.pizza) | Online JSON formatter and prettifier | Vue | Web | 80 |
-| [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw) | Virtual whiteboard for sketching hand-drawn like diagrams | TypeScript | Web | 105353 |
-| [hoppscotch/hoppscotch](https://github.com/hoppscotch/hoppscotch) | Open source API development ecosystem - https://hoppscotch.io (open-source alternative to Postman, Insomnia) | TypeScript | Web | 73489 |
+| [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw) | Virtual whiteboard for sketching hand-drawn like diagrams | TypeScript | Web | 105354 |
+| [hoppscotch/hoppscotch](https://github.com/hoppscotch/hoppscotch) | Open source API development ecosystem - https://hoppscotch.io (open-source alternative to Postman, Insomnia) | TypeScript | Web | 73491 |
 
 
 ## 🗂️ devFramework
@@ -1326,7 +1326,7 @@ A curated list of my starred repositories on GitHub, presented in a filterable t
 |---|---|---|---|---|
 | [theajack/cnchar](https://github.com/theajack/cnchar) | 🇨🇳 功能全面的汉字工具库 (拼音 笔画 偏旁 成语 语音 可视化等) (Chinese character util) | TypeScript | Web | 2832 |
 | [3q-u/rime-trans](https://github.com/3q-u/rime-trans) | No description provided. | Lua | General | 14 |
-| [iDvel/rime-ice](https://github.com/iDvel/rime-ice) | Rime 配置：雾凇拼音 \| 长期维护的简体词库 | Lua | General | 12512 |
+| [iDvel/rime-ice](https://github.com/iDvel/rime-ice) | Rime 配置：雾凇拼音 \| 长期维护的简体词库 | Lua | General | 12513 |
 | [Mintimate/oh-my-rime](https://github.com/Mintimate/oh-my-rime) | The Simple Config Template Of Rime By Mintimate.   | Lua | General | 3518 |
 | [shewer/librime-lua-script](https://github.com/shewer/librime-lua-script) | No description provided. | Lua | General | 60 |
 
