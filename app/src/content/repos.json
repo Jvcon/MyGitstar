@@ -134,7 +134,7 @@
     "full_name": "Zie619/n8n-workflows",
     "description": "all of the workflows of n8n i could find (also from the site itself)",
     "language": "HTML",
-    "stars": 23013,
+    "stars": 23014,
     "topics": [],
     "url": "https://github.com/Zie619/n8n-workflows",
     "list_name": "Home Selfhosted List",
@@ -277,7 +277,7 @@
     "full_name": "BlankSourceCode/obs-zoom-to-mouse",
     "description": "An OBS lua script to zoom a display-capture source to focus on the mouse",
     "language": "Lua",
-    "stars": 702,
+    "stars": 703,
     "topics": [
       "lua",
       "obs",
@@ -1217,7 +1217,7 @@
     "full_name": "datalab-to/marker",
     "description": "Convert PDF to markdown + JSON quickly with high accuracy",
     "language": "Python",
-    "stars": 27457,
+    "stars": 27458,
     "topics": [],
     "url": "https://github.com/datalab-to/marker",
     "list_name": "Type selection",
@@ -1298,7 +1298,7 @@
     "full_name": "advplyr/audiobookshelf",
     "description": "Self-hosted audiobook and podcast server",
     "language": "JavaScript",
-    "stars": 9710,
+    "stars": 9711,
     "topics": [
       "audiobook-manager",
       "audiobooks",
@@ -2029,7 +2029,7 @@
     "full_name": "microsoft/markitdown",
     "description": "Python tool for converting files and office documents to Markdown.",
     "language": "Python",
-    "stars": 71224,
+    "stars": 71225,
     "topics": [
       "autogen",
       "autogen-extension",
@@ -2417,7 +2417,7 @@
     "full_name": "studyzy/imewlconverter",
     "description": "”深蓝词库转换“ 一款开源免费的输入法词库转换程序",
     "language": "C#",
-    "stars": 8797,
+    "stars": 8798,
     "topics": [
       "c-sharp",
       "chinese-characters",
@@ -2472,7 +2472,7 @@
     "full_name": "readest/readest",
     "description": "Readest is a modern, feature-rich ebook reader designed for avid readers offering seamless cross-platform access, powerful tools, and an intuitive interface to elevate your reading experience.",
     "language": "TypeScript",
-    "stars": 11209,
+    "stars": 11210,
     "topics": [
       "android",
       "cross-platform",
@@ -2540,7 +2540,7 @@
     "full_name": "LadybirdBrowser/ladybird",
     "description": "Truly independent web browser",
     "language": "C++",
-    "stars": 46682,
+    "stars": 46683,
     "topics": [
       "browser",
       "browser-engine"
@@ -2825,7 +2825,7 @@
     "full_name": "massgravel/Microsoft-Activation-Scripts",
     "description": "Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
     "language": "Batchfile",
-    "stars": 144590,
+    "stars": 144591,
     "topics": [
       "activator",
       "hwid",
@@ -3873,7 +3873,7 @@
     "full_name": "practical-tutorials/project-based-learning",
     "description": "Curated list of project-based tutorials",
     "language": "N/A",
-    "stars": 239478,
+    "stars": 239482,
     "topics": [
       "beginner-project",
       "cpp",
@@ -4358,7 +4358,7 @@
     "full_name": "ikas-mc/ContextMenuForWindows11",
     "description": "Add Custom Context Menu For Windows11",
     "language": "C#",
-    "stars": 2398,
+    "stars": 2399,
     "topics": [
       "context-menu",
       "microsoft",
@@ -6003,7 +6003,7 @@
     "full_name": "usememos/memos",
     "description": "A modern, open-source, self-hosted knowledge management and note-taking platform designed for privacy-conscious users and organizations.",
     "language": "Go",
-    "stars": 43587,
+    "stars": 43588,
     "topics": [
       "docker",
       "foss",
@@ -6028,7 +6028,7 @@
     "full_name": "toeverything/AFFiNE",
     "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use. ",
     "language": "TypeScript",
-    "stars": 54261,
+    "stars": 54260,
     "topics": [
       "app",
       "crdt",
@@ -6284,7 +6284,7 @@
     "full_name": "tldraw/tldraw",
     "description": "very good whiteboard SDK / infinite canvas SDK",
     "language": "TypeScript",
-    "stars": 41270,
+    "stars": 41269,
     "topics": [
       "canvas",
       "collaboration",
@@ -7779,7 +7779,7 @@
     "full_name": "lxgw/LxgwWenKai",
     "description": "An unprofessional open-source Chinese font derived from Fontworks' Klee One. 一款非专业的开源中文字体，基于 FONTWORKS 出品字体 Klee One 衍生。  ",
     "language": "Shell",
-    "stars": 21169,
+    "stars": 21170,
     "topics": [
       "cjk",
       "font",
@@ -8303,7 +8303,7 @@
     "full_name": "excalidraw/excalidraw",
     "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
     "language": "TypeScript",
-    "stars": 105358,
+    "stars": 105357,
     "topics": [
       "canvas",
       "collaboration",
@@ -8569,7 +8569,7 @@
     "full_name": "aardappel/treesheets",
     "description": "TreeSheets : Free Form Data Organizer (see strlen.com/treesheets)",
     "language": "C++",
-    "stars": 2842,
+    "stars": 2841,
     "topics": [],
     "url": "https://github.com/aardappel/treesheets",
     "list_name": "Uncategorized",
@@ -8605,7 +8605,7 @@
     "full_name": "akiirui/mpv-handler",
     "description": "A protocol handler for mpv. Use mpv and yt-dlp to play video and music from the websites.",
     "language": "Rust",
-    "stars": 321,
+    "stars": 322,
     "topics": [],
     "url": "https://github.com/akiirui/mpv-handler",
     "list_name": "Uncategorized",
@@ -8701,7 +8701,7 @@
     "full_name": "Tichau/FileConverter",
     "description": "File Converter is a very simple tool which allows you to convert and compress files using the context menu in windows explorer.",
     "language": "C#",
-    "stars": 10772,
+    "stars": 10773,
     "topics": [],
     "url": "https://github.com/Tichau/FileConverter",
     "list_name": "Uncategorized",
@@ -8954,7 +8954,7 @@
     "full_name": "PaddlePaddle/PaddleOCR",
     "description": "Awesome multilingual OCR and Document Parsing toolkits based on PaddlePaddle (practical ultra lightweight OCR system, support 80+ languages recognition, provide data annotation and synthesis tools, support training and deployment among server, mobile, embedded and IoT devices)",
     "language": "Python",
-    "stars": 52617,
+    "stars": 52618,
     "topics": [
       "chatocr",
       "chineseocr",
@@ -11453,7 +11453,7 @@
     "full_name": "hoppscotch/hoppscotch",
     "description": "Open source API development ecosystem - https://hoppscotch.io (open-source alternative to Postman, Insomnia)",
     "language": "TypeScript",
-    "stars": 73494,
+    "stars": 73495,
     "topics": [
       "api",
       "api-client",
@@ -11974,7 +11974,7 @@
     "full_name": "n8n-io/n8n",
     "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
     "language": "TypeScript",
-    "stars": 129465,
+    "stars": 129466,
     "topics": [
       "ai",
       "apis",
@@ -12433,7 +12433,7 @@
     "full_name": "justjavac/free-programming-books-zh_CN",
     "description": ":books: 免费的计算机编程类中文书籍，欢迎投稿",
     "language": "N/A",
-    "stars": 114964,
+    "stars": 114966,
     "topics": [
       "android",
       "angular",
@@ -12554,7 +12554,7 @@
     "full_name": "nvbn/thefuck",
     "description": "Magnificent app which corrects your previous console command.",
     "language": "Python",
-    "stars": 93454,
+    "stars": 93455,
     "topics": [
       "python",
       "shell"
@@ -12569,7 +12569,7 @@
     "full_name": "jackfrued/Python-100-Days",
     "description": "Python - 100天从新手到大师",
     "language": "Jupyter Notebook",
-    "stars": 170792,
+    "stars": 170794,
     "topics": [],
     "url": "https://github.com/jackfrued/Python-100-Days",
     "list_name": "Uncategorized",
@@ -16543,7 +16543,7 @@
     "full_name": "ngosang/trackerslist",
     "description": "Updated list of public BitTorrent trackers",
     "language": "N/A",
-    "stars": 50968,
+    "stars": 50969,
     "topics": [
       "bittorrent",
       "bittorrent-tracker",
@@ -17300,7 +17300,7 @@
     "full_name": "awesome-selfhosted/awesome-selfhosted",
     "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
     "language": "N/A",
-    "stars": 241742,
+    "stars": 241744,
     "topics": [
       "awesome",
       "awesome-list",
@@ -17545,7 +17545,7 @@
     "full_name": "nextcloud/server",
     "description": "☁️ Nextcloud server, a safe home for all your data",
     "language": "PHP",
-    "stars": 30441,
+    "stars": 30442,
     "topics": [
       "cloud",
       "collaboration",
@@ -19744,7 +19744,7 @@
     "full_name": "sindresorhus/awesome",
     "description": "😎 Awesome lists about all kinds of interesting topics",
     "language": "N/A",
-    "stars": 391499,
+    "stars": 391503,
     "topics": [
       "awesome",
       "awesome-list",
