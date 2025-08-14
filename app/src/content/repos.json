@@ -3,7 +3,7 @@
     "full_name": "gonzazoid/Ultimatum",
     "description": "Ultimatum is a chromium fork with webextensions support on Android, anti-detect browser capabilities, web3.0 support and much more",
     "language": "C++",
-    "stars": 669,
+    "stars": 670,
     "topics": [],
     "url": "https://github.com/gonzazoid/Ultimatum",
     "list_name": "Uncategorized",
@@ -134,7 +134,7 @@
     "full_name": "Zie619/n8n-workflows",
     "description": "all of the workflows of n8n i could find (also from the site itself)",
     "language": "HTML",
-    "stars": 23011,
+    "stars": 23013,
     "topics": [],
     "url": "https://github.com/Zie619/n8n-workflows",
     "list_name": "Home Selfhosted List",
@@ -194,7 +194,7 @@
     "full_name": "alpha-liu-01/SpeedyNote",
     "description": "A simple note app with good performance and PDF import support",
     "language": "C++",
-    "stars": 798,
+    "stars": 799,
     "topics": [],
     "url": "https://github.com/alpha-liu-01/SpeedyNote",
     "list_name": "Tool List",
@@ -249,7 +249,7 @@
     "full_name": "OpenCut-app/OpenCut",
     "description": "The open-source CapCut alternative",
     "language": "TypeScript",
-    "stars": 30394,
+    "stars": 30396,
     "topics": [
       "editor",
       "oss",
@@ -882,7 +882,7 @@
     "full_name": "anilbeesetti/nextplayer",
     "description": "An Android native video player",
     "language": "Kotlin",
-    "stars": 2889,
+    "stars": 2890,
     "topics": [
       "android",
       "exoplayer",
@@ -908,7 +908,7 @@
     "full_name": "sansan0/TrendRadar",
     "description": "🎯 告别信息过载，只看真正关心的新闻 - 多平台热点聚合工具，一键监控今日头条、百度热搜、微博、抖音、知乎、B站等35个平台，智能关键词筛选，自动生成热点分析报告。支持企业微信、飞书、钉钉、Telegram推送，1分钟部署完毕， 支持 docker 部署。⭐ 让算法为你服务，而非被算法绑架",
     "language": "Python",
-    "stars": 2089,
+    "stars": 2090,
     "topics": [
       "bilibili",
       "data-analysis",
@@ -1217,7 +1217,7 @@
     "full_name": "datalab-to/marker",
     "description": "Convert PDF to markdown + JSON quickly with high accuracy",
     "language": "Python",
-    "stars": 27456,
+    "stars": 27457,
     "topics": [],
     "url": "https://github.com/datalab-to/marker",
     "list_name": "Type selection",
@@ -1229,7 +1229,7 @@
     "full_name": "Stirling-Tools/Stirling-PDF",
     "description": "#1 Locally hosted web application that allows you to perform various operations on PDF files",
     "language": "Java",
-    "stars": 64302,
+    "stars": 64303,
     "topics": [
       "docker",
       "java",
@@ -1483,7 +1483,7 @@
     "full_name": "QL-Win/QuickLook",
     "description": "Bring macOS “Quick Look” feature to Windows",
     "language": "C#",
-    "stars": 20581,
+    "stars": 20582,
     "topics": [
       "quicklook"
     ],
@@ -1635,7 +1635,7 @@
     "full_name": "xxnuo/MTranServer",
     "description": "End to end, Offline, high speed, and privately self-host free version of Google Translate - 低占用速度快可私有部署的离线版 Google 翻译",
     "language": "JavaScript",
-    "stars": 3458,
+    "stars": 3459,
     "topics": [],
     "url": "https://github.com/xxnuo/MTranServer",
     "list_name": "Home Selfhosted List",
@@ -2029,7 +2029,7 @@
     "full_name": "microsoft/markitdown",
     "description": "Python tool for converting files and office documents to Markdown.",
     "language": "Python",
-    "stars": 71223,
+    "stars": 71224,
     "topics": [
       "autogen",
       "autogen-extension",
@@ -2160,7 +2160,7 @@
     "full_name": "community-scripts/ProxmoxVE",
     "description": "Proxmox VE Helper-Scripts (Community Edition) ",
     "language": "Shell",
-    "stars": 19274,
+    "stars": 19275,
     "topics": [
       "alpine",
       "authentification",
@@ -2377,7 +2377,7 @@
     "full_name": "subframe7536/maple-font",
     "description": "Maple Mono: Open source monospace font with round corner, ligatures and Nerd-Font icons for IDE and terminal, fine-grained customization options. 带连字和控制台图标的圆角等宽字体，中英文宽度完美2:1，细粒度的自定义选项",
     "language": "Python",
-    "stars": 18861,
+    "stars": 18862,
     "topics": [
       "coding-font",
       "font",
@@ -2472,7 +2472,7 @@
     "full_name": "readest/readest",
     "description": "Readest is a modern, feature-rich ebook reader designed for avid readers offering seamless cross-platform access, powerful tools, and an intuitive interface to elevate your reading experience.",
     "language": "TypeScript",
-    "stars": 11206,
+    "stars": 11209,
     "topics": [
       "android",
       "cross-platform",
@@ -2664,7 +2664,7 @@
     "full_name": "hoothin/UserScripts",
     "description": "Greasemonkey scripts ( Pagetual / Picviewer CE+ / DownloadAllContent ) 油猴腳本集 ユーザースクリプト集",
     "language": "JavaScript",
-    "stars": 3726,
+    "stars": 3725,
     "topics": [
       "add-on",
       "auto-scroll",
@@ -2825,7 +2825,7 @@
     "full_name": "massgravel/Microsoft-Activation-Scripts",
     "description": "Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
     "language": "Batchfile",
-    "stars": 144588,
+    "stars": 144590,
     "topics": [
       "activator",
       "hwid",
@@ -3224,7 +3224,7 @@
     "full_name": "alshedivat/al-folio",
     "description": "A beautiful, simple, clean, and responsive Jekyll theme for academics",
     "language": "HTML",
-    "stars": 13652,
+    "stars": 13653,
     "topics": [
       "academic",
       "academic-website",
@@ -3489,7 +3489,7 @@
     "full_name": "qarmin/czkawka",
     "description": "Multi functional app to find duplicates, empty folders, similar images etc.",
     "language": "Rust",
-    "stars": 24924,
+    "stars": 24925,
     "topics": [
       "cleaner",
       "duplicates",
@@ -3684,7 +3684,7 @@
     "full_name": "JoeanAmier/TikTokDownloader",
     "description": "TikTok 发布/喜欢/合辑/直播/视频/图集/音乐；抖音发布/喜欢/收藏/收藏夹/视频/图集/实况/直播/音乐/合集/评论/账号/搜索/热榜数据采集工具/下载工具",
     "language": "Python",
-    "stars": 11223,
+    "stars": 11224,
     "topics": [
       "abogus",
       "api",
@@ -3873,7 +3873,7 @@
     "full_name": "practical-tutorials/project-based-learning",
     "description": "Curated list of project-based tutorials",
     "language": "N/A",
-    "stars": 239472,
+    "stars": 239478,
     "topics": [
       "beginner-project",
       "cpp",
@@ -4449,7 +4449,7 @@
     "full_name": "CorentinTh/it-tools",
     "description": "Collection of handy online tools for developers, with great UX. ",
     "language": "Vue",
-    "stars": 32041,
+    "stars": 32042,
     "topics": [
       "converter",
       "developer-productivity",
@@ -5349,7 +5349,7 @@
     "full_name": "ImranR98/Obtainium",
     "description": "Get Android app updates straight from the source.",
     "language": "Dart",
-    "stars": 12153,
+    "stars": 12154,
     "topics": [
       "android",
       "apk",
@@ -5666,7 +5666,7 @@
     "full_name": "dail8859/NotepadNext",
     "description": "A cross-platform, reimplementation of Notepad++",
     "language": "C++",
-    "stars": 12086,
+    "stars": 12087,
     "topics": [
       "desktop",
       "editor",
@@ -5857,7 +5857,7 @@
     "full_name": "AykutSarac/jsoncrack.com",
     "description": "✨ Innovative and open-source visualization application that transforms various data formats, such as JSON, YAML, XML, CSV and more, into interactive graphs.",
     "language": "TypeScript",
-    "stars": 40889,
+    "stars": 40890,
     "topics": [
       "csv",
       "diagrams",
@@ -6284,7 +6284,7 @@
     "full_name": "tldraw/tldraw",
     "description": "very good whiteboard SDK / infinite canvas SDK",
     "language": "TypeScript",
-    "stars": 41269,
+    "stars": 41270,
     "topics": [
       "canvas",
       "collaboration",
@@ -7720,7 +7720,7 @@
     "full_name": "WXRIW/Lyricify-App",
     "description": "Lyricify (/lɪ'rɪsəfaɪ/), a fantastic app to provide scroll lyrics for Spotify and other apps. 一款为 Spotify 等各种应用提供滚动歌词的软件。",
     "language": "N/A",
-    "stars": 5864,
+    "stars": 5865,
     "topics": [
       "all-platforms",
       "apple",
@@ -7964,7 +7964,7 @@
     "full_name": "offa/android-foss",
     "description": "A list of Free and Open Source Software (FOSS) for Android – saving Freedom and Privacy.",
     "language": "Python",
-    "stars": 7981,
+    "stars": 7982,
     "topics": [
       "android",
       "android-apps",
@@ -8303,7 +8303,7 @@
     "full_name": "excalidraw/excalidraw",
     "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
     "language": "TypeScript",
-    "stars": 105357,
+    "stars": 105358,
     "topics": [
       "canvas",
       "collaboration",
@@ -8470,7 +8470,7 @@
     "full_name": "GitSquared/edex-ui",
     "description": "A cross-platform, customizable science fiction terminal emulator with advanced monitoring & touchscreen support.",
     "language": "JavaScript",
-    "stars": 42847,
+    "stars": 42848,
     "topics": [
       "desktop",
       "edex-ui",
@@ -8852,7 +8852,7 @@
     "full_name": "srwi/EverythingToolbar",
     "description": "Everything integration for the Windows taskbar.",
     "language": "C#",
-    "stars": 12005,
+    "stars": 12006,
     "topics": [
       "deskband",
       "everything",
@@ -9067,7 +9067,7 @@
     "full_name": "BluePointLilac/ContextMenuManager",
     "description": "🖱️ 纯粹的Windows右键菜单管理程序",
     "language": "C#",
-    "stars": 15868,
+    "stars": 15869,
     "topics": [],
     "url": "https://github.com/BluePointLilac/ContextMenuManager",
     "list_name": "Uncategorized",
@@ -10255,7 +10255,7 @@
     "full_name": "tesseract-ocr/tesseract",
     "description": "Tesseract Open Source OCR Engine (main repository)",
     "language": "C++",
-    "stars": 68818,
+    "stars": 68819,
     "topics": [
       "hacktoberfest",
       "lstm",
@@ -10689,7 +10689,7 @@
     "full_name": "yujqiao/DungeonRush",
     "description": "👾🐍 A opensource game inspired by Snake, written in pure C with SDL",
     "language": "C",
-    "stars": 2112,
+    "stars": 2113,
     "topics": [
       "c",
       "game",
@@ -11575,7 +11575,7 @@
     "full_name": "laurent22/joplin",
     "description": "Joplin - the privacy-focused note taking app with sync capabilities for Windows, macOS, Linux, Android and iOS.",
     "language": "TypeScript",
-    "stars": 50787,
+    "stars": 50788,
     "topics": [
       "android",
       "dropbox",
@@ -11886,7 +11886,7 @@
     "full_name": "fangzesheng/free-api",
     "description": "收集免费的接口服务,做一个api的搬运工",
     "language": "N/A",
-    "stars": 15581,
+    "stars": 15582,
     "topics": [
       "api",
       "freeapi"
@@ -11974,7 +11974,7 @@
     "full_name": "n8n-io/n8n",
     "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
     "language": "TypeScript",
-    "stars": 129461,
+    "stars": 129465,
     "topics": [
       "ai",
       "apis",
@@ -12290,7 +12290,7 @@
     "full_name": "microsoft/vscode",
     "description": "Visual Studio Code",
     "language": "TypeScript",
-    "stars": 175716,
+    "stars": 175718,
     "topics": [
       "editor",
       "electron",
@@ -13177,7 +13177,7 @@
     "full_name": "dmscode/WinSize",
     "description": "AHK 的快速设定窗口尺寸的小工具",
     "language": "N/A",
-    "stars": 169,
+    "stars": 170,
     "topics": [],
     "url": "https://github.com/dmscode/WinSize",
     "list_name": "Uncategorized",
@@ -13389,7 +13389,7 @@
     "full_name": "Tencent/matrix",
     "description": "Matrix is a plugin style, non-invasive APM system developed by WeChat.",
     "language": "Java",
-    "stars": 11878,
+    "stars": 11879,
     "topics": [
       "android",
       "apm-client",
@@ -13520,7 +13520,7 @@
     "full_name": "fatedier/frp",
     "description": "A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.",
     "language": "Go",
-    "stars": 97403,
+    "stars": 97406,
     "topics": [
       "expose",
       "firewall",
@@ -13700,7 +13700,7 @@
     "full_name": "AdguardTeam/AdGuardHome",
     "description": "Network-wide ads & trackers blocking DNS server",
     "language": "Go",
-    "stars": 29636,
+    "stars": 29637,
     "topics": [
       "adblock",
       "adguard",
@@ -15875,7 +15875,7 @@
     "full_name": "marktext/marktext",
     "description": "📝A simple and elegant markdown editor, available for Linux, macOS and Windows.",
     "language": "JavaScript",
-    "stars": 50878,
+    "stars": 50881,
     "topics": [
       "dark-mode",
       "editor",
@@ -16928,7 +16928,7 @@
     "full_name": "captbaritone/webamp",
     "description": "Winamp 2 reimplemented for the browser",
     "language": "TypeScript",
-    "stars": 10605,
+    "stars": 10606,
     "topics": [
       "html5",
       "javascript",
@@ -19744,7 +19744,7 @@
     "full_name": "sindresorhus/awesome",
     "description": "😎 Awesome lists about all kinds of interesting topics",
     "language": "N/A",
-    "stars": 391496,
+    "stars": 391499,
     "topics": [
       "awesome",
       "awesome-list",
@@ -19762,7 +19762,7 @@
     "full_name": "EbookFoundation/free-programming-books",
     "description": ":books: Freely available programming books",
     "language": "Python",
-    "stars": 365015,
+    "stars": 365016,
     "topics": [
       "books",
       "education",
