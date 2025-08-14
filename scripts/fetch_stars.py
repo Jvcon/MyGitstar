@@ -1,5 +1,6 @@
 import os
 import csv
+import json
 from datetime import datetime
 from collections import defaultdict
 from gh_toolkit import GitHubManager
@@ -51,7 +52,7 @@ CROSS_PLATFORM_TARGETS = {
     'ionic': {'iOS', 'Android', 'Web'}
 }
 
-def analyze_platform_from_repo(repo: dict) -> str:
+def analyze_platform_from_repo(repo: dict) -> list[str]:
     """
     Analyzes a repository's topics, description, and language to determine its platform(s).
     This function uses a structured mapping inspired by AlternativeTo.net's categorization.
@@ -107,9 +108,9 @@ def analyze_platform_from_repo(repo: dict) -> str:
              # Already handled by the initial update
              pass
         else:
-            return "General"
+            return ["General"]
 
-    return ", ".join(sorted(list(detected_platforms)))
+    return sorted(list(detected_platforms))
 
 def process_and_enrich_data(manager: GitHubManager) -> list[dict]:
     """
@@ -129,7 +130,7 @@ def process_and_enrich_data(manager: GitHubManager) -> list[dict]:
         repo_copy['language'] = language
         
         repo_copy['platform'] = analyze_platform_from_repo(repo)
-        repo_copy['topics_str'] = ','.join(repo.get('topics', []))
+        repo_copy['topics'] = repo.get('topics', [])
 
         enriched_data.append(repo_copy)
         
@@ -146,13 +147,20 @@ def format_to_csv(data: list[dict], filename: str):
         print("No data to format into CSV.")
         return
 
-    headers = ['full_name', 'list_name', 'description', 'language', 'platform', 'stars', 'url', 'topics_str']
-    
+    headers = ['full_name', 'list_name', 'description', 'language', 'platform', 'stars', 'url', 'topics']
+    processed_data = []
+    for repo in data:
+        repo_copy = repo.copy()
+        if isinstance(repo_copy.get('platform'), list):
+                    repo_copy['platform'] = ', '.join(repo_copy['platform'])
+        if isinstance(repo_copy.get('topics'), list):
+            repo_copy['topics'] = ', '.join(repo_copy['topics'])
+        processed_data.append(repo_copy)
     print(f"Generating CSV file: {filename}...")
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=headers, extrasaction='ignore')
         writer.writeheader()
-        writer.writerows(data)
+        writer.writerows(processed_data)
     print(f"Successfully generated CSV file: {filename}")
 
 def format_to_markdown(data: list[dict], filename: str):
@@ -190,9 +198,10 @@ def format_to_markdown(data: list[dict], filename: str):
             name_link = f"[{repo['full_name']}]({repo['url']})"
             description = (repo.get('description') or 'No description provided.').replace('\n', ' ').replace('\r', '').replace('|', '\\|')
             language = repo.get('language', 'N/A')
-            platform = repo.get('platform', 'N/A')
             stars = repo.get('stars', 0)
-            markdown_content.append(f"| {name_link} | {description} | {language} | {platform} | {stars} |")
+            platform = repo.get('platform',[])
+            platform_str = ', '.join(platform) if isinstance(platform, list) else (platform or 'N/A')
+            markdown_content.append(f"| {name_link} | {description} | {language} | {platform_str} | {stars} |")
         
         markdown_content.append("\n")
 
@@ -201,6 +210,21 @@ def format_to_markdown(data: list[dict], filename: str):
 
     print(f"Successfully generated Markdown file: {filename}")
 
+def format_to_json(data: list[dict], filename: str):
+    """
+    Formats the starred repository data into a single JSON file.
+    
+    This function takes a list of repository data and writes it to a specified
+    JSON file, suitable for consumption by web frontends like Astro.
+    """
+    if not data:
+        print("No data to format into JSON.")
+        return
+
+    print(f"Generating JSON file: {filename}...")
+    with open(filename, 'w', encoding='utf-8') as jsonfile:
+        json.dump(data, jsonfile, ensure_ascii=False, indent=2)
+    print(f"Successfully generated JSON file: {filename}")
 
 def main():
     """
@@ -218,9 +242,14 @@ def main():
     enriched_data = process_and_enrich_data(manager)    
 
     if enriched_data:
-        
-        format_to_csv(enriched_data, "my-stars.csv")
-        format_to_markdown(enriched_data, "my-stars.md")
+        output_dir = "dist" # 或者 "public"，取决于您希望如何组织文件
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+
+        format_to_csv(enriched_data, os.path.join(output_dir, "repos.csv"))
+        format_to_markdown(enriched_data, os.path.join(output_dir, "starred-repos.md"))
+        format_to_json(enriched_data, os.path.join(output_dir, "repos.json"))
+
         
         print("\nAll tasks completed successfully!")
     else:

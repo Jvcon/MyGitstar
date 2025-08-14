@@ -18,6 +18,9 @@ on:
           - release
   # schedule:
   #   - cron: '0 0 * * 0' # 每周日午夜执行一次
+env:
+  BACKEND_PATH: "./scripts"
+  FRONTEND_PATH: "./app"
 
 jobs:
   fetch:
@@ -45,28 +48,31 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies and run
+        id: fetch-stars
         env:
           GH_TOKEN: ${{ secrets.PAT }}
+        working-directory: ${{ env.BACKEND_PATH }}
         run: |
           python -m pip install --upgrade pip
-          pip install -r scripts/requirements.txt
-          python scripts/fetch_stars.py
+          pip install -r requirements.txt
+          python fetch_stars.py
+          echo "path=${{env.BACKEND_PATH}}/dist" >> $GITHUB_OUTPUT
 
       - name: Upload stars file
         if: steps.init-env.outputs.mode == 'draft'
         uses: actions/upload-artifact@v4
         with:
           name: my-stars-draft
-          path: |
-            my-stars.md
-            my-stars.csv
+          path: ${{ steps.fetch-stars.outputs.path }}
+          retention-days: 7
 
       - name: Prepare release files
         if: steps.init-env.outputs.mode == 'release'
         run: |
-          mkdir -p app/src/content/docs app/public/data
-          mv my-stars.md app/src/content/docs/index.md
-          mv my-stars.csv app/public/data/my-stars.csv
+          mkdir -p ${{env.FRONTEND_PATH}}/src/content/docs
+          mv ${{ steps.fetch-stars.outputs.path }}/*.md ${{env.FRONTEND_PATH}}/src/content/docs/
+          mv ${{ steps.fetch-stars.outputs.path }}/*.csv ${{env.FRONTEND_PATH}}/src/content/
+          mv ${{ steps.fetch-stars.outputs.path }}/*.json ${{env.FRONTEND_PATH}}/src/content/
 
       - name: Commit and push release changes
         id: auto-commit-action
@@ -74,7 +80,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "📚 Release update of starred repositories"
-          file_pattern: 'app/src/content/docs/index.md app/public/data/my-stars.csv'
+          file_pattern: '${{env.FRONTEND_PATH}}/src/content/**/*'
           branch: main
 
   call-build:
