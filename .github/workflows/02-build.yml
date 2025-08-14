@@ -41,7 +41,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      build-path: steps.build-site.outputs.path
+      build-path: ${{ steps.build-site.outputs.path }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
