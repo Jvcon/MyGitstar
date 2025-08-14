@@ -40,8 +40,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      build-path: ${{ steps.build-site.outputs.path }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -55,14 +53,12 @@ jobs:
         working-directory: ${{ env.BASE_PATH }}
         run: |
           npm run build
-          echo "path=${{ env.BASE_PATH }}/dist" >> $GITHUB_OUTPUT
 
       - name: Upload build artifact
-        if: ${{ github.event_name == 'push' || inputs.mode == 'draft' || (inputs.mode == 'release' && !inputs.has_changes) }}
         uses: actions/upload-artifact@v4
         with:
-          name: astro-build-draft
-          path: ${{ steps.build-site.outputs.path }}
+          name: astro-build
+          path: ${{ env.BASE_PATH }}/dist/
           retention-days: 7
           
   deploy:
@@ -80,10 +76,16 @@ jobs:
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: astro-build
+          path: .
+
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ needs.build.outputs.build-path }}
+          path: .
 
       - name: Deploy to GitHub Pages
         id: deployment
