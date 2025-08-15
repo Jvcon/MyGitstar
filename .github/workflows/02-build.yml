@@ -51,6 +51,8 @@ jobs:
       - name: Build the application
         id: build-site
         working-directory: ${{ env.BASE_PATH }}
+        env:
+          BASE_URL: /${{ github.event.repository.name }}/
         run: |
           npm run build
 

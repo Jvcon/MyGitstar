@@ -1,4 +1,5 @@
 ---
+const basePath = import.meta.env.BASE_URL;
 ---
 
 <div id="container">
@@ -7,8 +8,9 @@
       <h1>🌟 My Gitstar</h1>
       <h2>A Github Collection Management Project.</h2>
       <section id="links">
-        <a class="comic-button" href="/getting-started">Docs</a>
-		    <a class="comic-button" href="/Manage">Manage</a>
+        <a class="comic-button" href={basePath+"getting-started"} >Docs</a>
+		    <a class="comic-button" href={basePath+"table"} >Table</a>
+		    <a class="comic-button" href={basePath+"manage"} >Manage</a>
         <a href="https://github.com/Jvcon/MyGitstar">Github</a>
       </section>
     </section>

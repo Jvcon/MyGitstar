@@ -1,11 +1,12 @@
 ---
 // 我们自己创建的可移植组件
 // import ThemeToggleButton from './ThemeToggleButton.astro';
+const basePath = import.meta.env.BASE_URL;
 
 const views = [
-  { label: "Doc", href: "/getting-started" },
-  { label: "Table", href: "/table" },
-  { label: "Kanboard", href: "/kanboard" },
+  { label: "Doc", href: basePath+"getting-started" },
+  { label: "Table", href: basePath+"table" },
+  { label: "Kanboard", href: basePath+"kanboard" },
 ];
 
 const siteTitle = "🌟 My Gitstar";
@@ -16,14 +17,14 @@ const siteTitle = "🌟 My Gitstar";
 >
   <div class="header">
     <div class="title-wrapper sl-flex">
-      <a href="/" class="site-title">{siteTitle}</a>
+      <a href={basePath} class="site-title">{siteTitle}</a>
     </div>
     <!-- 左侧部分 -->
     <div class="left-items print:hidden sl-flex">
       <nav class="hidden md:flex nav-links">
-        <a href="/getting-started" class="nav-link">Introduction</a>
-        <a href="/table" class="nav-link">Table</a>
-        <a href="/manage" class="nav-link">Manage</a>
+        <a href={basePath+"getting-started"} class="nav-link">Introduction</a>
+        <a href={basePath+"table"} class="nav-link">Table</a>
+        <a href={basePath+"manage"} class="nav-link">Manage</a>
       </nav>
     </div>
 

@@ -6,7 +6,7 @@ import starlight from "@astrojs/starlight";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  base: '/MyGitstar/',
+  base: process.env.BASE_URL || '/',
   integrations: [
     starlight({
       title: "🌟 My Gitstar",
