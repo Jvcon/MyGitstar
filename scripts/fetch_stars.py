@@ -112,11 +112,12 @@ def analyze_platform_from_repo(repo: dict) -> list[str]:
 
     return sorted(list(detected_platforms))
 
-def process_and_enrich_data(manager: GitHubManager) -> list[dict]:
+def fetch_and_process_all_data(manager: GitHubManager) -> tuple[list[dict],list[dict]]:
     """
     Processes raw repository data to add computed fields like 'platform'.
     This function takes the list of repos from the API and enriches it.
     """
+    collections = manager.get_lists()
     repo_to_list_map = manager.get_repo_list_mapping_hybrid()
     starred_repos = manager.get_starred_repos()
 
@@ -134,7 +135,7 @@ def process_and_enrich_data(manager: GitHubManager) -> list[dict]:
 
         enriched_data.append(repo_copy)
         
-    return enriched_data
+    return enriched_data, collections
 
 def format_to_csv(data: list[dict], filename: str):
     """
@@ -239,21 +240,25 @@ def main():
     
     print("Fetching all starred repositories...")
 
-    enriched_data = process_and_enrich_data(manager)    
+    enriched_repo_data,collections_data = fetch_and_process_all_data(manager)    
 
-    if enriched_data:
-        output_dir = "dist" # 或者 "public"，取决于您希望如何组织文件
-        if not os.path.exists(output_dir):
-            os.makedirs(output_dir)
-
-        format_to_csv(enriched_data, os.path.join(output_dir, "repos.csv"))
-        format_to_markdown(enriched_data, os.path.join(output_dir, "starred-repos.md"))
-        format_to_json(enriched_data, os.path.join(output_dir, "repos.json"))
-
+    output_dir = "dist"
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
         
-        print("\nAll tasks completed successfully!")
+    if enriched_repo_data:
+        print("\n[Step 1/2] Formatting and writing repository data files...")
+        format_to_csv(enriched_repo_data, os.path.join(output_dir, "repos.csv"))
+        format_to_markdown(enriched_repo_data, os.path.join(output_dir, "starred-repos.md"))
+        format_to_json(enriched_repo_data, os.path.join(output_dir, "repos.json"))
     else:
-        print("No starred repositories found.")
+        print("\n[Step 1/2] No starred repositories found to process.")
 
+    if collections_data:
+        print("\n[Step 2/2] Formatting and writing collection data file (list.json)...")
+        format_to_json(collections_data, os.path.join(output_dir, "collections.json"))
+    else:
+        print("\n[Step 2/2] No collections (lists) found to process.")
+        
 if __name__ == "__main__":
     main()
