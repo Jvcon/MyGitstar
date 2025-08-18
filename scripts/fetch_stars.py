@@ -4,6 +4,7 @@ import json
 from datetime import datetime
 from collections import defaultdict
 from gh_toolkit import GitHubManager
+from utils.data_loader import load_dict_fr_txt,get_filtered
 
 # 定义一个平台关键词配置，更易于维护和扩展
 PLATFORM_MAPPING = {
@@ -117,9 +118,9 @@ def fetch_and_process_all_data(manager: GitHubManager) -> tuple[list[dict],list[
     Processes raw repository data to add computed fields like 'platform'.
     This function takes the list of repos from the API and enriches it.
     """
-    collections = manager.get_lists()
+    collections = get_filtered(manager.get_lists(),load_dict_fr_txt("../data/.listignore"),"name")
     repo_to_list_map = manager.get_repo_list_mapping_hybrid()
-    starred_repos = manager.get_starred_repos()
+    starred_repos = get_filtered(manager.get_starred_repos(),load_dict_fr_txt("../data/.repoignore"),"full_name")
 
     enriched_data = []
     for repo in starred_repos:
