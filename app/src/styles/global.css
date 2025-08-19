@@ -24,6 +24,7 @@
   --color-gray-800: #2f1c42;
   --color-gray-900: #1c1425;
   --sl-text-h4: 1.25rem;
+  --color-accent-600-rgb: 167, 0, 195; 
 }
 
 /*
@@ -111,9 +112,11 @@ https://tailwindcss.com/docs/adding-custom-styles#using-custom-css
   }
 }
 /* 
-* 3. 第三方库样式覆盖 (Select2 Theming)
+* 3. 第三方库样式覆盖
 * 使用 var() 函数来引用上面 @theme 中定义的颜色，实现主题统一。
 */
+
+/* Datatable */
 .dt-buttons {
   --tablens-highlight-color: var(--color-gray-200);
   --tablens-focused-color: var(--color-accent-600);
@@ -150,10 +153,38 @@ input {
   color: var(--color-gray-200);
   background-color: var(--color-gray-700, #412e55);
 }
+
+/* Select2 */
+
 /* 主容器和多选框区域 */
 .select2-container--default .select2-selection--multiple {
   @apply bg-gray-800 border border-gray-700 text-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-600;
   padding: 0;
+}
+
+.select2-container--default .select2-selection--single {
+  @apply bg-gray-800 border border-gray-700 text-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-600;
+  border-radius: 4px;
+  height: 32px;
+}
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__rendered {
+  color: var(--color-gray-200);
+  line-height: 30px;
+}
+
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow {
+  color: var(--color-gray-200);
+  line-height: 30px;
+}
+
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow {
+  height: 30px;
 }
 
 /* 已选中的选项 "pills" */
@@ -208,4 +239,295 @@ input {
   .select2-results__option--highlighted[aria-selected] {
   background-color: var(--color-accent-900);
   color: white;
+}
+
+/* Manager Custom */
+
+.manager-grid {
+  display: grid;
+  grid-template-columns: 70fr 30fr;
+  gap: 1.5rem;
+  height: 100%;
+  overflow: hidden;
+}
+.repo-display-section,
+.collection-list-section {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: var(--color-gray-900);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1%;
+  border: 1px solid var(--color-gray-700);
+}
+
+.tabs {
+  flex-shrink: 0;
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: nowrap; /* 允许换行 */
+  overflow-x: auto;
+  border-bottom: 1px solid var(--color-gray-700);
+  scrollbar-width: none; /* Firefox */
+}
+.tabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+.tab-btn {
+  /* [修改] 调整 padding，使其在垂直方向上更舒适 */
+  padding: 0.75rem 0.25rem;
+  /* [新增] 增加外边距来控制按钮间距 */
+  margin-bottom: -2px; /* 让下边框与容器边框重合 */
+  margin: 0 0.75rem;
+  /* [修改] 移除背景色和边框，改为底部透明边框占位 */
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0; /* 移除胶囊形状 */
+  background-color: transparent;
+  color: var(--color-gray-300); /* 未激活时使用柔和的颜色 */
+  cursor: pointer;
+  /* [修改] 明确指定过渡效果的属性 */
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap; /* 防止按钮文字换行 */
+}
+.tab-btn:hover {
+  background-color: transparent;
+  color: var(--color-accent-200); /* 悬停时使用更亮的强调色 */
+}
+.tab-btn.active {
+  /* [修改] 激活状态也不再使用背景色 */
+  background-color: transparent;
+  /* [修改] 而是使用主题色来高亮文字和下划线 */
+  color: var(--color-accent-200);
+  border-bottom-color: var(--color-accent-600); /* 用主强调色作为下划线 */
+  font-weight: bold;
+}
+
+.cards-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 0.5rem; /* 给滚动条留出空间 */
+  margin: -0.5rem; /* 抵消内边距 */
+  align-content: start;
+}
+/* [新增] 为取消收藏的卡片添加样式 */
+.repo-card.is-unfavorited {
+  opacity: 0.6;
+  background-color: var(--color-gray-800);
+}
+.repo-card.is-unfavorited:hover {
+  opacity: 1;
+}
+/* [新增] 为卡片内的交互元素添加样式 */
+/* .card-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+.target-collection-selector select {
+  background-color: var(--color-gray-700);
+  color: var(--color-gray-200);
+  border: 1px solid var(--color-gray-500);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+}
+.card-buttons button {
+  background: none;
+  border: none;
+  color: var(--color-gray-400);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+}
+.card-buttons button:hover {
+  color: var(--color-accent-200);
+}
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-gray-700);
+  border: 1px solid var(--color-gray-800);
+  border-radius: 0.5rem;
+  padding: 1rem 1.2rem;
+  cursor: grab;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s ease-out;
+}
+.repo-card:hover {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-gray-800);
+  border-color: var(--color-accent-900);
+}
+.repo-card:active {
+  cursor: grabbing;
+  background-color: var(--color-gray-800);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* 顶部对齐 */
+  gap: 0.5rem;
+}
+.repo-name {
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-gray-100);
+  font-size: 1.1rem;
+}
+.repo-link-btn {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--color-gray-400);
+  transition: color 0.2s;
+}
+.repo-link-btn:hover {
+  color: var(--color-accent-200);
+}
+.repo-collection,
+.repo-description {
+  font-size: 0.85rem;
+  color: var(--color-gray-300);
+  margin: 0.75rem 0 0;
+  line-height: 1.5; /* 增加行高以提升可读性 */
+}
+.repo-description {
+  flex-grow: 1; /* 让描述部分占据多余空间 */
+  margin-bottom: 1rem;
+}
+
+.toolbar,
+.collection-creator {
+  margin-bottom: 1rem;
+}
+.list-container {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.toolbar,
+.collection-creator {
+  flex-shrink: 0;
+  margin-bottom: 1rem;
+}
+#new-collection-input {
+  width: 100%;
+  background-color: var(--color-gray-900);
+  border: 1px solid var(--color-gray-700);
+  color: var(--color-gray-200);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+}
+#new-collection-input:focus {
+  outline: none;
+  border-color: var(--color-accent-600);
+  box-shadow: 0 0 0 2px var(--color-accent-950);
+}
+.list-container {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+.collection-item {
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  margin-bottom: 0.5rem;
+  background-color: transparent; /* 默认透明 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: background-color 0.2s, border-color 0.2s;
+  position: relative;
+}
+.collection-item:hover {
+  background-color: var(--color-gray-900); /* 悬停时高亮 */
+}
+.collection-item.drag-over {
+  /* 使用 class 替代 data 属性选择器 */
+  border-color: var(--color-accent-600);
+  border-style: dashed;
+  background-color: var(--color-accent-950);
+}
+.collection-name {
+  flex-grow: 1;
+  color: var(--color-gray-200);
+}
+.repo-count {
+  margin: 0 0.75rem;
+  font-size: 0.8rem;
+  color: var(--color-gray-400);
+}
+.delete-collection-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.6;
+  padding: 0.25rem;
+  line-height: 1;
+}
+.delete-collection-btn:hover {
+  opacity: 1;
+  color: #ff5555; /* 删除按钮使用危险色提示 */
+}
+
+/* Sortable for Manage */
+
+.repo-card-drag-proxy {
+  /* 基础样式 */
+  background-color: var(--color-accent-900) !important; /* 使用 !important 强制覆盖原卡片样式 */
+  border: 1px solid var(--color-accent-600) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 6px !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important;
+  font-size: 0.9rem !important;
+  font-weight: bold;
+  color: var(--color-gray-100) !important;
+  /* 强制浮于顶层 */
+  z-index: 9999 !important;
+  /* 只显示 repo-name，隐藏其他所有内容 */
+  overflow: hidden !important;
+  height: 48px;
+}
+.repo-card-drag-proxy .repo-name {
+  display: block !important; /* 确保标题可见 */
+}
+
+.repo-card-drag-proxy > *:not(.card-header),
+.repo-card-drag-proxy .card-header > *:not(.repo-name) {
+  display: none !important; /* 隐藏除标题外的所有其他元素 */
+}
+
+/* 
+.collection-item:has(> .repo-item-ghost) {
+  background-color: var(--color-accent-950) !important;
+  border: 1px solid var(--color-accent-600) !important; 
+} */
+
+.repo-item-ghost { 
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(var(--color-accent-600-rgb), 0.15) !important; /* 可以稍微加深一点透明度 */
+  border: 2px dashed var(--color-accent-600) !important;
+  border-radius: 0.375rem !important; /* 与父元素保持一致的圆角 */
+  box-shadow: none !important;
+  
+  /* 确保它不会意外地产生自己的尺寸 */
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.repo-item-ghost > * {
+  visibility: hidden;
 }

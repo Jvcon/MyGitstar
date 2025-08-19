@@ -15,6 +15,12 @@
     "astro": "^5.12.9",
     "datatables.net-dt": "^2.3.2",
     "jquery": "^3.7.1",
+    "nanostores": "^1.0.1",
+    "select2": "~4.0",
+    "sortablejs": "^1.15.6",
     "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@types/sortablejs": "^1.15.8"
   }
 }
