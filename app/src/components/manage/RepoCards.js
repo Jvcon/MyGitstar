@@ -4,10 +4,12 @@ import {
   moveRepoToCollection,
 } from "./store.js";
 import Sortable from "sortablejs";
+import TomSelect from 'tom-select';
 
 let container = null;
 let allRepos = [];
 let sortableInstance = null;
+let tomSelectInstances = [];
 
 function unfavoriteRepo(repoId) {
   const currentState = JSON.parse(JSON.stringify(managedStateStore.get()));
@@ -31,6 +33,9 @@ function render(reposToShow) {
   if (sortableInstance) {
     sortableInstance.destroy();
   }
+  tomSelectInstances.forEach(instance => instance.destroy());
+  tomSelectInstances = [];
+
   container.innerHTML = reposToShow
     .map((repo) => {
       const collectionOptions = managedState.manage
@@ -83,16 +88,28 @@ function render(reposToShow) {
     })
     .join("");
 
-  $(".repo-target-select")
-    .select2({
-      width: "150px",
-    })
-    .on("change", function () {
-      const repoId = $(this).data("repo-id");
-      const newCollectionId = $(this).val();
-      moveRepoToCollection(repoId, newCollectionId);
-    });
+  // $(".repo-target-select")
+  //   .select2({
+  //     width: "150px",
+  //   })
+  //   .on("change", function () {
+  //     const repoId = $(this).data("repo-id");
+  //     const newCollectionId = $(this).val();
+  //     moveRepoToCollection(repoId, newCollectionId);
+  //   });
 
+  container.querySelectorAll('.repo-target-select').forEach(selectElement => {
+    const repoId = selectElement.dataset.repoId;
+    const instance = new TomSelect(selectElement, {
+      // TomSelect 的配置
+      onChange: (value) => {
+        // 当值改变时，调用我们的状态管理函数
+        moveRepoToCollection(repoId, value);
+      }
+    });
+    tomSelectInstances.push(instance); // 将新实例存入数组
+  });
+  
   sortableInstance = new Sortable(container, {
     group: {
       name: "shared-repos",

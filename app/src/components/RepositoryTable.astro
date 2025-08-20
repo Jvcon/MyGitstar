@@ -1,7 +1,6 @@
 ---
 // 1. 在服务器端导入 JSON 数据
 // Astro 会在构建时处理这个导入，将 JSON 数据嵌入到页面中。
-import repos from "../content/repos.json";
 
 // 定义组件的 Props 接口（可选，为了好的实践）
 export interface Props {
@@ -22,7 +21,7 @@ const tableId = Astro.props.id || "repos-table";
         <th>Collection</th>
         <th>Platform(s)</th>
         <th>Language</th>
-        <th>⭐ Stars</th>
+        <th>Stars⭐</th>
         <th>Description</th>
         <th>Topics</th>
       </tr>
@@ -37,218 +36,228 @@ const tableId = Astro.props.id || "repos-table";
         <th></th>
       </tr>
     </thead>
-    <tbody>
-      {}
-    </tbody>
+    <tbody> </tbody>
   </table>
 </div>
 
-<script define:vars={{ tableId, repos }}>
-  document.addEventListener("DOMContentLoaded", function () {
-    $("#" + tableId + " .filters th").each(function () {
-      const title = $(this).text();
-      // 只有需要文本搜索的列才添加 input
-      if ($(this).index() === 0 || $(this).index() === 5) {
-        $(this).html('<input type="text" placeholder="Search..." />');
+<script>
+  import $ from "jquery";
+  import TomSelect from "tom-select";
+  import "datatables.net-dt";
+  import "datatables.net-buttons-dt";
+  import "datatables.net-buttons/js/buttons.colVis.js";
+  import "datatables.net-buttons/js/buttons.html5.js";
+  import "datatables.net-fixedheader-dt";
+
+  document.addEventListener("DOMContentLoaded", async function () {
+    const tableElement = document.querySelector("table.display");
+    if (!tableElement) {
+      console.error("Table element not found!");
+      return;
+    }
+    const tableId = tableElement.id;
+    const tableSelector = "#" + tableId;
+
+    try {
+      const response = await fetch("/data/repos.json");
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    });
+      const repos = await response.json();
 
-    const table = $("#" + tableId).DataTable({
-      data: repos,
-      columns: [
-        { data: "full_name", title: "Repository" }, // 使用 title 属性确保 ColVis 显示正确的名称
-        { data: "list_name", title: "Collection" },
-        { data: "platform", title: "Platform(s)" },
-        { data: "language", title: "Language" },
-        { data: "stars", title: "⭐ Stars" },
-        { data: "description", title: "Description" },
-        { data: "topics", title: "Topics" },
-      ],
-      orderCellsTop: true, // 告诉 DataTables 排序事件应该附加到最顶部的表头行
-      fixedHeader: true, // 推荐：当页面滚动时，固定表头和筛选行
-      dom: "Bfrtip",
-      buttons: [
-        {
-          extend: "colvis",
-          text: "Columns",
-          // 使用 columns 选择器确保 ColVis 能正确地作用于所有非指定的列
-          columns: ":not(.no-colvis)",
-        },
-      ],
-      columnDefs: [
-        // Column 0: Repository
-        {
-          targets: 0,
-          className: "no-colvis",
-          orderable: true,
-          searchable: true,
-          render: function (data, type, row) {
-            // 只在显示时渲染为链接
-            if (type === "display") {
-              return `<a href="${row.url}" target="_blank" rel="noopener noreferrer">${data}</a>`;
-            }
-            return data; // 对于搜索和排序，使用原始的 full_name 字符串
+      // 初始化筛选器的占位符
+      $(tableSelector + " .filters th").each(function () {
+        const title = $(this).text();
+        // 只有需要文本搜索的列才添加 input
+        if ($(this).index() === 0 || $(this).index() === 5) {
+          $(this).html('<input type="text" placeholder="Search..." />');
+        }
+      });
+
+      const table = $("#" + tableId).DataTable({
+        data: repos,
+        columns: [
+          { data: "full_name", title: "Repository" }, // 使用 title 属性确保 ColVis 显示正确的名称
+          { data: "list_name", title: "Collection" },
+          { data: "platform", title: "Platform(s)" },
+          { data: "language", title: "Language" },
+          { data: "stars", title: "Stars⭐" },
+          { data: "description", title: "Description" },
+          { data: "topics", title: "Topics" },
+        ],
+        orderCellsTop: true,
+        fixedHeader: true,
+        dom: "Bfrtip",
+        buttons: [
+          {
+            extend: "colvis",
+            text: "Columns",
+            columns: ":not(.no-colvis)",
           },
-        },
-        // Column 1: Colleciton
-        { targets: 1, orderable: true, searchable: true },
-        // Column 2: Platform(s) / Column 6: Topics - 禁用排序，自定义渲染
-        {
-          targets: [2, 6],
-          orderable: false,
-          searchable: true,
-          render: function (data, type, row, meta) {
-            // 'data' 在这里是 platform 或 topics 数组
-            if (type === "display") {
-              const tagsArray = data || [];
-              if (Array.isArray(tagsArray) && tagsArray.length > 0) {
-                const badgeClass = meta.col === 2 ? 'platform' : 'topic'; 
-                // 只显示前5个以避免拥挤
-                return tagsArray
-                  .slice(0, 5)
-                  .map(
-                    (tag) => `<span class="badge ${badgeClass}">${tag}</span>`
-                  )
-                  .join(" ");
+          {
+            extend: "csv",
+            text: "CSV (UTF-8)",
+            charset: "utf-8",
+            bom: true,
+          },
+          'copyHtml5'
+        ],
+        columnDefs: [
+          // Column 0: Repository
+          {
+            targets: 0,
+            className: "no-colvis",
+            orderable: true,
+            searchable: true,
+            render: function (data, type, row) {
+              // 只在显示时渲染为链接
+              if (type === "display") {
+                return `<a href="${row.url}" target="_blank" rel="noopener noreferrer">${data}</a>`;
               }
-              return "";
-            }
-            // 对于搜索和筛选，返回一个空格分隔的字符串
-            return Array.isArray(data) ? data.join(" ") : "";
+              return data; // 对于搜索和排序，使用原始的 full_name 字符串
+            },
           },
-        },
-        // Column 3: Language
-        { targets: 3, orderable: true, searchable: true },
-        // Column 4: Stars - 启用排序，禁用搜索
-        {
-          targets: 4,
-          orderable: true,
-          searchable: false,
-          className: "text-center",
-        },
-        // Column 5: Description - 禁用排序
-        {
-          targets: 5,
-          orderable: false,
-          searchable: true,
-          render: function (data, type, row) {
-            // 截断长文本以保持表格整洁
-            return type === "display" && data && data.length > 80
-              ? '<span title="' + data + '">' + data.substr(0, 80) + "…</span>"
-              : data;
-          },
-        },
-      ],
-      initComplete: function () {
-        const api = this.api();
-
-        api.columns([1, 2, 3, 6]).every(function () {
-          const column = this;
-          const filterCell = $(".filters th").eq(column.index());
-          if (filterCell.length === 0) return; // 如果单元格不存在则跳过
-
-          const select = $(
-            '<select multiple="multiple" style="width: 100%;"></select>'
-          )
-            .appendTo(filterCell.empty())
-            .on("change", function () {
-              const selectedValues = $(this).val() || [];
-              if (selectedValues.length === 0) {
-                // 如果没有选项被选中，清除该列的搜索
-                column.search("", true, false).draw();
-                return;
+          // Column 1: Colleciton
+          { targets: 1, orderable: true, searchable: true },
+          // Column 2: Platform(s) / Column 6: Topics - 禁用排序，自定义渲染
+          {
+            targets: [2, 6],
+            orderable: false,
+            searchable: true,
+            render: function (data, type, row, meta) {
+              // 'data' 在这里是 platform 或 topics 数组
+              if (type === "display") {
+                const tagsArray = data || [];
+                if (Array.isArray(tagsArray) && tagsArray.length > 0) {
+                  const badgeClass = meta.col === 2 ? "platform" : "topic";
+                  // 只显示前5个以避免拥挤
+                  return tagsArray
+                    .slice(0, 5)
+                    .map(
+                      (tag) => `<span class="badge ${badgeClass}">${tag}</span>`
+                    )
+                    .join(" ");
+                }
+                return "";
               }
-              const searchStr = selectedValues
-                .map((val) => `\\b${$.fn.dataTable.util.escapeRegex(val)}\\b`) // 使用单词边界 \b
-                .join("|");
-              column.search(searchStr, true, false).draw();
+              // 对于搜索和筛选，返回一个空格分隔的字符串
+              return Array.isArray(data) ? data.join(" ") : "";
+            },
+          },
+          // Column 3: Language
+          { targets: 3, orderable: true, searchable: true },
+          // Column 4: Stars - 启用排序，禁用搜索
+          {
+            targets: 4,
+            orderable: true,
+            searchable: false,
+            className: "text-center",
+          },
+          // Column 5: Description - 禁用排序
+          {
+            targets: 5,
+            orderable: false,
+            searchable: true,
+            render: function (data, type, row) {
+              // 截断长文本以保持表格整洁
+              return type === "display" && data && data.length > 80
+                ? '<span title="' +
+                    data +
+                    '">' +
+                    data.substr(0, 80) +
+                    "…</span>"
+                : data;
+            },
+          },
+        ],
+        initComplete: function () {
+          const api = this.api();
+
+          api.columns([1, 2, 3, 6]).every(function () {
+            const column = this;
+            const filterCell = $(".filters th").eq(column.index());
+            if (
+              filterCell.length === 0 ||
+              $(this).index() === 0 ||
+              $(this).index() === 5
+            )
+              return;
+
+            const select = $(
+              '<select multiple placeholder="Filter..."></select>'
+            )[0];
+            filterCell.empty().append(select);
+
+            const tomSelectInstance = new TomSelect(select, {
+              plugins: ["remove_button"],
+              onChange: (values) => {
+                const searchStr = values
+                  .map((val) => `\\b${$.fn.dataTable.util.escapeRegex(val)}\\b`)
+                  .join("|");
+                column.search(searchStr, true, false).draw();
+              },
             });
 
-          select.select2({ placeholder: "Filter...", allowClear: true });
+            const uniqueValues = new Set();
+            // 使用为搜索优化的正交数据来构建筛选选项
+            const columnSearchData = column.data();
 
-          const uniqueValues = new Set();
-          // 使用为搜索优化的正交数据来构建筛选选项
-          const columnSearchData = column.data();
+            if (column.index() === 2 || column.index() === 6) {
+              // Platform(s) 和 Topics 列
+              columnSearchData.each((arr) => {
+                if (Array.isArray(arr))
+                  arr.forEach((item) => uniqueValues.add(item));
+              });
+            } else {
+              // Collection & Language
+              columnSearchData.unique().each((d) => {
+                if (d) uniqueValues.add(d);
+              });
+            }
 
-          if (column.index() === 2 || column.index() === 6) {
-            // Platform(s) 和 Topics 列
-            columnSearchData.each((arr) => {
-              if (Array.isArray(arr))
-                arr.forEach((item) => uniqueValues.add(item));
-            });
-          } else {
-            // Collection & Language
-            columnSearchData.unique().each((d) => {
-              if (d) uniqueValues.add(d);
-            });
-          }
+            const options = Array.from(uniqueValues)
+              .sort()
+              .map((d) => ({ value: d, text: d }));
+            tomSelectInstance.addOptions(options);
 
-          Array.from(uniqueValues)
-            .sort()
-            .forEach((d) =>
-              select.append(`<option value="${d}">${d}</option>`)
+            // Array.from(uniqueValues)
+            //   .sort()
+            //   .forEach((d) =>
+            //     select.append(`<option value="${d}">${d}</option>`)
+            //   );
+          });
+
+          // 为文本搜索框绑定事件
+          api.columns([0, 5]).every(function () {
+            const column = this;
+            $("input", $(".filters th").eq(column.index())).on(
+              "keyup change clear",
+              function () {
+                if (column.search() !== this.value) {
+                  column.search(this.value).draw();
+                }
+              }
             );
-        });
+          });
+        },
+      });
 
-        // 为文本搜索框绑定事件
-        api.columns([0, 5]).every(function () {
-          const column = this;
-          $("input", $(".filters th").eq(column.index())).on(
-            "keyup change clear",
-            function () {
-              if (column.search() !== this.value) {
-                column.search(this.value).draw();
-              }
-            }
-          );
-        });
-      },
-    });
-
-    // --- FEATURE 1 (cont.): Prevent 'Name' column from being hidden ---
-    // DataTables adds a class to the visibility buttons. We can use that.
-    $(".dt-button.buttons-colvis").on("click", function () {
-      // Find the button for the first column and disable it
+      // --- FEATURE 1 (cont.): Prevent 'Name' column from being hidden ---
+      // DataTables adds a class to the visibility buttons. We can use that.
+      $(".dt-button.buttons-colvis").on("click", function () {
+        // Find the button for the first column and disable it
+        $('.dt-button.buttons-columnVisibility[data-cv-idx="0"]').prop(
+          "disabled",
+          true
+        );
+      });
+      // Initial check in case the menu is opened
       $('.dt-button.buttons-columnVisibility[data-cv-idx="0"]').prop(
         "disabled",
         true
       );
-    });
-    // Initial check in case the menu is opened
-    $('.dt-button.buttons-columnVisibility[data-cv-idx="0"]').prop(
-      "disabled",
-      true
-    );
+    } catch (error) {
+      console.error("Failed to initialize repository table:", error);
+    }
   });
 </script>
-
-<style>
-  /* 为表格容器添加一些样式，以便在小屏幕上可以水平滚动 */
-  .table-container {
-    overflow-x: auto;
-    width: 100%;
-  }
-
-  /* DataTables 的一些微调（可选） */
-  table.dataTable thead th {
-    font-weight: bold;
-  }
-  .table-controls {
-    margin-bottom: 1rem;
-  }
-  thead select {
-    width: 100%;
-    padding: 4px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  .filters input,
-  .filters select {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 4px;
-  }
-  .text-center {
-    text-align: center;
-  }
-</style>

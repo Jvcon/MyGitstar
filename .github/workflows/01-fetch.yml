@@ -71,8 +71,7 @@ jobs:
         run: |
           mkdir -p ${{env.FRONTEND_PATH}}/src/content/docs
           mv ${{ steps.fetch-stars.outputs.path }}/*.md ${{env.FRONTEND_PATH}}/src/content/docs/
-          mv ${{ steps.fetch-stars.outputs.path }}/*.csv ${{env.FRONTEND_PATH}}/src/content/
-          mv ${{ steps.fetch-stars.outputs.path }}/*.json ${{env.FRONTEND_PATH}}/src/content/
+          mv ${{ steps.fetch-stars.outputs.path }}/*.json ${{env.FRONTEND_PATH}}/public/data/
 
       - name: Commit and push release changes
         id: auto-commit-action
@@ -80,7 +79,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "📚 Release update of starred repositories"
-          file_pattern: '${{env.FRONTEND_PATH}}/src/content/*'
+          file_pattern: '${{env.FRONTEND_PATH}}/src/content/*,${{env.FRONTEND_PATH}}/public/data/*'
           branch: main
 
   call-build:

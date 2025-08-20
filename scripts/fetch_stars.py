@@ -249,7 +249,7 @@ def main():
         
     if enriched_repo_data:
         print("\n[Step 1/2] Formatting and writing repository data files...")
-        format_to_csv(enriched_repo_data, os.path.join(output_dir, "repos.csv"))
+        # format_to_csv(enriched_repo_data, os.path.join(output_dir, "repos.csv"))
         format_to_markdown(enriched_repo_data, os.path.join(output_dir, "starred-repos.md"))
         format_to_json(enriched_repo_data, os.path.join(output_dir, "repos.json"))
     else:
