@@ -1,0 +1,81 @@
+<div id="repo-cards-container" class="cards-container">
+  <span class="p-4 text-gray-500">Loading repositories...</span>
+</div>
+
+<script>
+  import TomSelect from "tom-select";
+  import {
+    cardViewRepos,
+    moveRepoToCollection,
+    initializeCollectionSelector,
+  } from "../store.js";
+  import Sortable from "sortablejs";
+
+  const container = document.getElementById("repo-cards-container");
+  const cardTomSelectInstances = new Map();
+
+  function renderCards(repos) {
+    if (!container) return;
+
+    if (repos.length === 0) {
+      container.innerHTML = `<p class="text-gray-500 p-4">No repositories in this category.</p>`;
+      return;
+    }
+
+    container.innerHTML = repos
+      .map(
+        (repo) => `
+      <div class="repo-card" data-repo-id="${repo.full_name}">
+        <div class="card-header">
+          <a href="${repo.url}" target="_blank" class="repo-name">${repo.full_name}</a>
+        </div>
+        <p class="repo-description">${repo.description || "No description available."}</p>
+        <div class="tags">
+          ${(repo.topics || []).map((topic) => `<span class="badge topic">${topic}</span>`).join("")}
+        </div>
+        <div class="card-footer" style="margin-top: 1rem;">
+        <select 
+          class="collection-select-card" 
+          data-repo-fullname="${repo.full_name}"
+          aria-label="Change collection for ${repo.full_name}"
+        ></select>
+      </div>
+      </div>
+    `
+      )
+      .join("");
+
+    container
+      .querySelectorAll(".collection-select-card")
+      .forEach((selectEl) => {
+        initializeCollectionSelector(
+          selectEl as HTMLSelectElement,
+          cardTomSelectInstances,
+          TomSelect
+        );
+      });
+  }
+
+  // 订阅 store 的变化
+  cardViewRepos.subscribe(renderCards);
+
+  // 初始化拖拽功能
+  new Sortable(container, {
+    group: {
+      name: "shared-repos",
+      pull: "clone", // 从卡片列表拖拽时是“克隆”一个代理元素
+      put: false, // 不允许其他元素拖拽到卡片列表中
+    },
+    sort: false, // 在卡片视图内部不进行排序
+    animation: 150,
+  });
+
+  document.addEventListener(
+    "astro:before-swap",
+    () => {
+      cardTomSelectInstances.forEach((instance) => instance.destroy());
+      cardTomSelectInstances.clear();
+    },
+    { once: true }
+  );
+</script>

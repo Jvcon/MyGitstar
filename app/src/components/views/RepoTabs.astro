@@ -1,0 +1,53 @@
+
+<div id="repo-tabs" class="tabs">
+  <span class="p-4 text-gray-500">Loading tabs...</span>
+</div>
+
+
+<script>
+  import { activeTab, cardViewTabs } from '../store.js';
+
+  const container = document.getElementById('repo-tabs');
+
+  function renderTabs(tabs, currentTab) {
+    if (!container) return;
+
+    container.innerHTML = ''; // 清空容器
+    
+    tabs.forEach(tabInfo => {
+      const button = document.createElement('button');
+      button.className = 'tab-btn';
+      button.textContent = `${tabInfo.name} (${tabInfo.count})`;
+      button.dataset.tabName = tabInfo.name;
+      
+      // 根据当前激活的 tab 添加 active 类
+      if (tabInfo.name === currentTab) {
+        button.classList.add('active');
+      }
+
+      container.appendChild(button);
+    });
+  }
+
+  // 点击事件委托
+  container.addEventListener('click', (e) => {
+    const eventTarget = e.target as HTMLElement;
+    const target = eventTarget.closest('.tab-btn');
+    if (target && target instanceof HTMLElement && target.dataset.tabName) {
+      // 当用户点击一个 tab，我们只做一件事：更新 store 中的状态
+      activeTab.set(target.dataset.tabName);
+    }
+  });
+
+  // 订阅 store 的变化
+  // 1. 监听 tabs 数据本身的变化（通常只在初始化时发生）
+  cardViewTabs.subscribe(tabs => {
+    renderTabs(tabs, activeTab.get());
+  });
+
+  // 2. 监听 activeTab 的变化，以更新按钮的 'active' 状态
+  activeTab.subscribe(currentTab => {
+    const tabs = cardViewTabs.get();
+    renderTabs(tabs, currentTab);
+  });
+</script>

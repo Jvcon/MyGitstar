@@ -1,0 +1,341 @@
+---
+
+---
+
+<div class="table-container h-full w-full">
+  <table id="repos-table" class="display compact" style="width:100%">
+    <thead>
+      <!-- 第一行：列标题 -->
+      <tr>
+        <th>Repository</th>
+        <th>Collection</th>
+        <th>Description</th>
+        <th>Language</th>
+        <th>Platform(s)</th>
+        <th>Topics</th>
+        <th>Stars⭐</th>
+      </tr>
+      <!-- 第二行：筛选器 -->
+      <tr class="filters">
+        <th><input type="text" placeholder="Search..." class="w-full" /></th>
+        <th></th>
+        <th><input type="text" placeholder="Search..." class="w-full" /></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody> </tbody>
+  </table>
+</div>
+
+<script>
+  import $ from "jquery";
+  import TomSelect from "tom-select";
+  import "datatables.net-dt";
+  import "datatables.net-buttons-dt";
+  import "datatables.net-buttons/js/buttons.colVis.js";
+  import "datatables.net-buttons/js/buttons.html5.js";
+  import "datatables.net-fixedheader-dt";
+  import "datatables.net-scroller-dt";
+  import {
+    enrichedRepos,
+    managedCollections,
+    moveRepoToCollection,
+    dataTableStore,
+    initializeCollectionSelector,
+  } from "../store.js";
+
+  const tableElement = document.querySelector("#repos-table");
+  let dataTableInstance = null; // 用于存储 DataTables 的实例
+  let tomSelectInstances = new Map(); // 用于管理 TomSelect 实例，防止内存泄漏
+  let headerTomSelects = new Map();
+  let collectionsUnsubscribe = null;
+  let reposUnsubscribe = null;
+
+  function initializeOrUpdateTable(reposData) {
+    if (!tableElement) return;
+    if (!reposData || reposData.length === 0) return;
+
+    if (dataTableInstance) {
+      dataTableInstance.clear().rows.add(reposData).draw();
+      return;
+    }
+
+    dataTableInstance = $(tableElement).DataTable({
+      data: reposData,
+      orderCellsTop: true,
+      paging: true,
+      scrollY: "500px", // 让表格体占据其容器100%的高度
+      scrollCollapse: true,
+      scroller: true,
+      dom: "<'dataTables_scroll'Srt>" + "<'dataTables_bottom'i>",
+      columns: [
+        { data: "full_name", title: "Repository" },
+        { data: "managedCollection.name", title: "Collection" },
+        { data: "description", title: "Description" },
+        { data: "language", title: "Language" },
+        { data: "platform", title: "Platform(s)" },
+        { data: "topics", title: "Topics" },
+        { data: "stars", title: "Stars⭐" },
+      ],
+      columnDefs: [
+        // Column 0: Repository (渲染为链接)
+        {
+          targets: 0,
+          className: "no-colvis",
+          render: (data, type, row) =>
+            type === "display"
+              ? `<a href="${row.url}" target="_blank" rel="noopener noreferrer">${data}</a>`
+              : data,
+        },
+        // Column 1: Collection (渲染为可编辑的 TomSelect 下拉框)
+        {
+          targets: 1,
+          render: (data, type, row) => {
+            if (type === "display") {
+              // 返回一个带有唯一标识符的 <select> 占位符
+              // 我们使用 slug 作为操作的 key，但 full_name 作为 DOM 元素的 data 属性
+              // 添加 aria-label 提升可访问性
+              const readableRepoName = row.full_name.replace("/", " ");
+              return `<select class="collection-select" data-repo-fullname="${row.full_name}" aria-label="Change collection for ${readableRepoName}" placeholder="Change collection..."></select>`;
+            }
+            // 对于排序和搜索，使用原始的 collection 名称
+            return row.managedCollection
+              ? row.managedCollection.name
+              : "Uncategorized";
+          },
+        },
+        // Column 2: Description (截断长文本)
+        {
+          targets: 2,
+          orderable: false,
+          searchable: true,
+          render: (data, type) =>
+            type === "display" && data && data.length > 80
+              ? `<span title="${data}">${data.substr(0, 80)}…</span>`
+              : data,
+        },
+        // Column 3: Language
+        { targets: 3, orderable: true, searchable: true },
+        // Column 4: Platform Column 5: Topics (渲染为徽章)
+        {
+          targets: [4, 5],
+          orderable: false,
+          searchable: true,
+          render: function (data, type, row, meta) {
+            // 'data' 在这里是 platform 或 topics 数组
+            if (type === "display") {
+              const tagsArray = data || [];
+              if (Array.isArray(tagsArray) && tagsArray.length > 0) {
+                const badgeClass = meta.col === 2 ? "platform" : "topic";
+                // 只显示前5个以避免拥挤
+                return tagsArray
+                  .slice(0, 5)
+                  .map(
+                    (tag) => `<span class="badge ${badgeClass}">${tag}</span>`
+                  )
+                  .join(" ");
+              }
+              return "";
+            }
+            // 对于搜索和筛选，返回一个空格分隔的字符串
+            return Array.isArray(data) ? data.join(" ") : "";
+          },
+        },
+        // Column 6: Stars - 启用排序，禁用搜索
+        {
+          targets: 6,
+          orderable: true,
+          searchable: false,
+          className: "text-center",
+        },
+      ],
+      initComplete: function () {
+        const api = this.api();
+        new $.fn.dataTable.Buttons(api, {
+          buttons: [
+            { extend: "colvis", text: "Columns" },
+            { extend: "csv", text: "CSV", charset: "utf-8", bom: true },
+            { extend: "copyHtml5", text: "COPY" },
+          ],
+        });
+        api.buttons().container().appendTo("#datatable-buttons-container");
+
+        api.columns([0, 2]).every(function () {
+          const column = this;
+          const input = $("input", $(".filters th").eq(column.index()));
+          input.on("keyup change clear", function () {
+            if (column.search() !== (this as HTMLInputElement).value) {
+              column.search((this as HTMLInputElement).value).draw();
+            }
+          });
+        });
+
+        const collectionColumn = api.column(1);
+        const collectionFilterCell = $(".filters th").eq(
+          collectionColumn.index()
+        );
+        const collectionSelect = $(
+          '<select multiple placeholder="Filter..."></select>'
+        )[0] as HTMLSelectElement;
+        collectionFilterCell.empty().append(collectionSelect);
+        const collectionTomSelect = new TomSelect(collectionSelect, {
+          plugins: ["remove_button"],
+          dropdownParent: "body",
+          onChange: (values) => {
+            const searchStr = (values as string[])
+              .map((val) => `^${$.fn.dataTable.util.escapeRegex(val)}$`)
+              .join("|");
+            collectionColumn.search(searchStr, true, false).draw();
+          },
+        });
+        // 存储实例，以便在 drawCallback 中访问和填充
+        headerTomSelects.set(1, collectionTomSelect);
+
+        api.columns([3, 4, 5]).every(function () {
+          const column = this;
+          const filterCell = $(".filters th").eq(column.index());
+
+          if (filterCell.length === 0) return;
+
+          const select = $(
+            '<select multiple placeholder="Filter..."></select>'
+          )[0] as HTMLSelectElement;
+          filterCell.empty().append(select);
+
+          const tomSelectInstance = new TomSelect(select, {
+            plugins: ["remove_button"],
+            dropdownParent: "body",
+            onChange: (values) => {
+              const searchStr = (values as string[])
+                .map((val) => `\\b${$.fn.dataTable.util.escapeRegex(val)}\\b`)
+                .join("|");
+              // 使用 search() 方法应用筛选
+              column.search(searchStr, true, false).draw();
+            },
+          });
+
+          // 动态填充筛选选项
+          const uniqueValues = new Set<string>();
+          // 使用为搜索优化的正交数据来构建筛选选项
+          const columnSearchData = column.data();
+
+          if (column.index() === 4 || column.index() === 5) {
+            const columnDataKey = api.settings().init().columns[column.index()]
+              .data as string;
+            api.rows().every(function () {
+              const rowData = this.data();
+              const items = rowData[columnDataKey];
+              if (Array.isArray(items)) {
+                items.forEach((item) => {
+                  if (item) uniqueValues.add(item);
+                });
+              }
+            });
+          } else {
+            // Collection & Language
+            columnSearchData.unique().each((d) => {
+              if (d) uniqueValues.add(d);
+            });
+          }
+
+          const options = Array.from(uniqueValues)
+            .sort()
+            .map((d) => ({ value: d, text: d }));
+          tomSelectInstance.addOptions(options);
+        });
+      },
+      drawCallback: function (settings) {
+        // 这是初始化/更新 TomSelect 的最佳时机
+        const collections = managedCollections.get();
+
+        const rowOptions = collections.map((c) => ({
+          value: c.slug,
+          text: c.name,
+        }));
+        this.api()
+          .rows({ page: "current" })
+          .nodes()
+          .to$()
+          .find(".collection-select")
+          .each(function () {
+            initializeCollectionSelector(
+              this as HTMLSelectElement,
+              tomSelectInstances,
+              TomSelect
+            );
+          });
+      },
+    });
+
+    dataTableStore.set(dataTableInstance);
+
+    // 监听 fixedHeader 准备隐藏原始表头的事件
+    $(tableElement).on("fixedHeader-hiding.dt", function (e, dt, node) {
+      const focusedElement = document.activeElement;
+      // 检查焦点元素是否在我们的表格之内
+      if (focusedElement && tableElement.contains(focusedElement)) {
+        (focusedElement as HTMLElement).blur();
+      }
+    });
+  }
+
+  reposUnsubscribe = enrichedRepos.subscribe((reposData) => {
+    if (document.body.contains(tableElement)) {
+      initializeOrUpdateTable(reposData);
+    }
+  });
+
+  collectionsUnsubscribe = managedCollections.subscribe((collections) => {
+    // 只有当 Collection 数据真实存在时才继续
+    if (collections.length === 0) return;
+
+    // 找到我们之前在 initComplete 中创建的 TomSelect 实例
+    const headerCollectionSelect = headerTomSelects.get(1);
+
+    // 确保实例存在，才进行操作
+    if (headerCollectionSelect) {
+      // 关键步骤：
+      // a. 先清空所有现有选项，防止重复添加。这对于处理动态数据至关重要。
+      headerCollectionSelect.clearOptions();
+
+      // b. 准备新选项
+      const collectionOptions = collections.map((c) => ({
+        value: c.name,
+        text: c.name,
+      }));
+
+      // c. 添加新选项
+      headerCollectionSelect.addOptions(collectionOptions);
+      // d. 刷新UI，让用户看到变化。这是您搜索结果中反复强调的关键点。
+      //    [API - Tom Select](https://tom-select.js.org/docs/api/){target="_blank" class="gpt-web-url"}
+      headerCollectionSelect.refreshOptions(false);
+    }
+  });
+
+  enrichedRepos.subscribe((reposData) => {
+    // 确保组件已挂载到 DOM
+    if (document.body.contains(tableElement)) {
+      initializeOrUpdateTable(reposData);
+    }
+  });
+
+  document.addEventListener(
+    "astro:before-swap",
+    () => {
+      if (reposUnsubscribe) reposUnsubscribe();
+      if (collectionsUnsubscribe) collectionsUnsubscribe();
+      if (dataTableInstance) {
+        dataTableInstance.destroy();
+        dataTableInstance = null;
+      }
+      tomSelectInstances.forEach((instance) => instance.destroy());
+      tomSelectInstances.clear();
+      headerTomSelects.forEach((instance) => instance.destroy());
+      headerTomSelects.clear();
+    },
+    { once: true }
+  );
+</script>

@@ -3,12 +3,6 @@
 // import ThemeToggleButton from './ThemeToggleButton.astro';
 const basePath = import.meta.env.BASE_URL;
 
-const views = [
-  { label: "Doc", href: basePath+"getting-started" },
-  { label: "Table", href: basePath+"table" },
-  { label: "Kanboard", href: basePath+"kanboard" },
-];
-
 const siteTitle = "🌟 My Gitstar";
 ---
 
@@ -22,9 +16,9 @@ const siteTitle = "🌟 My Gitstar";
     <!-- 左侧部分 -->
     <div class="left-items print:hidden sl-flex">
       <nav class="hidden md:flex nav-links">
-        <a href={basePath+"getting-started"} class="nav-link">Introduction</a>
-        <a href={basePath+"table"} class="nav-link">Table</a>
-        <a href={basePath+"manage"} class="nav-link">Manage</a>
+          <a href={basePath} class="nav-link">Welcome</a>
+        <a href={basePath+"getting-started"} class="nav-link">Documentation</a>
+        <a href={basePath+"explorer"} class="nav-link">Explorer</a>
       </nav>
     </div>
 

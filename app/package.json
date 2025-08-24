@@ -13,14 +13,20 @@
     "@astrojs/starlight-tailwind": "^4.0.1",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.12.9",
+    "datatables.net-buttons-dt": "^3.2.4",
     "datatables.net-dt": "^2.3.2",
+    "datatables.net-fixedheader-dt": "^4.0.3",
+    "datatables.net-scroller-dt": "^2.4.3",
+    "dexie": "^4.0.7",
     "jquery": "^3.7.1",
     "nanostores": "^1.0.1",
-    "select2": "~4.0",
     "sortablejs": "^1.15.6",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "tom-select": "^2.4.3"
   },
   "devDependencies": {
-    "@types/sortablejs": "^1.15.8"
+    "@types/jquery": "^3.5.32",
+    "@types/sortablejs": "^1.15.8",
+    "@vite-pwa/astro": "^1.1.0"
   }
 }

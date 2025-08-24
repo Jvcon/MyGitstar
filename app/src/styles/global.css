@@ -7,8 +7,8 @@
 @import "tom-select/dist/css/tom-select.default.css" layer(base);
 @import "datatables.net-dt/css/dataTables.dataTables.css" layer(base);
 @import "datatables.net-buttons-dt/css/buttons.dataTables.css" layer(base);
-@import "datatables.net-fixedheader-dt/css/fixedHeader.dataTables.css"
-  layer(base);
+@import "datatables.net-fixedheader-dt/css/fixedHeader.dataTables.css" layer(base);
+@import "datatables.net-scroller-dt/css/scroller.dataTables.css" layer(base);
 
 @theme {
   /*
@@ -38,53 +38,25 @@ Add additional Tailwind styles to this file:
 https://tailwindcss.com/docs/adding-custom-styles#using-custom-css
 */
 @layer base {
-  body {
-    color: var(--color-accent-200);
+  :root {
     background-color: var(--color-gray-900);
+    --dt-html-background: var(--color-gray-900);
+  }
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 防止顶层出现滚动条 */
   }
   h1 {
     font-size: var(--text-6xl);
+    color: var(--color-accent-200);
   }
   h2 {
     font-size: var(--text-2xl);
-  }
-  /* From Uiverse.io by kamehame-ha */
-  .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 15px;
-    gap: 15px;
-    background-color: #007acc;
-    outline: 3px #007acc solid;
-    outline-offset: -3px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: 400ms;
-  }
-
-  .button .text {
-    color: white;
-    font-weight: 700;
-    font-size: 1em;
-    transition: 400ms;
-  }
-
-  .button svg path {
-    transition: 400ms;
-  }
-
-  .button:hover {
-    background-color: transparent;
-  }
-
-  .button:hover .text {
-    color: #007acc;
-  }
-
-  .button:hover svg path {
-    fill: #007acc;
+    color: var(--color-accent-200);
   }
 
   /* From Uiverse.io by Gautammsharma */
@@ -117,8 +89,137 @@ https://tailwindcss.com/docs/adding-custom-styles#using-custom-css
     transform: translateY(4px);
   }
 }
+@layer layout {
+  /* 应用程序主容器布局 */
+  #app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    gap: 1rem;
+  }
+  #app-container > .toolbar {
+    flex-shrink: 0;
+  }
+  #app-container > .manager-grid {
+    flex-grow: 1;
+    min-height: 0;
+  }
+
+  /* 主网格布局 */
+  .manager-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 30%;
+    transition: grid-template-columns 0.3s ease-in-out;
+  }
+  .manager-grid.sidebar-collapsed {
+    grid-template-columns: 1fr auto 0;
+  }
+  .manager-grid.sidebar-collapsed #sidebar-area {
+    overflow: hidden;
+    padding: 0;
+  }
+
+  /* 视图切换容器修复 (核心修复) */
+  #card-view-wrapper,
+  #table-view-wrapper {
+    display: flex; /* 默认使用 flex，而不是在 :not(.hidden) 中 */
+    flex-direction: column;
+    height: 100%;
+    min-height: 0; /* 再次强调，允许子元素滚动 */
+    overflow: hidden;
+  }
+  #card-view-wrapper.hidden,
+  #table-view-wrapper.hidden {
+    display: none !important;
+  }
+
+  /* CardView 内部骨架 */
+  .card-view-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+  }
+  .card-view-layout > .tabs-container {
+    flex-shrink: 0;
+  }
+  .card-view-layout > .cards-wrapper {
+    flex-grow: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 1rem;
+    overscroll-behavior: contain;
+  }
+
+  /* TableView 内部骨架 */
+  .table-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+  }
+
+  /* 侧边栏布局 */
+  #sidebar-area.collection-list-section {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background-color: var(--color-gray-900);
+    padding: 1rem;
+    border-left: 1px solid var(--color-gray-700);
+  }
+}
 
 @layer components {
+  .toolbar-button {
+    @apply bg-gray-800 border border-gray-700 text-gray-300 rounded-lg;
+    @apply inline-flex items-center justify-center px-4 py-2; /* 尺寸和对齐 */
+    @apply bg-gray-800 border border-gray-700; /* 背景和边框 */
+    @apply text-gray-200 font-semibold text-sm rounded-lg; /* 文本和圆角 */
+    @apply transition-colors duration-200; /* 过渡效果 */
+    @apply focus:outline-none focus:ring-2 focus:ring-accent-600 focus:ring-offset-2 focus:ring-offset-gray-900; /* 聚焦状态 */
+  }
+  .toolbar-button:hover {
+    @apply bg-gray-700 text-white; /* 悬停状态 */
+  }
+  .view-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: transparent;
+    color: var(--color-gray-300);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  .view-btn:hover {
+    background-color: var(--color-gray-700);
+  }
+  .view-btn.active {
+    background-color: var(--color-accent-600);
+    color: white;
+    font-weight: bold;
+  }
+  .badge {
+    @apply inline-flex items-center px-2 py-1 text-xs font-medium rounded-full;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+    display: inline-block;
+    padding: 0.2em 0.6em;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    margin: 0.1rem;
+  }
+  .badge.platform {
+    color: var(--color-gray-100);
+    background-color: var(--color-accent-900, #4e0e5b);
+  }
+  .badge.topic {
+    color: var(--color-gray-200);
+    background-color: var(--color-gray-700, #412e55);
+  }
   /* ------------------------------------- */
   /* Tom Select Theming (保持不变)         */
   /* ------------------------------------- */
@@ -194,13 +295,44 @@ https://tailwindcss.com/docs/adding-custom-styles#using-custom-css
   /* ------------------------------------- */
 
   /* --- 整体容器和文本颜色 --- */
+  .table-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0; /* 再次强调，允许 flex 子元素收缩 */
+  }
   .dataTables_wrapper {
+    display: flex !important;
     color: var(--color-gray-300);
+    height: 100%;
+    min-height: 0;
+    flex-direction: column;
+  }
+  .dataTables_scroll {
+    flex-grow: 1;
+    min-height: 0; /* 允许其自身收缩 */
+    display: flex;
+    flex-direction: column;
+  }
+  .dt-scroll-body {
+    flex-grow: 1;
+    overflow-y: auto !important; /* 强制开启垂直滚动 */
+    height: auto !important;
+  }
+  .dataTables_bottom {
+    flex-shrink: 0;
   }
 
   /* --- 表格主体 --- */
   table.dataTable {
+    table-layout: fixed;
+    width: 100% !important;
     border-color: var(--color-gray-700) !important;
+  }
+  table.dataTable td,
+  table.dataTable th {
+    white-space: normal !important;
+    word-break: break-word;
   }
   table.dataTable thead th,
   table.dataTable thead td {
@@ -208,7 +340,7 @@ https://tailwindcss.com/docs/adding-custom-styles#using-custom-css
     border-bottom: 2px solid var(--color-gray-700) !important;
   }
   table.dataTable tbody tr {
-    background-color: transparent; /* 移除默认的条纹背景 */
+    background-color: var(--color-gray-800); /* 移除默认的条纹背景 */
     transition: background-color 0.2s;
   }
   table.dataTable tbody tr:hover {
@@ -263,11 +395,20 @@ https://tailwindcss.com/docs/adding-custom-styles#using-custom-css
   /* --- 按钮 (如 "Columns") 和按钮集合 --- */
   .dt-button {
     @apply bg-gray-800 border border-gray-700 text-gray-300 rounded-lg;
+    @apply inline-flex items-center justify-center px-4 py-2; /* 尺寸和对齐 */
+    @apply bg-gray-800 border border-gray-700; /* 背景和边框 */
+    @apply text-gray-200 font-semibold text-sm rounded-lg; /* 文本和圆角 */
+    @apply transition-colors duration-200; /* 过渡效果 */
+    @apply focus:outline-none focus:ring-2 focus:ring-accent-600 focus:ring-offset-2 focus:ring-offset-gray-900; /* 聚焦状态 */
+    background-image: none !important;
+    box-shadow: none !important;
+    border: none !important; /* 强制覆盖，确保我们的边框生效 */
     transition: background-color 0.2s, border-color 0.2s;
   }
   .dt-button:hover {
-    background: var(--color-gray-700) !important;
-    border-color: var(--color-gray-600) !important;
+    background-image: none !important;
+    border: none !important; /* 强制覆盖，确保我们的边框生效 */
+    box-shadow: none !important;
   }
   div.dt-button-collection {
     @apply bg-gray-800 border border-gray-700 rounded-lg;
@@ -349,50 +490,15 @@ input {
   min-height: 32px;
   font-size: small;
 }
-.badge {
-  @apply inline-flex items-center px-2 py-1 text-xs font-medium rounded-full;
-  margin-right: 0.25rem;
-  margin-bottom: 0.25rem;
-  display: inline-block;
-  padding: 0.2em 0.6em;
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  margin: 0.1rem;
-}
-.badge.platform {
-  color: var(--color-gray-100);
-  background-color: var(--color-accent-900, #4e0e5b);
-}
-.badge.topic {
-  color: var(--color-gray-200);
-  background-color: var(--color-gray-700, #412e55);
-}
 
 /* Manager Custom */
 
-.manager-grid {
-  display: grid;
-  grid-template-columns: 70fr 30fr;
-  gap: 1.5rem;
-  height: 100%;
-  overflow: hidden;
-}
-.repo-display-section,
-.collection-list-section {
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  background-color: var(--color-gray-900);
-  border-radius: 0.5rem;
-  padding: 1rem;
-  margin: 1%;
-  border: 1px solid var(--color-gray-700);
+.tabs-container {
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--color-gray-700); /* 视觉上的分割线 */
 }
 
 .tabs {
-  flex-shrink: 0;
   margin-bottom: 1rem;
   display: flex;
   gap: 0.5rem;
@@ -403,14 +509,18 @@ input {
 }
 .tabs::-webkit-scrollbar {
   display: none; /* Chrome, Safari, and Opera */
+  height: 6px; /* 适用于 Chrome, Safari */
 }
+
+.tabs::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-600);
+  border-radius: 3px;
+}
+
 .tab-btn {
-  /* [修改] 调整 padding，使其在垂直方向上更舒适 */
   padding: 0.75rem 0.25rem;
-  /* [新增] 增加外边距来控制按钮间距 */
-  margin-bottom: -2px; /* 让下边框与容器边框重合 */
+  margin-bottom: -2px;
   margin: 0 0.75rem;
-  /* [修改] 移除背景色和边框，改为底部透明边框占位 */
   border: none;
   border-bottom: 2px solid transparent;
   border-radius: 0; /* 移除胶囊形状 */
@@ -433,51 +543,12 @@ input {
   border-bottom-color: var(--color-accent-600); /* 用主强调色作为下划线 */
   font-weight: bold;
 }
-
 .cards-container {
-  flex-grow: 1;
-  overflow-y: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  padding: 0.5rem; /* 给滚动条留出空间 */
-  margin: -0.5rem; /* 抵消内边距 */
-  align-content: start;
+  gap: 1rem;
 }
-/* [新增] 为取消收藏的卡片添加样式 */
-.repo-card.is-unfavorited {
-  opacity: 0.6;
-  background-color: var(--color-gray-800);
-}
-.repo-card.is-unfavorited:hover {
-  opacity: 1;
-}
-/* [新增] 为卡片内的交互元素添加样式 */
-/* .card-actions {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
-.target-collection-selector select {
-  background-color: var(--color-gray-700);
-  color: var(--color-gray-200);
-  border: 1px solid var(--color-gray-500);
-  border-radius: 4px;
-  padding: 0.25rem 0.5rem;
-}
-.card-buttons button {
-  background: none;
-  border: none;
-  color: var(--color-gray-400);
-  cursor: pointer;
-  font-size: 1.2rem;
-  padding: 0.25rem;
-  margin-left: 0.5rem;
-}
-.card-buttons button:hover {
-  color: var(--color-accent-200);
-}
+
 .repo-card {
   display: flex;
   flex-direction: column;
@@ -500,6 +571,36 @@ input {
   background-color: var(--color-gray-800);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 }
+
+/* [新增] 为取消收藏的卡片添加样式 */
+.repo-card.is-unfavorited {
+  opacity: 0.6;
+  background-color: var(--color-gray-800);
+}
+.repo-card.is-unfavorited:hover {
+  opacity: 1;
+}
+
+.target-collection-selector select {
+  background-color: var(--color-gray-700);
+  color: var(--color-gray-200);
+  border: 1px solid var(--color-gray-500);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+}
+.card-buttons button {
+  background: none;
+  border: none;
+  color: var(--color-gray-400);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+}
+.card-buttons button:hover {
+  color: var(--color-accent-200);
+}
+
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -664,4 +765,8 @@ input {
 
 .repo-item-ghost > * {
   visibility: hidden;
+}
+
+.view-mode-card .buttons-colvis {
+  display: none !important;
 }

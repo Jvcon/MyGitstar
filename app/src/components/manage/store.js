@@ -12,7 +12,7 @@ export const managedStateStore = atom({
 
 // 3. UI状态：当前激活的Tab
 export const activeTabStore = atom('全部');
-
+export const dataTableStore = atom(null); 
 
 // --- 派生/计算 Store (用于表示层) ---
 // 这个 store 是连接数据和UI的桥梁，它根据原始数据和管理状态生成用于显示的“视图模型”

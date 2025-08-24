@@ -1,24 +1,132 @@
 ---
+// File: /app/src/components/RepoManager.astro
+
+// 1. 导入子组件“岛屿”
+// 我们像搭积木一样，将之前创建的独立组件导入进来。
+import RepoTabs from './manage/RepoTabs.astro';
+import RepoCards from './manage/RepoCards.astro';
+import CollectionList from './manage/CollectionList.astro';
+
+// 2. 在构建时获取和预处理数据
+// 这部分代码只在服务器端运行，完全符合 Astro 的 "Server-First" 理念。
+// [Astro](https://astro.build/){target="_blank" class="gpt-web-url"}
+import reposData from '../../public/data/repos.json';
+import collectionsData from '../../public/data/collections.json';
+
+// --- 数据预处理 ---
+
+const allRepos = reposData;
+
+// a. 计算 Tabs 所需的数据
+const repoCounts = allRepos.reduce((acc, repo) => {
+  acc[repo.list_name] = (acc[repo.list_name] || 0) + 1;
+  return acc;
+}, {});
+
+const tabData = ["全部", ...Object.keys(repoCounts).sort()].map((name) => ({
+  name: name,
+  count: name === "全部" ? allRepos.length : repoCounts[name],
+}));
+const finalCollectionMap = new Map();
+
+// 首先，从 collections.json 添加预定义的集合元数据
+collectionsData.forEach(col => {
+    // 防御性检查，跳过无效的集合数据
+    if (!col || !col.name) return;
+    
+    finalCollectionMap.set(col.name, {
+        id: col.id || `col_${Date.now()}_${col.name.toLowerCase().replace(/\s+/g, "-")}`,
+        name: col.name,
+        slug: col.slug || col.name.toLowerCase().replace(/\s+/g, "-"),
+        description: col.description || "",
+        // **关键修正点 1**: 无论原始数据如何，都保证 repos 属性是一个数组
+        repos: [] 
+    });
+});
+
+// 然后，从 repos.json 补充可能缺失的集合
+allRepos.forEach(repo => {
+    if (repo.list_name && !finalCollectionMap.has(repo.list_name)) {
+        finalCollectionMap.set(repo.list_name, {
+            id: `col_${Date.now()}_${repo.list_name.toLowerCase().replace(/\s+/g, "-")}`,
+            name: repo.list_name,
+            slug: repo.list_name.toLowerCase().replace(/\s+/g, "-"),
+            description: "",
+            // **关键修正点 2**: 动态创建的集合也必须保证 repos 属性是一个数组
+            repos: [] 
+        });
+    }
+});
+
+// 阶段 2: 将仓库填充到已经准备好的“空壳”中
+allRepos.forEach(repo => {
+    const collection = finalCollectionMap.get(repo.list_name);
+    if (collection) {
+        // 因为我们已确保 collection.repos 是一个数组，所以这里可以安全地 .push
+        if (!collection.repos.includes(repo.full_name)) {
+            collection.repos.push(repo.full_name);
+        }
+    }
+});
+
+// 现在，finalCollectionMap.values() 包含了所有结构完整、数据填充好的集合
+const finalCollections = Array.from(finalCollectionMap.values());
+
+const initialManagedState = {
+  manage: finalCollections,
+  removed: []
+};
+
+// --- 为客户端脚本准备数据 ---
+const initialStoreData = {
+  allRepos: allRepos,
+  initialManagedState: initialManagedState,
+};
 
 ---
 
-<div id="repo-manager-container" class="manager-grid">
+<!-- 3. 组件的静态 HTML 结构 -->
+<!-- 
+  这里我们不写复杂的 HTML，而是以声明式的方式组合我们的子组件。
+  这种组件化的方式是所有现代框架的最佳实践。
+  [Astro UI Framework [Full Book]](https://www.freecodecamp.org/news/how-to-use-the-astro-ui-framework/){target="_blank" class="gpt-web-url"}
+-->
+<div 
+  id="repo-manager-container" 
+  class="manager-grid" 
+  data-initial-store={JSON.stringify(initialStoreData)}
+>
   <div class="repo-display-section">
-    <div id="repo-tabs" class="tabs"></div>
-    <div id="repo-cards-container" class="cards-container"></div>
+    <!-- 传入预处理好的 tabData，用于静态渲染 -->
+    <RepoTabs tabData={tabData} />
+
+    <!-- RepoCards 是一个纯粹的客户端岛屿，它从 store 获取数据，无需 props -->
+    <RepoCards />
   </div>
-  <div id="collection-list-section" class="collection-list-section">
-    <div class="toolbar">
-      <button id="export-btn" class="comic-button">导出 JSON</button>
-    </div>
-    <div class="collection-creator">
-      <input type="text" id="new-collection-input" placeholder="输入名称后回车，创建新 Collection" />
-    </div>
-    <div id="collection-list-container" class="list-container"></div>
-  </div>
+
+  <!-- 
+    传入预处理好的集合列表，用于静态渲染初始 UI。
+    这正是渐进式增强（Progressive Enhancement）的体现。
+  -->
+  <CollectionList initialCollections={initialManagedState.manage} />
 </div>
 
-<script type="module">
-  import { initApp } from '/src/components/manage/App.js';
-  initApp();
+
+<!-- 4. 客户端初始化脚本 -->
+<!-- 
+  这是连接服务器端（构建时）和客户端（运行时）的关键桥梁。
+  它的唯一职责是初始化共享状态，从而唤醒所有交互“岛屿”。
+-->
+<script>
+  import { initializeStores } from './manage/store.js';
+  const container = document.getElementById('repo-manager-container');
+  if (container && container.dataset.initialStore) {
+    // 解析存储在 data-* 属性中的 JSON 字符串
+    const dataFromDOM = JSON.parse(container.dataset.initialStore);
+    
+    // 使用从 DOM 获取的数据来初始化我们的 store
+    initializeStores(dataFromDOM);
+  } else {
+    console.error("RepoManager: Could not find initial data on the container element.");
+  }
 </script>
